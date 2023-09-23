@@ -1,0 +1,191 @@
+/*GENERAL PARAMETERS*/
+:root {
+    --primary: #1F1F1F;
+    --primary-light-1: #5C5C5C;
+    --primary-light-2: #908F8F;
+    --primary-shadow-1: #030202;
+    --primary-shadow-2: #000;
+    --secondary: #3E7393;
+    --secondary-light-1: #6090AD;
+    --secondary-light-2: #94BAD0;
+    --secondary-shadow-1: #276082;
+    --secondary-shadow-2: #154A69;
+    --accent: #C3F25C;
+    --danger: #D52B1E;
+    --success: #008842;
+}
+
+* {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+body {
+    margin: 0;
+}
+
+/* Typography*/
+
+h1 {
+    margin: 0px;
+    font-size: 24px;
+}
+
+h2 {
+    margin: 0px;
+    font-size: 21px;
+}
+
+h3 {
+    margin: 0px;
+    font-size: 18px;
+}
+
+p {
+    margin: 0px;
+    font-size: 14px;
+}
+
+a {
+    color: #FFF;
+}
+
+.light {
+    font-weight: 300;
+}
+
+.semibold {
+    font-weight: 700;
+}
+
+/* Buttons */
+
+button {
+    padding: 8px 24px;
+    font-size: 18px;
+    border-radius: 8px;
+}
+
+.outlined {
+    background-color: transparent;
+}
+
+/* Directions */
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Sections */
+
+.header {
+    background-color: var(--primary);
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    padding-left:16px;
+    padding-right: 16px;
+
+    .profile{
+        align-items: center;
+        gap: 10px
+    }
+
+    .profile img {
+        width: 40px;
+    }
+}
+
+
+
+.release {
+    position: relative;
+    display:block;
+    width: 100%;
+    height: 768px;
+    outline: none;
+    background-image:url(../images/Release.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .release_button {
+        position: absolute;
+        left: 64px;
+        bottom: 34px;
+        border-color: #fff;
+        color: #fff;
+    }
+}
+
+footer {
+    height: 286px;
+    background-color: var(--primary);
+    color: #FFF;
+    padding: 64px;
+}
+
+.footer_left {
+    flex: 8;
+    justify-content: space-between;
+}
+
+.footer_items {
+    justify-content: space-between;
+
+    & h3 {
+        opacity: 0.8;
+        margin-bottom: 16px;
+    }
+    
+    & p {
+        opacity: 0.8;
+        margin-bottom: 8px;
+    }
+}
+
+.copyright {
+    .logo {
+        align-items: center;
+        & i {
+            color: var(--accent);
+            margin-right: 14px;
+        }
+    }
+    & p {
+        opacity: 0.5;
+        margin-top: 8px;
+    }
+}
+
+.footer_right {
+    flex: 4;
+    justify-content: space-between;
+
+    & div {
+        padding-left: 64px;
+    }
+
+    & h1 {
+        opacity: 0.8;
+        margin-bottom: 8px;
+    }
+
+    & h3 {
+        opacity: 0.8;
+        margin-bottom: 16px;
+    } 
+
+    & i {
+        margin-right: 16px;
+    }
+}
+
+.footer_phone {
+    justify-content: space-around;
+}
+
