@@ -17,24 +17,68 @@
     <body>
 
         <header class="header row">
-            <button  id="menu-burger"><p>menu</p></button>
+            <button  id="menu" class="outlined btn-menu">
+                <img src="/TP2/svg/menu.svg" alt="menu-burger">
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <button>X</button>
+                <h3>Categories</h3>
+                <ul>
+                    <li>Adventure</li>
+                    <li>Action</li>
+                    <li>Arcade</li>
+                    <li>Multiplayer</li>
+                    <li>Shooters</li>
+                    <li>Sports</li>
+                </ul>
+            </nav>
             <div class="row header-tittle">
-                <p>logo</p>
+                <img src="/TP2/svg/logo.svg" alt="logo">
                 <h1><a href="index.html">LevelUp.com</a></h1>
             </div>
             <div class="row profile">
-                <p>carrito</p>
-                <button class="profile-user outlined">
+                <img src="/TP2/svg/cart.svg" alt="carrito">
+                <button class="btn-profile-user outlined">
                     <img src="/TP2/images/profile.png" alt="user-avatar">
                 </button>
             </div>
         </header>
+        <main>
+            <section class="column banner">
+                <h1>MAY THE 4TH IN A ROW</h1>
+                <button>PLAY</button>
+            </section>
+    
+            <section class="section-carrousel">
+                <h1>Category</h1>
 
+                <div class="carrousel-container">
+                    <button id="prevBtn" class="outlined btn-arrow"><img src="/TP2/svg/left-arrow.svg" alt="left-arrow"></button>
+    
+                    
 
+                    
+                    <button id="nextBtn" class="outlined btn-arrow"><img src="/TP2/svg/right-arrow.svg" alt="right-arrow"></button>
+                </div>
+            </section>
+            <div class="card-container column">
+                <img src="/TP2/images/game-dota-2.png" alt="game-dota-2" class="card-img">
+                <div class="card-body column">
+                    <p class="light">Category</p>
+                    <h3 class="semibold">Dota 2</h3>
+                    
+                    <div class="card-price-default">
+                        <h3>$3000</h3>
+                    </div>
 
-        <section class="release">
-            <button class="outlined release_button"> OFICIAL TRAILER </button>
-        </section>
+                    <button class="card-btn-addToCart"></button>
+                </div>
+            </div>
+    
+            <section class="release">
+                <button class="outlined release_button"> OFICIAL TRAILER </button>
+            </section>
+        </main>
 
 
 
@@ -95,6 +139,7 @@
                 </div>
             </div>   
         </footer>
+        <script src="/TP2/js/menu.js"></script>
     </body>
 
 </html>
