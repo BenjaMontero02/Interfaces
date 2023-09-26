@@ -149,7 +149,7 @@ button {
     align-items: center;
     padding: 32px;
     height: 350px;
-    background-image:url(/TP2/images/banner-4enLinea.jpg);
+    background-image:url(../images/banner-4enLinea.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
