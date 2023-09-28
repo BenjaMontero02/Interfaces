@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LevelUp.com</title>
+    <title>Registration</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,77 +19,37 @@
       crossorigin="anonymous"
     />
   </head>
-
   <body>
     <header class="header row">
-      <button id="menu" class="outlined btn-menu">
-        <img src="/TP2/svg/menu.svg" alt="menu-burger" />
-      </button>
-      <nav class="nav-menu" id="navMenu">
-        <button>X</button>
-        <h3>Categories</h3>
-        <ul>
-          <li>Adventure</li>
-          <li>Action</li>
-          <li>Arcade</li>
-          <li>Multiplayer</li>
-          <li>Shooters</li>
-          <li>Sports</li>
-        </ul>
-      </nav>
       <div class="row header-tittle">
-        <img src="/TP2/svg/logo.svg" alt="logo" />
+        <img src="svg/logo.svg" alt="logo" />
         <h1><a href="index.html">LevelUp.com</a></h1>
-      </div>
-      <div class="row profile">
-        <img src="../TP2/svg/cart.svg" alt="carrito" />
-        <button class="btn-profile-user outlined">
-          <img src="/TP2/images/profile.png" alt="user-avatar" />
-        </button>
       </div>
     </header>
     <main>
-      <section class="column banner">
-        <h1>MAY THE 4TH IN A ROW</h1>
-        <button>PLAY</button>
-      </section>
+      <section>
+        <form action="" class="column">
+          <label for="completeName">Complete name *</label>
+          <input type="text" name="name" placeholder="Complete name" />
+          <label for="nickname">Nickname</label>
+          <input
+            type="text"
+            name="nickname"
+            placeholder="Ingrese su password"
+          />
 
-      <section class="section-carrousel">
-        <h1>Category</h1>
-
-        <div class="carrousel-container">
-          <button id="prevBtn" class="outlined btn-arrow">
-            <img src="/TP2/svg/left-arrow.svg" alt="left-arrow" />
-          </button>
-
-          <button id="nextBtn" class="outlined btn-arrow">
-            <img src="/TP2/svg/right-arrow.svg" alt="right-arrow" />
-          </button>
-        </div>
-      </section>
-      <div class="card-container column">
-        <img
-          src="/TP2/images/game-dota-2.png"
-          alt="game-dota-2"
-          class="card-img"
-        />
-        <div class="card-body column">
-          <p class="light">Category</p>
-          <h3 class="semibold">Dota 2</h3>
-
-          <div class="card-price-default">
-            <h3>$3000</h3>
-          </div>
-
-          <button class="card-btn-addToCart"></button>
-        </div>
-      </div>
-
-      <section class="release">
-        <button class="outlined release_button">OFICIAL TRAILER</button>
+          <label for="age">Age *</label>
+          <input type="number" name="age" placeholder="Age" />
+          <label for="email">Email *</label><br />
+          <input type="text" name="email" placeholder="Email" />
+          <label for="password">Password *</label>
+          <input type="password" name="password" placeholder="Password" />
+          <label for="repeatpw">Repeat Password *</label>
+          <input type="password" name="rptpw" placeholder="Repeat Password" />
+          <button type="submit">SIGN UP</button>
+        </form>
       </section>
     </main>
-
     <footer class="row">
       <div class="column footer_left">
         <div class="row footer_items">
@@ -153,6 +113,5 @@
         </div>
       </div>
     </footer>
-    <script src="/TP2/js/menu.js"></script>
   </body>
 </html>
