@@ -128,10 +128,15 @@ button {
         width: 18.75rem;
 
         > button {
-            margin-left: 1.5rem;
+            margin-left: 2rem;
             margin-top: 2rem;
             border: none;
-            width: 1.875rem;
+            border-radius: 0;
+            padding: 0;
+            justify-content: end;
+            display: flex;
+            color: #fff;
+            cursor: pointer;
         }
 
         .nav-menu-sub-menu{

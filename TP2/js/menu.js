@@ -3,8 +3,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let navMenu = document.getElementById("navMenu");
     let btnCloseMenu = document.getElementById("btn-close-menu");
 
-    const menuItems = document.querySelectorAll(".nav-menu > ul > li");
-
     menu.addEventListener("click", () => {
         if (navMenu.style.display === "block") {
             navMenu.style.display = "none";
