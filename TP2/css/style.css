@@ -135,7 +135,11 @@ button {
 
     .header-tittle {
         align-items: center;
-        gap: 0.3125rem;
+        gap: 0.5rem;
+
+        > i {
+            color: var(--accent);
+        }
     }
 
     .btn-menu{
@@ -259,6 +263,8 @@ button {
     background-position: center;
     background-size: cover;
 
+    
+
     > h1{
         color: #fff;
         background-color: #000;
@@ -271,6 +277,11 @@ button {
         width: 8.125rem;
         cursor: pointer;
         border-radius: 0.5rem;
+
+        > a {
+            color: #000;
+            text-decoration: none;
+        }
     }
 }
 
@@ -520,5 +531,97 @@ footer {
 
 .footer_phone {
     justify-content: space-around;
+}
+
+/*-----------------------------------------------------game section ------------------------------------*/
+
+.section-tittle-game{
+    background-color: var(--secondary-shadow-1);
+    height: fit-content;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+    color: #FFF;
+
+    .section-tittle-game2{
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 8px;
+        padding-bottom: 8px;
+
+        > button {
+            color: #FFF;
+            border: none;
+            padding-right: 0;
+        }
+    }
+}
+
+.section-game-content{
+    justify-content: space-between;
+    height: 450px;
+    background-color: #000;
+    padding-left: 32px;
+    padding-right: 32px;
+    color: #FFF;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.section-game-instructions{
+    color: var(--accent);
+    padding-top: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-game-about{
+    background-color: var(--primary-light-1);
+    padding: 2rem 2rem 2rem 2rem;
+    color: #FFF;
+
+    > h4 {
+        margin: 32px 0 0 0;
+    }
+}
+
+.section-game-logos{
+    padding: 1rem 2rem 1rem 2rem;
+    justify-content: center;
+    gap: 8px;
+}
+
+.section-game-howToPlay{
+    background-color: var(--secondary-shadow-1);
+    padding: 2rem 2rem 2rem 2rem;
+    color: #FFF;
+
+    >h2{
+        margin-bottom: 8px;
+    }
+}
+
+.section-game-howToPlay-content-card{
+    width: 100%;
+}
+
+.section-game-howToPlay-content{
+    gap: 16px;
+}
+
+.section-game-howToPlay-content-img{
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.img-game-mouse{
+    width: 100px;
+    height: 150px;
 }
 
