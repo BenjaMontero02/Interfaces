@@ -23,7 +23,7 @@
 body {
     margin: 0;
     width: 100%;
-    background-color: var(--primary);
+    background-color: var(--primary-shadow-2);
 }
 
 /* Typography*/
@@ -253,12 +253,11 @@ button {
 
 
 .banner{
-    justify-content: space-between;
-    text-align: center;
+    justify-content: end;
     align-items: center;
     padding: 2rem;
     height: 21.875rem;
-    background-image:url(../images/banner-4enLinea.jpg);
+    background-image:url(../svg/image.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -271,18 +270,21 @@ button {
         padding: 1rem;
     }
 
-    > button{
-        background-color: var(--accent);
-        border: none;
-        width: 8.125rem;
-        cursor: pointer;
-        border-radius: 0.5rem;
+    > a {
+        color: #000;
+        text-decoration: none;
 
-        > a {
-            color: #000;
-            text-decoration: none;
+        > button{
+            background-color: var(--accent);
+            border: none;
+            width: 8.125rem;
+            cursor: pointer;
+            border-radius: 0.5rem;
+    
+            
         }
     }
+    
 }
 
 
@@ -313,10 +315,9 @@ main{
 /*-----------------------------------------------CARD AND CARROUSEL----------------------------------*/
 
 .section-carrousel{
-    margin-top: 4rem;
+    background-color: var(--primary);
+    padding: 2rem 2rem 2rem 2rem;
     color: #FFF;
-    margin-left: 2rem;
-    margin-right: 2rem;
 }
 
 .card-body-second{
@@ -567,9 +568,22 @@ footer {
     color: #FFF;
     padding-top: 32px;
     padding-bottom: 32px;
+
+    > div {
+        justify-content: center;
+        align-items: center;
+        color: var(--accent);
+
+        .tokens{
+            margin-top: 8px;
+            margin-bottom: 8px;
+            color: #FFF
+        }
+    }
 }
 
 .section-game-instructions{
+    background-color: var(--primary);
     color: var(--accent);
     padding-top: 16px;
     padding-left: 32px;
@@ -578,6 +592,18 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    > div{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        > button {
+            cursor: pointer;
+            border: none;
+            padding: 0;
+        }
+    }
 }
 
 .section-game-about{
@@ -593,7 +619,7 @@ footer {
 .section-game-logos{
     padding: 1rem 2rem 1rem 2rem;
     justify-content: center;
-    gap: 8px;
+    gap: 1rem;
 }
 
 .section-game-howToPlay{
@@ -602,7 +628,7 @@ footer {
     color: #FFF;
 
     >h2{
-        margin-bottom: 8px;
+        margin-bottom: 32px;
     }
 }
 
@@ -610,18 +636,183 @@ footer {
     width: 100%;
 }
 
+.section-game-howToPlay-content-card-info{
+    height: 65px;
+}
+
+.section-game-howToPlay-content-card-info :first-child {
+    margin-bottom: 8px;
+}
+
 .section-game-howToPlay-content{
-    gap: 16px;
+    gap: 2rem;
 }
 
 .section-game-howToPlay-content-img{
     display: flex;
     justify-content: center;
-    margin-top: 8px;
+    margin-top: 16px;
 }
 
 .img-game-mouse{
-    width: 100px;
+    width: 120px;
     height: 150px;
+}
+
+.section-game-win-info{
+    background-color: var(--primary);
+    padding: 2rem 2rem 2rem 2rem ;
+    color: #FFF;
+
+    >h2{
+        margin-bottom: 16px;
+    }
+}
+
+.section-game-win-info-content{
+    justify-content: space-between;
+    gap: 24px;
+
+    > div {
+        background-color: var(--primary-light-1);
+        padding: 1rem;
+
+        > h3{
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.section-game-video{
+    background-color: var(--primary-shadow-2);
+    padding: 2rem 2rem 2rem 2rem;
+    color:#FFF
+}
+
+.section-game-video-content{
+    margin-top: 16px;
+    width: 100%;
+    justify-content: center;
+    gap: 16px;
+
+    .first-card{
+        width: 400px;
+        height: 400px;
+        background-color: var(--primary);
+
+        > h4 {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        > p {
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-bottom: 32px;
+            padding-top: 32px;
+        }
+    }
+
+    .second-card{
+        width: 400px;
+        height: 400px;
+        background-color: var(--primary);
+
+        > div {
+            background-image: url(../svg/Frame70.svg);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            > button {
+                border: none;
+                padding: 0;
+                cursor: pointer;
+            }
+        }
+
+        >h4 {
+            padding-left: 16px;
+        }
+    }
+}
+
+/*---------------------------------------section comments-------------------------------------------*/
+
+.section-comments{
+    padding: 2rem;
+    justify-content: space-between;
+    color: #FFF;
+    gap: 2rem;
+}
+
+.section-comments-first{
+    justify-content: start;
+    align-items: center;
+    gap: 16px;
+}
+
+.section-comments-buttons{
+    justify-content: space-between;
+
+    >div > button:first-child {
+        background-color: transparent;
+        border: 2px solid var(--accent);
+        color: var(--accent);
+        width: 130px;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    > div > button:last-child {
+        background-color: var(--accent);
+        border: 2px solid var(--accent);
+        width: 130px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.section-form-comments{
+    width: 100%;
+}
+
+.img{
+    border-radius: 50px;
+    width: 50px;
+}
+
+.input{
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 10px;
+    height: 70px;
+    outline: none;
+    background-color: var(--primary-light-1);
+    color: #FFF;
+}
+
+.input::placeholder{
+    color: #FFF;
+    padding-left: 16px;
+    text-align: start;
+}
+
+.order{
+    margin-top: 1rem;
+    gap: 16px;
+    align-items: center;
+
+    > p {
+        display: flex;
+        align-items: center;
+    }
 }
 
