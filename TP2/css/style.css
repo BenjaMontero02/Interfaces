@@ -746,6 +746,7 @@ footer {
     justify-content: space-between;
     color: #FFF;
     gap: 2rem;
+    height: 100%;
 }
 
 .section-comments-first{
@@ -816,3 +817,32 @@ footer {
     }
 }
 
+.scroll-comment{
+    max-height: 383px;
+    overflow-y: auto;
+    overflow-x: hidden;    
+}
+
+.comment{
+    margin-top: 32px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 8px;
+    max-height: 100%;
+    margin-left: 16px;
+    margin-right: 16px;
+    
+    .first-part-comment{
+        width: 70%;
+
+        > :first-child{
+            margin-bottom: 8px;
+        }
+    }
+    .second-part-comment{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: end;
+        width: 30%;
+    }
+}
