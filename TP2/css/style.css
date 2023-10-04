@@ -211,12 +211,6 @@ button {
         .nav-menu-list li:hover{
             background-color: var(--primary-light-2);
         }
-
-        .nav-menu.list li:active{
-            background-color: var(--secondary-light-1);
-        }
-
-
     }
 
     
@@ -753,6 +747,7 @@ footer {
     justify-content: start;
     align-items: center;
     gap: 16px;
+    padding-bottom: 8px;
 }
 
 .section-comments-buttons{
