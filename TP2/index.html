@@ -20,7 +20,24 @@
     />
   </head>
 
-  <body>
+  <body class="hidden" id="bodyRemove">
+    <div class="centrado" id="onload">
+      <div class="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="contenedor">
+        <div class="barra">
+          <div class="progreso" style="--w: 100%"></div>
+        </div>
+      </div>
+    </div>
     <header class="header row">
       <button id="menu" class="outlined btn-menu">
         <img src="../TP2/svg/menu.svg" alt="menu-burger" />
@@ -424,7 +441,7 @@
         </div>
       </div>
     </footer>
-    <script src="..TP2/js/menu.js"></script>
+    <script src="js/menu.js"></script>
     <script src="..TP2/js/carrousel.js"></script>
   </body>
 </html>

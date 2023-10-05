@@ -21,35 +21,51 @@
   </head>
   <body>
     <header class="header row">
-      <div class="row header-tittle">
-        <img src="svg/logo.svg" alt="logo" />
-        <h1><a href="index.html">LevelUp.com</a></h1>
-      </div>
-    </header>
-    <main>
-      <section>
-        <form action="" class="column">
-          <label for="completeName">Complete name *</label>
-          <input type="text" name="name" placeholder="Complete name" />
-          <label for="nickname">Nickname</label>
-          <input
-            type="text"
-            name="nickname"
-            placeholder="Ingrese su password"
-          />
-
-          <label for="age">Age *</label>
-          <input type="number" name="age" placeholder="Age" />
-          <label for="email">Email *</label><br />
-          <input type="text" name="email" placeholder="Email" />
-          <label for="password">Password *</label>
-          <input type="password" name="password" placeholder="Password" />
-          <label for="repeatpw">Repeat Password *</label>
-          <input type="password" name="rptpw" placeholder="Repeat Password" />
-          <button type="submit">SIGN UP</button>
-        </form>
-      </section>
-    </main>
+      <header class="header row">
+        <div class="row header-tittle">
+          <img src="svg/logo.svg" alt="logo" />
+          <h1><a href="index.html">LevelUp.com</a></h1>
+        </div>
+        <div class="row profile">
+          <p>Already have an account?</p>
+          <a href="login.html">Sign In</a>
+          <img src="svg/right-arrow.svg" alt="" />
+        </div>
+      </header>
+      <main>
+        <section class="form-section">
+          <div class="form-container">
+            <form action="">
+              <label for="completeName">Complete name *</label>
+              <input type="text" name="name" placeholder="Complete name" />
+              <label for="nickname">Nickname</label>
+              <input type="text" name="nickname" placeholder="Password" />
+  
+              <label for="age">Age *</label>
+              <input type="number" name="age" placeholder="Age" />
+              <label for="email">Email *</label>
+              <input type="text" name="email" placeholder="Email" />
+              <label for="password">Password *</label>
+              <input type="password" name="password" placeholder="Password" />
+              <label for="repeatpw">Repeat Password *</label>
+              <input type="password" name="rptpw" placeholder="Repeat Password" />
+              <p>Or quicly log in with:</p>
+              <div class="socials-logo">
+                <img src="images/facebook-new.png" alt="facebook" />
+                <img src="images/google-logo.png" alt="" />
+              </div>
+              <div class="captcha">
+                <div>
+                  <input type="checkbox" name="captcha" id="" />
+                  <p>I'm not a robot</p>
+                </div>
+                <img src="svg/recaptcha-icon.svg" alt="" />
+              </div>
+              <button type="submit" class="fifth">SIGN UP</button>
+            </form>
+          </div>
+        </section>
+      </main>
     <footer class="row">
       <div class="column footer_left">
         <div class="row footer_items">
