@@ -449,12 +449,12 @@ main{
 
 /*-----------------------------------------------CARD WITH TITLE----------------------------------*/
 
-.card-container{
-    width: 13.75rem;   
+.card-container {
+    /*width: 13.75rem;*/
+    width: 21%;   
     background-color: var(--primary);
-    padding: 2rem 2rem 2rem 2rem;
+    padding: 1%;
     color: #FFF;
-    margin: 0px 2rem;
 
     >img {
         width: 100%;
@@ -463,13 +463,13 @@ main{
     }
 }
 
-.card-tittle{
+.card-tittle {
     display: flex;
     flex-direction: column;
     text-align: start;
 }
 
-.card-body{
+.card-body {
     margin-top: 0.5rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
