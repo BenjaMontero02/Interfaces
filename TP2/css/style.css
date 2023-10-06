@@ -546,11 +546,30 @@ footer {
         padding-bottom: 8px;
 
         > button {
+            display: flex;
+            gap: 8px;
+            align-items: center;
             color: #FFF;
             border: none;
             padding-right: 0;
+            cursor: pointer;
         }
     }
+}
+
+.share{
+    cursor: auto;
+    position: absolute;
+    top: 185px;
+    background-color: var(--secondary-shadow-1);
+    padding-bottom: 8px;
+    padding-top: 8px;
+    display: none;
+    flex-direction: column;
+    right: 0;
+    padding-left: 12px;
+    padding-right: 8px;
+    gap: 16px;
 }
 
 .section-game-content{
