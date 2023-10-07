@@ -188,12 +188,6 @@ button {
         .nav-menu-list li:hover{
             background-color: var(--primary-light-2);
         }
-
-        .nav-menu.list li:active{
-            background-color: var(--secondary-light-1);
-        }
-
-
     }
 
     /* PROFILE */
@@ -320,20 +314,20 @@ main{
         padding: 1rem;
     }
 
-    > a {
-        color: #000;
-        text-decoration: none;
+    /*------------------------------------------------ BTN ANIMATIONS --------------------------------*/
 
-        > button{
-            background-color: var(--accent);
-            border: none;
-            width: 8.125rem;
-            cursor: pointer;
-            border-radius: 0.5rem;
-    
-            
-        }
+    #playButton>a>button{
+        border: none;
+        background-color: var(--accent);
+        transition:all .3s ease-in-out;
     }
+        
+    #playButton:hover >a > button{
+        border: none;
+        box-shadow: var(--primary-light-2);
+        font-size: xx-large
+    }
+
     
 }
 
@@ -686,11 +680,30 @@ footer {
         padding-bottom: 8px;
 
         > button {
+            display: flex;
+            gap: 8px;
+            align-items: center;
             color: #FFF;
             border: none;
             padding-right: 0;
+            cursor: pointer;
         }
     }
+}
+
+.share{
+    cursor: auto;
+    position: absolute;
+    top: 185px;
+    background-color: var(--secondary-shadow-1);
+    padding-bottom: 8px;
+    padding-top: 8px;
+    display: none;
+    flex-direction: column;
+    right: 0;
+    padding-left: 12px;
+    padding-right: 8px;
+    gap: 16px;
 }
 
 .section-game-content{
@@ -895,6 +908,7 @@ footer {
     justify-content: start;
     align-items: center;
     gap: 16px;
+    padding-bottom: 8px;
 }
 
 .section-comments-buttons{
