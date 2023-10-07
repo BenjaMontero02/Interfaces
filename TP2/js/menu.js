@@ -3,8 +3,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let navMenu = document.getElementById("navMenu");
     let btnCloseMenu = document.getElementById("btn-close-menu");
 
-    let btnProfile = document.getElementById("profile");
+    let btnProfile = document.getElementById("avatar");
     let navMenuProfile = document.getElementById("navMenuProfile");
+
+    let btnShoppingCart = document.getElementById("shoppingCart");
+    let navMenuShoppingCart = document.getElementById("navMenuCart");
 
     menu.addEventListener("click", () => {
         if (navMenu.style.display === "block") {
@@ -19,11 +22,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 
     btnProfile.addEventListener("click", () => {
-        if(navMenuProfile.style.display === "none") {
-            navMenuProfile.style.display = "block";
-        }else{
+        if(navMenuProfile.style.display === "block") {
             navMenuProfile.style.display = "none";
+        }else{
+            navMenuProfile.style.display = "block";
         }
     });
 
+    btnShoppingCart.addEventListener("click", () => {
+        if(navMenuShoppingCart.style.display === "block") {
+            navMenuShoppingCart.style.display = "none";
+        }else{
+            navMenuShoppingCart.style.display = "block";
+        }
+    });
 });

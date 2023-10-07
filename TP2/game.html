@@ -17,18 +17,18 @@
 <body>
     <header class="header row">
         <button id="menu" class="outlined btn-menu">
-            <img src="../TP2/svg/menu.svg" alt="menu-burger">
+            <i class="fa fa-bars"></i>
         </button>
         <nav class="nav-menu" id="navMenu">
             <button class="outlined" id="btn-close-menu">X</button>
             <h3>Categories</h3>
             <ul class="nav-menu-list">
-                <li>Adventure <img src="../TP2/svg/right-arrow.svg" alt="right-arrow" /></li>
-                <li>Action <img src="../TP2/svg/right-arrow.svg" alt="right-arrow" /></li>
-                <li>Arcade <img src="../TP2/svg/right-arrow.svg" alt="right-arrow" /></li>
-                <li>Multiplayer <img src="../TP2/svg/right-arrow.svg" alt="right-arrow" /></li>
-                <li>Shooters <img src="../TP2/svg/right-arrow.svg" alt="right-arrow" /></li>
-                <li>Sports <img src="../TP2/svg/right-arrow.svg" alt="right-arrow" /></li>
+                <li>Adventure <i class="fa fa-chevron-right"></i></li>
+                <li>Action <i class="fa fa-chevron-right"></i></li>
+                <li>Arcade <i class="fa fa-chevron-right"></i></li>
+                <li>Multiplayer <i class="fa fa-chevron-right"></i></li>
+                <li>Shooters <i class="fa fa-chevron-right"></i></li>
+                <li>Sports <i class="fa fa-chevron-right"></i></li>
             </ul>
         </nav>
         <div class="row header-tittle">
@@ -36,17 +36,42 @@
             <h1><a href="index.html">LevelUp.com</a></h1>
         </div>
         <div class="row profile">
-            <img src="../TP2/svg/cart.svg" alt="carrito">
-            <button class="btn-profile-user outlined" id="profile">
-                <img src="../TP2/images/profile.png" alt="user-avatar">
+            <button id="shoppingCart" class="outlined">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+            <button id="avatar" class="outlined">
+                <img class="profile-img" src="../TP2/images/profile.png" alt="user-avatar">
             </button>
         </div>
-        <nav id="navMenuProfile" class="nav-menu-profile">
+        <nav id="navMenuCart" class="nav-menu-profile menu-cart">
+            <ul>
+                <li>
+                    <div class="cart-item row">
+                        <div class="left row">
+                            <img src="../TP2/images/game-battlegrounds.jpg" alt="game-battlegrounds">
+                            <h3 class="light">Battlegrounds</h3>
+                        </div>
+                        <div class="right row">
+                            <h3 class="semibold">$4500</h3>
+                            <i class="fa fa-trash"></i>
+                        </div>
+                    </div>
+                </li>
+                <li class="last">
+                    <div class="cart-item row">
+                        <h3 class="light">Total</h3>
+                        <h3 class="semibold">$4500</h3>
+                    </div>
+                </li>
+                <li class="last"><button>Checkout</button></li>
+            </ul>
+        </nav>
+        <nav id="navMenuProfile" class="nav-menu-profile menu-avatar">
             <ul>
                 <li>Profile</li>
                 <li>Favorites</li>
                 <li>My games</li>
-                <li>LOGOUT <img src="../TP2/svg/logout.svg" alt="logout"></li>
+                <li class="last">LOGOUT <i class="fas fa-sign-out-alt"></i></li>
             </ul>
         </nav>
     </header>
@@ -72,23 +97,23 @@
                 <div class="column">
                     <p class="semibold">PLAYER 1</p>
                     <p class="light tokens">Avalaible tokens</p>
-                    <img src="../TP2/svg/blue.svg" alt="">
+                    <img src="../TP2/svg/r2d2-token.svg" alt="">
                 </div>
                 <div>
-                    <img src="../TP2/svg/main.svg" alt="">
+                    <img src="../TP2/svg/board.svg" alt="">
                 </div>
                 <div class="column">
                     <p class="semibold">PLAYER 1</p>
                     <p class="light tokens">Avalaible tokens</p>
-                    <img src="../TP2/svg/red.svg" alt="">
+                    <img src="../TP2/svg/stormtrooper-token.svg" alt="">
                 </div>
             </div>
             <section class="section-game-instructions">
                 <h2 class="semibold">TURN<span class="light">: PLAYER 1</span></h2>
                 <div>
-                    <button class="outlined"><img src="../TP2/svg/GearIcon.svg" alt=""></button>
-                    <button class="outlined"><img src="../TP2/svg/MaxiIcon.svg" alt=""></button>
-                    <button class="outlined"><img src="../TP2/svg/CloseIcon.svg" alt=""></button>
+                    <button class="outlined"><i class="fas fa-cog fa-2x"></i></button>
+                    <button class="outlined"><i class="fas fa-expand-arrows-alt fa-2x"></i></button>
+                    <button class="outlined"><i class="fas fa-times-circle fa-2x"></i></button>
                 </div>
             </section>
         </section>
@@ -174,7 +199,7 @@
                 </div>
                 <div class="column second-card">
                     <div>
-                        <button class="outlined"><img src="../TP2/svg/PlayIcon.svg" alt=""></button>
+                        <button class="outlined"><i class="fa fa-play fa-3x"></i></button>
                     </div>
                     <h4>May the 4th in a row - LIVE </h4>
                 </div>
@@ -183,8 +208,8 @@
         <section class="column section-carrousel">
             <h1>More like this</h1>
             <div class="carrousel">
-                <button class="btn-carrousel-arrow prevButton" id="prevButtonMore">
-                    <img src="../TP2/svg/left-arrow-carrousel.svg" alt="left-arrow">
+                <button class="outlined btn-carrousel-arrow prevButton" id="prevButtonMore">
+                    <i class="fa fa-chevron-left fa-2x"></i>
                 </button>
                 <div class="carrousel-container" id="carrouselContainerMore">
                     <div class="carrousel-slide carrousel-slide-more">
@@ -193,7 +218,7 @@
                                 <img src="../TP2/images/game-mario.jpg" alt="game-mario" />
                                 <div class="card-body-second column">
                                     <p>$ 1750</p>
-                                    <button><img src="../TP2/svg/card-cart-btn-second.svg" alt=""></button>
+                                    <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
                             <div class="card-container-display column">
@@ -203,21 +228,21 @@
                                         <p class="discount">-50%</p>
                                         <p>$ 2000</p>
                                     </div>
-                                    <button><img src="../TP2/svg/card-cart-btn-second.svg" alt=""></button>
+                                    <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
                             <div class="card-container-display column">
                                 <img src="../TP2/images/game-wonder-boy.jpg" alt="game-wonder-boy" />
                                 <div class="card-body-second column">
                                     <p>$ 999</p>
-                                    <button><img src="../TP2/svg/card-cart-btn-second.svg" alt=""></button>
+                                    <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
                         </div>     
                     </div>
                 </div>
-                <button class="btn-carrousel-arrow nextButton" id="nextButtonMore">
-                    <img src="../TP2/svg/right-arrow-carrousel.svg" alt="right-arrow">
+                <button class="outlined btn-carrousel-arrow nextButton" id="nextButtonMore">
+                    <i class="fa fa-chevron-right fa-2x"></i>
                 </button>
             </div>
         </section>

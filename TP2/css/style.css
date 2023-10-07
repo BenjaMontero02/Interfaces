@@ -100,44 +100,15 @@ button {
     align-items: center;
     position: relative;
 
-    .nav-menu-profile{
-        display: none;
-        position: absolute;
-        top: 5rem;
-        right: 0;
-        width: 11.25rem;
-        height: fit-content;
-        background-color: var(--primary);
-        color: #FFF;
-
-        >ul{
-            padding: 0px;
-            margin: 0px;
-            list-style: none;
-
-            >li{
-                display: flex;
-                gap: 0.3125rem;
-                align-items: center;
-                height: 2.5rem;
-                border-bottom: 0.0625rem solid var(--primary-light-2);
-                padding-left: 1rem;
-            }
-
-            >li:hover{
-                background-color: var(--primary-light-2);
-            }
-        }
-    }
-
-
-    
-
     .header-tittle {
         align-items: center;
         gap: 0.5rem;
 
-        > i {
+        >h1 > a {
+            color: #fff;
+            text-decoration: none;
+        }
+        >i {
             color: var(--accent);
         }
     }
@@ -151,6 +122,12 @@ button {
         bottom: 0;
         top: 0;
         left: 2rem;
+
+        >i {
+            width: 22px;
+            height: 22px;
+            color: white;
+        }
     }
 
     .btn-nav-menu{
@@ -213,12 +190,7 @@ button {
         }
     }
 
-    
-    .header-tittle > h1 > a {
-        color: #fff;
-        text-decoration: none;
-    }
-    
+    /* PROFILE */
     .profile{
         align-items: center;
         gap: 1.25rem;
@@ -226,21 +198,98 @@ button {
         top: 0;
         bottom: 0;
         right: 2rem;
+
+        >button {
+            border: none;
+            padding: 0;
+            cursor: pointer;
+
+            >i {
+                color: white;
+                opacity: 0.8;
+            }
+        }
     }
     
-    
-    .btn-profile-user {
-        border: none;
-        padding: 0;
-        
-    }
-    
-    .btn-profile-user img{
+    .profile-img{
         width: 3.125rem;
         height: 3.125rem;
         border-radius: 3.125rem;
         cursor: pointer;
     }
+
+    .nav-menu-profile {
+        display: none;
+        position: absolute;
+        top: 5rem;
+        right: 0;
+        height: fit-content;
+        background-color: var(--primary);
+        color: #FFF;
+
+        >ul{
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+
+            >li {
+                display: flex;
+                gap: 0.3125rem;
+                align-items: center;
+                height: 2.5rem;
+                border-bottom: 0.0625rem solid var(--primary-light-2);
+                padding: 0px 1rem;
+
+                &.last {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
+    .menu-avatar {
+        width: 11.25rem;
+
+        >ul li {
+            &:hover {
+                background-color: var(--primary-light-2);
+            }
+        }
+    }
+
+    .menu-cart {
+        display: none;
+        padding: 0.5rem 0px;
+        >ul li {
+            justify-content: center;
+            >button {
+                background-color: var(--accent);
+            }
+        }
+
+        .cart-item {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+                .left {
+                    align-items: center;
+                    margin-right: 1rem;
+                    >img{
+                        margin-right: 0.5rem;
+                        width: 50px;
+                        height: 36px;
+                    }
+                }
+                .right {
+                    align-items: center;
+                    >h3 {
+                        margin: 0px 0.5rem ;
+                    }
+                }
+        }
+    }
+
 }
 
 /*------------------------------------------------ MAIN ---------------------------*/
@@ -341,18 +390,15 @@ main{
     justify-content: space-between;
 }
 
-.btn-carrousel-arrow {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+.btn-carrousel-arrow { 
     position: absolute;
+    border: none;
     top: calc(50% - 25px); /* Centra verticalmente */
     z-index: 1;
+
+    >i { 
+        color: white;
+    }
 }
 
 .prevButton {
@@ -703,6 +749,10 @@ footer {
             cursor: pointer;
             border: none;
             padding: 0;
+
+            >i {
+                color: var(--accent);
+            }
         }
     }
 }
@@ -831,6 +881,10 @@ footer {
                 border: none;
                 padding: 0;
                 cursor: pointer;
+
+                >i {
+                    color: white;
+                }
             }
         }
 
