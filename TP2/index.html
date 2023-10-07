@@ -10,25 +10,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+</head>
 </head>
 
 <body>
     <header class="header row">
         <button id="menu" class="outlined btn-menu">
-            <img src="../TP2/svg/menu.svg" alt="menu-burger">
+            <i class="fa fa-bars"></i>
         </button>
         <nav class="nav-menu" id="navMenu">
             <button class="outlined" id="btn-close-menu">X</button>
             <h3>Categories</h3>
             <ul class="nav-menu-list">
-                <li>Adventure <img src="../TP2/svg/right-arrow.svg" alt="right-arrow" /></li>
-                <li>Action <img src="../TP2/svg/right-arrow.svg" alt="right-arrow" /></li>
-                <li>Arcade <img src="../TP2/svg/right-arrow.svg" alt="right-arrow" /></li>
-                <li>Multiplayer <img src="../TP2/svg/right-arrow.svg" alt="right-arrow" /></li>
-                <li>Shooters <img src="../TP2/svg/right-arrow.svg" alt="right-arrow" /></li>
-                <li>Sports <img src="../TP2/svg/right-arrow.svg" alt="right-arrow" /></li>
+                <li>Adventure <i class="fa fa-chevron-right"></i></li>
+                <li>Action <i class="fa fa-chevron-right"></i></li>
+                <li>Arcade <i class="fa fa-chevron-right"></i></li>
+                <li>Multiplayer <i class="fa fa-chevron-right"></i></li>
+                <li>Shooters <i class="fa fa-chevron-right"></i></li>
+                <li>Sports <i class="fa fa-chevron-right"></i></li>
             </ul>
         </nav>
         <div class="row header-tittle">
@@ -36,17 +36,42 @@
             <h1><a href="index.html">LevelUp.com</a></h1>
         </div>
         <div class="row profile">
-            <img src="../TP2/svg/cart.svg" alt="carrito">
-            <button class="btn-profile-user outlined" id="profile">
-                <img src="../TP2/images/profile.png" alt="user-avatar">
+            <button id="shoppingCart" class="outlined">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+            <button id="avatar" class="outlined">
+                <img class="profile-img" src="../TP2/images/profile.png" alt="user-avatar">
             </button>
         </div>
-        <nav id="navMenuProfile" class="nav-menu-profile">
+        <nav id="navMenuCart" class="nav-menu-profile menu-cart">
+            <ul>
+                <li>
+                    <div class="cart-item row">
+                        <div class="left row">
+                            <img src="../TP2/images/game-battlegrounds.jpg" alt="game-battlegrounds">
+                            <h3 class="light">Battlegrounds</h3>
+                        </div>
+                        <div class="right row">
+                            <h3 class="semibold">$4500</h3>
+                            <i class="fa fa-trash"></i>
+                        </div>
+                    </div>
+                </li>
+                <li class="last">
+                    <div class="cart-item row">
+                        <h3 class="light">Total</h3>
+                        <h3 class="semibold">$4500</h3>
+                    </div>
+                </li>
+                <li class="last"><button>Checkout</button></li>
+            </ul>
+        </nav>
+        <nav id="navMenuProfile" class="nav-menu-profile menu-avatar">
             <ul>
                 <li>Profile</li>
                 <li>Favorites</li>
                 <li>My games</li>
-                <li>LOGOUT <img src="../TP2/svg/logout.svg" alt="logout"></li>
+                <li class="last">LOGOUT <i class="fas fa-sign-out-alt"></i></li>
             </ul>
         </nav>
     </header>
@@ -58,8 +83,8 @@
         <section class="column section-carrousel">
             <h1>Best Sellers</h1>
             <div class="carrousel">
-                <button class="btn-carrousel-arrow prevButton" id="prevButtonBest">
-                    <img src="../TP2/svg/left-arrow-carrousel.svg" alt="left-arrow">
+                <button class="outlined btn-carrousel-arrow prevButton" id="prevButtonBest">
+                    <i class="fa fa-chevron-left fa-2x"></i>
                 </button>
                 <div class="carrousel-container" id="carrouselContainerBest">
                     <div class="carrousel-slide carrousel-slide-best">
@@ -90,7 +115,7 @@
                                         <h3>$ 3800</h3>
                                     </div>
                                     <div class="card-content-btn">
-                                        <button class="card-btn-addToCart">ADD TO CART <img src="../TP2/svg/card-cart-btn.svg"></button>
+                                        <button class="card-btn-addToCart">ADD TO CART <i class="fas fa-shopping-cart"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -109,7 +134,7 @@
                                         </div>
                                     </div>
                                     <div class="card-content-btn">
-                                        <button class="card-btn-addToCart">ADD TO CART <img src="../TP2/svg/card-cart-btn.svg"></button>
+                                        <button class="card-btn-addToCart">ADD TO CART <i class="fas fa-shopping-cart"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -143,7 +168,7 @@
                                         <h3>$ 1250</h3>
                                     </div>
                                     <div class="card-content-btn">
-                                        <button class="card-btn-addToCart">ADD TO CART <img src="../TP2/svg/card-cart-btn.svg" alt=""></button>
+                                        <button class="card-btn-addToCart">ADD TO CART <i class="fas fa-shopping-cart"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -162,8 +187,7 @@
                                         </div>
                                     </div>
                                     <div class="card-content-btn">
-                                        <button class="card-btn-addToCart">ADD TO CART <img src="../TP2/svg/card-cart-btn.svg"
-                                                alt=""></button>
+                                        <button class="card-btn-addToCart">ADD TO CART <i class="fas fa-shopping-cart"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -182,8 +206,7 @@
                                         </div>
                                     </div>
                                     <div class="card-content-btn">
-                                        <button class="card-btn-addToCart">ADD TO CART <img src="../TP2/svg/card-cart-btn.svg"
-                                                alt=""></button>
+                                        <button class="card-btn-addToCart">ADD TO CART <i class="fas fa-shopping-cart"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -205,8 +228,8 @@
                         </div>
                     </div>    
                 </div>
-                <button class="btn-carrousel-arrow nextButton" id="nextButtonBest">
-                    <img src="../TP2/svg/right-arrow-carrousel.svg" alt="right-arrow">
+                <button class="outlined btn-carrousel-arrow nextButton" id="nextButtonBest">
+                    <i class="fa fa-chevron-right fa-2x"></i>
                 </button>
             </div>
         </section>
@@ -214,8 +237,8 @@
         <section class="column section-carrousel">
             <h1>Recommended</h1>
             <div class="carrousel">
-                <button class="btn-carrousel-arrow prevButton" id="prevButtonRecommended">
-                    <img src="../TP2/svg/left-arrow-carrousel.svg" alt="left-arrow">
+                <button class="outlined btn-carrousel-arrow prevButton" id="prevButtonRecommended">
+                    <i class="fa fa-chevron-left fa-2x"></i>
                 </button>
                 <div class="carrousel-container" id="carrouselContainerRecommended">
                     <div class="carrousel-slide carrousel-slide-recommended">
@@ -224,7 +247,7 @@
                                 <img src="../TP2/images/game-starfield.jpg" alt="game-starfield" />
                                 <div class="card-body-second column">
                                     <p>$ 11999</p>
-                                    <button><img src="../TP2/svg/card-cart-btn-second.svg" alt=""></button>
+                                    <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
                             <div class="card-container-display column">
@@ -234,14 +257,14 @@
                                         <p class="discount">-65%</p>
                                         <p>$ 1469</p>
                                     </div>
-                                    <button><img src="../TP2/svg/card-cart-btn-second.svg" alt=""></button>
+                                    <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
                             <div class="card-container-display column">
                                 <img src="../TP2/images/game-apex.png" alt="game-apex" />
                                 <div class="card-body-second column">
                                     <p>$ 1400</p>
-                                    <button><img src="../TP2/svg/card-cart-btn-second.svg" alt=""></button>
+                                    <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
                         </div>     
@@ -252,28 +275,28 @@
                                 <img src="../TP2/images/game-payday-3.png" alt="game-payday-3" />
                                 <div class="card-body-second column">
                                     <p>$ 1699</p>
-                                    <button><img src="../TP2/svg/card-cart-btn-second.svg"></button>
+                                    <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
                             <div class="card-container-display column">
                                 <img src="../TP2/images/game-dota-2.png" alt="game-dota-2" />
                                 <div class="card-body-second column">
                                     <p>$ 129,99</p>
-                                    <button><img src="../TP2/svg/card-cart-btn-second.svg" alt=""></button>
+                                    <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
                             <div class="card-container-display column">
                                 <img src="../TP2/images/game-remnant.jpg" alt="game-remnant" />
                                 <div class="card-body-second column">
                                     <p>$ 6159,20</p>
-                                    <button><img src="../TP2/svg/card-cart-btn-second.svg" alt=""></button>
+                                    <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button class="btn-carrousel-arrow nextButton" id="nextButtonRecommended">
-                    <img src="../TP2/svg/right-arrow-carrousel.svg" alt="right-arrow">
+                <button class="outlined btn-carrousel-arrow nextButton" id="nextButtonRecommended">
+                    <i class="fa fa-chevron-right fa-2x"></i>
                 </button>
             </div>
         </section>
@@ -281,8 +304,8 @@
         <section class="column section-carrousel">
             <h1>Browse by category</h1>
             <div class="carrousel">
-                <button class="btn-carrousel-arrow prevButton" id="prevButtonCategories">
-                    <img src="../TP2/svg/left-arrow-carrousel.svg" alt="left-arrow">
+                <button class="outlined btn-carrousel-arrow prevButton" id="prevButtonCategories">
+                    <i class="fa fa-chevron-left fa-2x"></i>
                 </button>
                 <div class="carrousel-container" id="carrouselContainerCategories">
                     <div class="carrousel-slide carrousel-slide-categories">
@@ -324,8 +347,8 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn-carrousel-arrow nextButton" id="nextButtonCategories">
-                    <img src="../TP2/svg/right-arrow-carrousel.svg" alt="right-arrow">
+                <button class="outlined btn-carrousel-arrow nextButton" id="nextButtonCategories">
+                    <i class="fa fa-chevron-right fa-2x"></i>
                 </button>
             </div>
         </section>
@@ -333,8 +356,8 @@
         <section class="column section-carrousel">
             <h1>Arcade most populars</h1>
             <div class="carrousel">
-                <button class="btn-carrousel-arrow prevButton" id="prevButtonPopulars">
-                    <img src="../TP2/svg/left-arrow-carrousel.svg" alt="left-arrow">
+                <button class="outlined btn-carrousel-arrow prevButton" id="prevButtonPopulars">
+                    <i class="fa fa-chevron-left fa-2x"></i>
                 </button>
                 <div class="carrousel-container" id="carrouselContainerPopulars">
                     <div class="carrousel-slide carrousel-slide-populars">
@@ -343,7 +366,7 @@
                                 <img src="../TP2/images/game-mario.jpg" alt="game-mario" />
                                 <div class="card-body-second column">
                                     <p>$ 1750</p>
-                                    <button><img src="../TP2/svg/card-cart-btn-second.svg" alt=""></button>
+                                    <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
                             <div class="card-container-display column">
@@ -353,14 +376,14 @@
                                         <p class="discount">-50%</p>
                                         <p>$ 2000</p>
                                     </div>
-                                    <button><img src="../TP2/svg/card-cart-btn-second.svg" alt=""></button>
+                                    <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
                             <div class="card-container-display column">
                                 <img src="../TP2/images/game-wonder-boy.jpg" alt="game-wonder-boy" />
                                 <div class="card-body-second column">
                                     <p>$ 999</p>
-                                    <button><img src="../TP2/svg/card-cart-btn-second.svg" alt=""></button>
+                                    <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
                         </div>     
@@ -374,28 +397,28 @@
                                         <p class="discount">-80%</p>
                                         <p>$ 300</p>
                                     </div>
-                                    <button><img src="../TP2/svg/card-cart-btn-second.svg"></button>
+                                    <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
                             <div class="card-container-display column">
                                 <img src="../TP2/images/game-sonic.jpg" alt="game-sonic" />
                                 <div class="card-body-second column">
                                     <p>$ 1800</p>
-                                    <button><img src="../TP2/svg/card-cart-btn-second.svg" alt=""></button>
+                                    <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
                             <div class="card-container-display column">
                                 <img src="../TP2/images/game-simpsons.jpg" alt="game-simpsons" />
                                 <div class="card-body-second column">
                                     <p>$ 899,50</p>
-                                    <button><img src="../TP2/svg/card-cart-btn-second.svg" alt=""></button>
+                                    <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button class="btn-carrousel-arrow nextButton" id="nextButtonPopulars">
-                    <img src="../TP2/svg/right-arrow-carrousel.svg" alt="right-arrow">
+                <button class="outlined btn-carrousel-arrow nextButton" id="nextButtonPopulars">
+                    <i class="fa fa-chevron-right fa-2x"></i>
                 </button>
             </div>
         </section>
