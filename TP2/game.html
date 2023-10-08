@@ -17,18 +17,18 @@
 <body>
     <header class="header row">
         <button id="menu" class="outlined btn-menu">
-            <img src="../TP2/svg/menu.svg" alt="menu-burger">
+            <i class="fa fa-bars"></i>
         </button>
         <nav class="nav-menu" id="navMenu">
             <button class="outlined" id="btn-close-menu">X</button>
             <h3>Categories</h3>
             <ul class="nav-menu-list">
-                <li>Adventure <img src="../TP2/svg/right-arrow.svg" alt="right-arrow" /></li>
-                <li>Action <img src="../TP2/svg/right-arrow.svg" alt="right-arrow" /></li>
-                <li>Arcade <img src="../TP2/svg/right-arrow.svg" alt="right-arrow" /></li>
-                <li>Multiplayer <img src="../TP2/svg/right-arrow.svg" alt="right-arrow" /></li>
-                <li>Shooters <img src="../TP2/svg/right-arrow.svg" alt="right-arrow" /></li>
-                <li>Sports <img src="../TP2/svg/right-arrow.svg" alt="right-arrow" /></li>
+                <li>Adventure <i class="fa fa-chevron-right"></i></li>
+                <li>Action <i class="fa fa-chevron-right"></i></li>
+                <li>Arcade <i class="fa fa-chevron-right"></i></li>
+                <li>Multiplayer <i class="fa fa-chevron-right"></i></li>
+                <li>Shooters <i class="fa fa-chevron-right"></i></li>
+                <li>Sports <i class="fa fa-chevron-right"></i></li>
             </ul>
         </nav>
         <div class="row header-tittle">
@@ -36,17 +36,42 @@
             <h1><a href="index.html">LevelUp.com</a></h1>
         </div>
         <div class="row profile">
-            <img src="../TP2/svg/cart.svg" alt="carrito">
-            <button class="btn-profile-user outlined" id="profile">
-                <img src="../TP2/images/profile.png" alt="user-avatar">
+            <button id="shoppingCart" class="outlined">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+            <button id="avatar" class="outlined">
+                <img class="profile-img" src="../TP2/images/profile.png" alt="user-avatar">
             </button>
         </div>
-        <nav id="navMenuProfile" class="nav-menu-profile">
+        <nav id="navMenuCart" class="nav-menu-profile menu-cart">
+            <ul>
+                <li>
+                    <div class="cart-item row">
+                        <div class="left row">
+                            <img src="../TP2/images/game-battlegrounds.jpg" alt="game-battlegrounds">
+                            <h3 class="light">Battlegrounds</h3>
+                        </div>
+                        <div class="right row">
+                            <h3 class="semibold">$4500</h3>
+                            <i class="fa fa-trash"></i>
+                        </div>
+                    </div>
+                </li>
+                <li class="last">
+                    <div class="cart-item row">
+                        <h3 class="light">Total</h3>
+                        <h3 class="semibold">$4500</h3>
+                    </div>
+                </li>
+                <li class="last"><button>Checkout</button></li>
+            </ul>
+        </nav>
+        <nav id="navMenuProfile" class="nav-menu-profile menu-avatar">
             <ul>
                 <li>Profile</li>
                 <li>Favorites</li>
                 <li>My games</li>
-                <li>LOGOUT <img src="../TP2/svg/logout.svg" alt="logout"></li>
+                <li class="last">LOGOUT <i class="fas fa-sign-out-alt"></i></li>
             </ul>
         </nav>
     </header>
@@ -56,32 +81,39 @@
             <p class="light"><a href="../TP2/index.html" class="light">Home</a> > Arcade > May the 4th in a row</p>
             <div class="row section-tittle-game2">
                 <h1 class="semibold">MAY THE 4th IN A ROW</h1>
-                <button class="outlined light">SHARE </button>
+                <button class="outlined light" id="share">SHARE <img src="../TP2/svg/ShareIcon.svg" alt="share">
+                    <div class="share">
+                        <img src="../TP2/svg/Whatsapp-icon.svg" alt="">
+                        <img src="../TP2/svg/Twitter-icon.svg" alt="">
+                        <img src="../TP2/svg/Facebook-icon.svg" alt="">
+                        <img src="../TP2/svg/Instagram-icon.svg" alt="">
+                        <img src="../TP2/svg/Google.svg" alt="">
+                    </div>
+                </button>
             </div>
         </section>
-
         <section class="column">
             <div class="row section-game-content">
                 <div class="column">
                     <p class="semibold">PLAYER 1</p>
                     <p class="light tokens">Avalaible tokens</p>
-                    <img src="../TP2/svg/blue.svg" alt="">
+                    <img src="../TP2/svg/r2d2-token.svg" alt="">
                 </div>
                 <div>
-                    <img src="../TP2/svg/main.svg" alt="">
+                    <img src="../TP2/svg/board.svg" alt="">
                 </div>
                 <div class="column">
                     <p class="semibold">PLAYER 1</p>
                     <p class="light tokens">Avalaible tokens</p>
-                    <img src="../TP2/svg/red.svg" alt="">
+                    <img src="../TP2/svg/stormtrooper-token.svg" alt="">
                 </div>
             </div>
             <section class="section-game-instructions">
                 <h2 class="semibold">TURN<span class="light">: PLAYER 1</span></h2>
                 <div>
-                    <button class="outlined"><img src="../TP2/svg/GearIcon.svg" alt=""></button>
-                    <button class="outlined"><img src="../TP2/svg/MaxiIcon.svg" alt=""></button>
-                    <button class="outlined"><img src="../TP2/svg/CloseIcon.svg" alt=""></button>
+                    <button class="outlined"><i class="fas fa-cog fa-2x"></i></button>
+                    <button class="outlined"><i class="fas fa-expand-arrows-alt fa-2x"></i></button>
+                    <button class="outlined"><i class="fas fa-times-circle fa-2x"></i></button>
                 </div>
             </section>
         </section>
@@ -102,9 +134,6 @@
             <img src="../TP2/svg/characters.svg" alt="">
             <img src="../TP2/svg/starships.svg" alt="">
         </section>
-
-
-
         <section class="column section-game-howToPlay">
             <h2 class="semibold">HOW TO PLAY</h2>
             <div class="row section-game-howToPlay-content">
@@ -139,7 +168,6 @@
                 </div>
             </div>
         </section>
-
         <section class="column section-game-win-info">
             <h2 class="semibold">OUTCOMES</h2>
             <div class="row section-game-win-info-content">
@@ -160,7 +188,6 @@
                 </div>
             </div>
         </section>
-
         <section class="column section-game-video">
             <h2 class="semibold">RECENT EVENTS & ANNOUNCEMENTS</h2>
 
@@ -172,55 +199,58 @@
                 </div>
                 <div class="column second-card">
                     <div>
-                        <button class="outlined"><img src="../TP2/svg/PlayIcon.svg" alt=""></button>
+                        <button class="outlined"><i class="fa fa-play fa-3x"></i></button>
                     </div>
                     <h4>May the 4th in a row - LIVE </h4>
                 </div>
             </div>
         </section>
-
         <section class="column section-carrousel">
-            <h1>Recommended</h1>
-            <div class="carrousel">
-                <div class="carrousel-content-button">
-                    <button class="outlined btn-carrousel-arrow">
-                        <img src="../TP2/svg/left-arrow-carrousel.svg" alt="left-arrow" class="arrow-carrousel">
-                    </button>
-                </div>
-                <div class="card-container column">
-                    <img src="../TP2/images/game-dota-2.png" alt="game-dota-2" class="card-img-second" />
-                    <div class="card-body-second column">
-                        <div class="card-discount-content">
-                            <p class="discount">-20%</p>
-                            <p>$11.999</p>
+            <h1>More like this</h1>
+            <div  class="carousel-container">
+                <button class="outlined btn-carrousel-arrow prevButton" id="prevButtonCategories">
+                    <i class="fa fa-chevron-left fa-2x"></i>
+                </button>
+                <div class="carousel">
+                    <div class="carousel-inner" >
+                        <div class="carousel-item third">
+                            <div class="card-container-display column">
+                                <img src="../TP2/images/game-mario.jpg" alt="game-mario" />
+                                <div class="card-body-second column">
+                                    <p>$ 1750</p>
+                                    <button><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
                         </div>
-                        <button class="outlined card-btn-second"><img src="../TP2/svg/card-cart-btn-second.svg"
-                                alt=""></button>
+                        <div class="carousel-item third">
+                            <div class="card-container-display column">
+                                <img src="../TP2/images/game-street.jpg" alt="game-street" />
+                                <div class="card-body-second column">
+                                    <div class="card-discount-content">
+                                        <p class="discount">-50%</p>
+                                        <p>$ 2000</p>
+                                    </div>
+                                    <button><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item third">
+                            <div class="card-container-display column">
+                                <img src="../TP2/images/game-wonder-boy.jpg" alt="game-wonder-boy" />
+                                <div class="card-body-second column">
+                                    <p>$ 999</p>
+                                    <button><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                        </div>   
                     </div>
                 </div>
-                <div class="card-container column">
-                    <img src="../TP2/images/game-dota-2.png" alt="game-dota-2" class="card-img-second" />
-                    <div class="card-body-second column">
-                        <p>$11.999</p>
-                        <button class="outlined card-btn-second"><img src="../TP2/svg/card-cart-btn-second.svg"
-                                alt=""></button>
-                    </div>
-                </div>
-                <div class="card-container column">
-                    <img src="../TP2/images/game-dota-2.png" alt="game-dota-2" class="card-img-second" />
-                    <div class="card-body-second column">
-                        <p>$11.999</p>
-                        <button class="outlined card-btn-second"><img src="../TP2/svg/card-cart-btn-second.svg"
-                                alt=""></button>
-                    </div>
-                </div>
-                <div class="carrousel-content-button">
-                    <button class="outlined btn-carrousel-arrow">
-                        <img src="../TP2/svg/right-arrow-carrousel.svg" alt="left-arrow" class="arrow-carrousel">
-                    </button>
-                </div>
+                <button class="outlined btn-carrousel-arrow nextButton" id="nextButtonCategories">
+                    <i class="fa fa-chevron-right fa-2x"></i>
+                </button>
             </div>
         </section>
+
         <section class="row section-comments">
             <section class="column" style="width: 100%;">
                 <section class="column section-form-comments">
@@ -230,14 +260,16 @@
                     </div>
                     <input type="text" placeholder="Leave a comment about the game..." class="input">
                     <div class="row section-comments-buttons">
-                        estrellas
+                        <p><img src="../TP2/svg/StarIcon.svg" alt=""><img src="../TP2/svg/StarIcon.svg" alt=""><img
+                                src="../TP2/svg/StarIcon.svg" alt=""><img src="../TP2/svg/StarIcon.svg" alt=""><img
+                                src="../TP2/svg/StarIcon.svg" alt=""></p>
                         <div>
                             <button>CANCEL</button>
                             <button>COMMENT</button>
                         </div>
                     </div>
                     <div class="row order">
-                        <p>2 comments</p>
+                        <p>5 comments</p>
                         <p><img src="../TP2/svg/OrderIcon.svg" alt="orderByIcon"> Order By</p>
                     </div>
                 </section>
@@ -254,7 +286,9 @@
                         </div>
                         <div class="second-part-comment">
                             <p>Today 11:35</p>
-                            <p>estrellas</p>
+                            <p><img src="../TP2/svg/StarIconYellow.svg" alt=""><img src="../TP2/svg/StarIconYellow.svg" alt=""><img
+                                    src="../TP2/svg/StarIconYellow.svg" alt=""><img src="../TP2/svg/StarIcon.svg" alt=""><img
+                                    src="../TP2/svg/StarIcon.svg" alt=""></p>
                         </div>
                     </section>
                     <section class="row comment">
@@ -269,7 +303,9 @@
                         </div>
                         <div class="second-part-comment">
                             <p>Today 11:35</p>
-                            <p>estrellas</p>
+                            <p><img src="../TP2/svg/StarIconYellow.svg" alt=""><img src="../TP2/svg/StarIconYellow.svg" alt=""><img
+                                    src="../TP2/svg/StarIcon.svg" alt=""><img src="../TP2/svg/StarIcon.svg" alt=""><img
+                                    src="../TP2/svg/StarIcon.svg" alt=""></p>
                         </div>
                     </section>
                     <section class="row comment">
@@ -279,12 +315,17 @@
                                 <h3>Jhon</h3>
                             </div>
                             <div>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod natus voluptas officia at deleniti qui, error ipsam cumque perspiciatis nesciunt ullam, architecto enim explicabo repudiandae optio laudantium laboriosam ea animi!</p>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod natus voluptas officia
+                                    at deleniti qui, error ipsam cumque perspiciatis nesciunt ullam, architecto enim
+                                    explicabo repudiandae optio laudantium laboriosam ea animi!</p>
                             </div>
                         </div>
                         <div class="second-part-comment">
                             <p>Today 11:35</p>
-                            <p>estrellas</p>
+                            <p><img src="../TP2/svg/StarIconYellow.svg" alt=""><img src="../TP2/svg/StarIconYellow.svg" alt=""><img
+                                    src="../TP2/svg/StarIconYellow.svg" alt=""><img src="../TP2/svg/StarIcon.svg" alt=""><img
+                                    src="../TP2/svg/StarIcon.svg" alt=""></p>
+
                         </div>
                     </section>
                     <section class="row comment">
@@ -299,7 +340,10 @@
                         </div>
                         <div class="second-part-comment">
                             <p>Today 11:35</p>
-                            <p>estrellas</p>
+                            <p><img src="../TP2/svg/StarIconYellow.svg" alt=""><img src="../TP2/svg/StarIcon.svg" alt=""><img
+                                    src="../TP2/svg/StarIcon.svg" alt=""><img src="../TP2/svg/StarIcon.svg" alt=""><img
+                                    src="../TP2/svg/StarIcon.svg" alt=""></p>
+
                         </div>
                     </section>
                     <section class="row comment">
@@ -314,7 +358,10 @@
                         </div>
                         <div class="second-part-comment">
                             <p>Today 11:35</p>
-                            <p>estrellas</p>
+                            <p><img src="../TP2/svg/StarIconYellow.svg" alt=""><img src="../TP2/svg/StarIconYellow.svg" alt=""><img
+                                    src="../TP2/svg/StarIconYellow.svg" alt=""><img src="../TP2/svg/StarIcon.svg" alt=""><img
+                                    src="../TP2/svg/StarIcon.svg" alt=""></p>
+
                         </div>
                     </section>
                 </section>
@@ -324,7 +371,7 @@
 
     </main>
 
-    <footer class="row">
+    <footer>
         <div class="column footer_left">
             <div class="row footer_items">
                 <div class="column" id="footer_categories">
@@ -380,6 +427,7 @@
         </div>
     </footer>
     <script src="../TP2/js/menu.js"></script>
+    <script src="../TP2/js/share.js"></script>
 </body>
 
 </html>
