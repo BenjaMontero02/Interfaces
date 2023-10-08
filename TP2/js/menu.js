@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", (event) => {
-    let menu = document.getElementById('menu');
-    let navMenu = document.getElementById("navMenu");
-    let btnCloseMenu = document.getElementById("btn-close-menu");
+  let menu = document.getElementById("menu");
+  let navMenu = document.getElementById("navMenu");
+  let btnCloseMenu = document.getElementById("btn-close-menu");
 
     let btnProfile = document.getElementById("avatar");
     let navMenuProfile = document.getElementById("navMenuProfile");
@@ -37,3 +37,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
         }
     });
 });
+function temporizadorDeRetraso() {
+  identificadorTiempoDeEspera = setTimeout(funcionConRetraso, 5000);
+}
+
+function funcionConRetraso() {
+  document.getElementById("onload").remove();
+  var div = document.getElementById("bodyRemove");
+  div.classList.remove("hidden");
+}
+
+temporizadorDeRetraso();
