@@ -84,14 +84,14 @@
 
         <section class="column section-carrousel">
             <h1>Best Sellers</h1>
-            <div class="carrousel">
+            <div class="carousel-container">
                 <button class="outlined btn-carrousel-arrow prevButton" id="prevButtonBest">
                     <i class="fa fa-chevron-left fa-2x"></i>
                 </button>
-                <div class="carrousel-container" id="carrouselContainerBest">
-                    <div class="carrousel-slide carrousel-slide-best">
-                        <div class="slide-container">
-                            <div class="card-container column">
+                <div class="carousel">
+                    <div class="carousel-inner" id="carrouselContainerBest">
+                        <div class="carousel-item quarter">
+                            <div class="card card-container column">
                                 <img src="../TP2/images/game-battlegrounds.jpg" alt="game-battlegrounds" />
                                 <div class="card-body column">
                                     <div class="card-tittle">
@@ -106,7 +106,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-container column">
+                        </div>
+                        <div class="carousel-item quarter">   
+                            <div class="card card-container column">
                                 <img src="../TP2/images/game-lostark.jpg" alt="game-lostark"  />
                                 <div class="card-body column">
                                     <div class="card-tittle">
@@ -121,7 +123,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-container column">
+                        </div>
+                        <div class="carousel-item quarter">
+                            <div class="card card-container column">
                                 <img src="../TP2/images/game-gta.jpg" alt="game-gta" />
                                 <div class="card-body column">
                                     <div class="card-tittle">
@@ -140,7 +144,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-container column">
+                        </div>
+                        <div class="carousel-item quarter">
+                            <div class="card card-container column">
                                 <img src="../TP2/images/game-warframe.jpg" alt="game-warframe" />
                                 <div class="card-body column">
                                     <div class="card-tittle">
@@ -156,10 +162,8 @@
                                 </div>
                             </div> 
                         </div>
-                    </div>
-                    <div class="carrousel-slide carrousel-slide-best">
-                        <div class="slide-container">
-                            <div class="card-container column">
+                        <div class="carousel-item quarter">
+                            <div class="card card-container column">
                                 <img src="../TP2/images/game-final.jpg" alt="game-final" />
                                 <div class="card-body column">
                                     <div class="card-tittle">
@@ -174,7 +178,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-container column">
+                        </div>
+                        <div class="carousel-item quarter">
+                            <div class="card card-container column">
                                 <img src="../TP2/images/game-baldurs.jpg" alt="game-baldurs" />
                                 <div class="card-body column">
                                     <div class="card-tittle">
@@ -193,7 +199,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-container column">
+                        </div>
+                        <div class="carousel-item quarter">
+                            <div class="card card-container column">
                                 <img src="../TP2/images/game-sunkenland.jpg" alt="game-sunkenland"/>
                                 <div class="card-body column">
                                     <div class="card-tittle">
@@ -212,7 +220,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-container column">
+                        </div>
+                        <div class="carousel-item quarter">
+                            <div class="card card-container column">
                                 <img src="../TP2/images/game-save.png" alt="game-save"/>
                                 <div class="card-body column">
                                     <div class="card-tittle">
@@ -227,7 +237,7 @@
                                     </div>
                                 </div>
                             </div> 
-                        </div>
+                        </div>    
                     </div>    
                 </div>
                 <button class="outlined btn-carrousel-arrow nextButton" id="nextButtonBest">
@@ -238,21 +248,23 @@
 
         <section class="column section-carrousel">
             <h1>Recommended</h1>
-            <div class="carrousel">
+            <div  class="carousel-container">
                 <button class="outlined btn-carrousel-arrow prevButton" id="prevButtonRecommended">
                     <i class="fa fa-chevron-left fa-2x"></i>
                 </button>
-                <div class="carrousel-container" id="carrouselContainerRecommended">
-                    <div class="carrousel-slide carrousel-slide-recommended">
-                        <div class="slide-container">
-                            <div class="card-container-display column">
+                <div class="carousel">
+                    <div class="carousel-inner" id="carrouselContainerRecommended">
+                        <div class="carousel-item third">
+                            <div class="card card-container-display column">
                                 <img src="../TP2/images/game-starfield.jpg" alt="game-starfield" />
                                 <div class="card-body-second column">
                                     <p>$ 11999</p>
                                     <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
-                            <div class="card-container-display column">
+                        </div>
+                        <div class="carousel-item third">
+                            <div class="card card-container-display column">
                                 <img src="../TP2/images/game-takes-two.jpg" alt="game-takes-two" />
                                 <div class="card-body-second column">
                                     <div class="card-discount-content">
@@ -262,7 +274,9 @@
                                     <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
-                            <div class="card-container-display column">
+                        </div>
+                        <div class="carousel-item third">
+                            <div class="card card-container-display column">
                                 <img src="../TP2/images/game-apex.png" alt="game-apex" />
                                 <div class="card-body-second column">
                                     <p>$ 1400</p>
@@ -270,24 +284,26 @@
                                 </div>
                             </div>
                         </div>     
-                    </div>
-                    <div class="carrousel-slide carrousel-slide-recommended">
-                        <div class="slide-container">
-                            <div class="card-container-display column">
+                        <div class="carousel-item third">
+                            <div class="card card-container-display column">
                                 <img src="../TP2/images/game-payday-3.png" alt="game-payday-3" />
                                 <div class="card-body-second column">
                                     <p>$ 1699</p>
                                     <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
-                            <div class="card-container-display column">
+                        </div>
+                        <div class="carousel-item third">
+                            <div class="card card-container-display column">
                                 <img src="../TP2/images/game-dota-2.png" alt="game-dota-2" />
                                 <div class="card-body-second column">
                                     <p>$ 129,99</p>
                                     <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
-                            <div class="card-container-display column">
+                        </div>
+                        <div class="carousel-item third">
+                            <div class="card card-container-display column">
                                 <img src="../TP2/images/game-remnant.jpg" alt="game-remnant" />
                                 <div class="card-body-second column">
                                     <p>$ 6159,20</p>
@@ -305,43 +321,49 @@
 
         <section class="column section-carrousel">
             <h1>Browse by category</h1>
-            <div class="carrousel">
+            <div  class="carousel-container">
                 <button class="outlined btn-carrousel-arrow prevButton" id="prevButtonCategories">
                     <i class="fa fa-chevron-left fa-2x"></i>
                 </button>
-                <div class="carrousel-container" id="carrouselContainerCategories">
-                    <div class="carrousel-slide carrousel-slide-categories">
-                        <div class="slide-container">
-                            <div class="card-category-container">
+                <div class="carousel">
+                    <div class="carousel-inner no-margin-carousel" id="carrouselContainerCategories">
+                        <div class="carousel-item third">
+                            <div class="card card-category-container">
                                 <div class="category-card-gradient"></div>
                                 <img src="../TP2/images/category-race.jpg" alt="category-races" class="card-category-img" />
                                 <h2 class="semibold">RACES</h3>
                             </div> 
-                            <div class="card-category-container">
+                        </div>
+                        <div class="carousel-item third">
+                            <div class="card card-category-container">
                                 <div class="category-card-gradient"></div>
                                 <img src="../TP2/images/category-fantasy.jpg" alt="category-fantasy" class="card-category-img" />
                                 <h2 class="semibold">FANTASY</h3>
                             </div> 
-                            <div class="card-category-container">
+                        </div>
+                        <div class="carousel-item third">
+                            <div class="card card-category-container">
                                 <div class="category-card-gradient"></div>
                                 <img src="../TP2/images/category-cards.jpg" alt="category-cards" class="card-category-img" />
                                 <h2 class="semibold">CARDS</h3>
                             </div>
                         </div>     
-                    </div>
-                    <div class="carrousel-slide carrousel-slide-categories">
-                        <div class="slide-container">
-                            <div class="card-category-container">
+                        <div class="carousel-item third">
+                            <div class="card card-category-container">
                                 <div class="category-card-gradient"></div>
                                 <img src="../TP2/images/category-arcade.jpg" alt="category-arcade" class="card-category-img" />
                                 <h2 class="semibold">ARCADE</h3>
                             </div> 
-                            <div class="card-category-container">
+                        </div>
+                        <div class="carousel-item third">
+                            <div class="card card-category-container">
                                 <div class="category-card-gradient"></div>
                                 <img src="../TP2/images/category-adventure.jpg" alt="category-adventure" class="card-category-img" />
                                 <h2 class="semibold">ADVENTURE</h3>
                             </div> 
-                            <div class="card-category-container">
+                        </div>
+                        <div class="carousel-item third">
+                            <div class="card card-category-container">
                                 <div class="category-card-gradient"></div>
                                 <img src="../TP2/images/category-multiplayer.jpg" alt="category-multiplayer" class="card-category-img" />
                                 <h2 class="semibold">MULTIPLAYER</h3>
@@ -357,21 +379,23 @@
 
         <section class="column section-carrousel">
             <h1>Arcade most populars</h1>
-            <div class="carrousel">
+            <div  class="carousel-container">
                 <button class="outlined btn-carrousel-arrow prevButton" id="prevButtonPopulars">
                     <i class="fa fa-chevron-left fa-2x"></i>
                 </button>
-                <div class="carrousel-container" id="carrouselContainerPopulars">
-                    <div class="carrousel-slide carrousel-slide-populars">
-                        <div class="slide-container">
-                            <div class="card-container-display column">
+                <div class="carousel">
+                    <div class="carousel-inner" id="carrouselContainerPopulars">
+                        <div class="carousel-item third">
+                            <div class="card card-container-display column">
                                 <img src="../TP2/images/game-mario.jpg" alt="game-mario" />
                                 <div class="card-body-second column">
                                     <p>$ 1750</p>
                                     <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
-                            <div class="card-container-display column">
+                        </div>
+                        <div class="carousel-item third">
+                            <div class="card card-container-display column">
                                 <img src="../TP2/images/game-street.jpg" alt="game-street" />
                                 <div class="card-body-second column">
                                     <div class="card-discount-content">
@@ -381,7 +405,9 @@
                                     <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
-                            <div class="card-container-display column">
+                        </div>
+                        <div class="carousel-item third">
+                            <div class="card card-container-display column">
                                 <img src="../TP2/images/game-wonder-boy.jpg" alt="game-wonder-boy" />
                                 <div class="card-body-second column">
                                     <p>$ 999</p>
@@ -389,10 +415,8 @@
                                 </div>
                             </div>
                         </div>     
-                    </div>
-                    <div class="carrousel-slide carrousel-slide-populars">
-                        <div class="slide-container">
-                            <div class="card-container-display column">
+                        <div class="carousel-item third">
+                            <div class="card card-container-display column">
                                 <img src="../TP2/images/game-pinball.jpg" alt="game-pinball" />
                                 <div class="card-body-second column">
                                     <div class="card-discount-content">
@@ -402,14 +426,18 @@
                                     <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
-                            <div class="card-container-display column">
+                        </div>
+                        <div class="carousel-item third">
+                            <div class="card card-container-display column">
                                 <img src="../TP2/images/game-sonic.jpg" alt="game-sonic" />
                                 <div class="card-body-second column">
                                     <p>$ 1800</p>
                                     <button><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
-                            <div class="card-container-display column">
+                        </div>
+                        <div class="carousel-item third">
+                            <div class="card card-container-display column">
                                 <img src="../TP2/images/game-simpsons.jpg" alt="game-simpsons" />
                                 <div class="card-body-second column">
                                     <p>$ 899,50</p>
@@ -430,7 +458,7 @@
         </section>
     </main>
 
-    <footer class="row">
+    <footer>
         <div class="column footer_left">
             <div class="row footer_items">
                 <div class="column" id="footer_categories">
