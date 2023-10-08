@@ -1,48 +1,76 @@
-function initializeCarousel(carouselContainerId, prevButtonId, nextButtonId, slideSelector) {
-    const carouselContainer = document.getElementById(carouselContainerId);
+function initializeCarousel(carouselContainerId, prevButtonId, nextButtonId, cardCount) {
+    const carousel = document.getElementById(carouselContainerId);
     const prevButton = document.getElementById(prevButtonId);
     const nextButton = document.getElementById(nextButtonId);
-    const slides = carouselContainer.querySelectorAll(slideSelector);
-    let currentIndex = 0;
+    const totalCards = carousel.querySelectorAll('.card').length;
 
-    // Función para habilitar o deshabilitar botones según la posición del slide
-    function updateButtons() {
-        prevButton.disabled = currentIndex === 0;
-        nextButton.disabled = currentIndex === slides.length - 1;
+    let currentIndex = 0;
+    let cardWidth = 100 / cardCount; // Ancho de una tarjeta en porcentaje
+
+    function showSlide(index) {
+        const translateX = -index * cardWidth;
+        carousel.style.transform = `translateX(${translateX}%)`;
     }
 
-    // Inicializar botones al cargar la página
-    updateButtons();
+    showSlide(currentIndex);
 
-    nextButton.addEventListener("click", function () {
-        if (currentIndex < slides.length - 1) {
-            currentIndex++;
-        } else {
-            currentIndex = 0; // Vuelve a la primera imagen si estás en la última
-        }
-        updateCarousel();
-        updateButtons(); // Actualiza el estado de los botones
-    });
+    // Avanzar al siguiente slide
+    function nextSlide() {
+        currentIndex++;
+        showSlide(currentIndex);
+    }
 
-    prevButton.addEventListener("click", function () {
+    // Retroceder al slide anterior
+    function prevSlide() {
         if (currentIndex > 0) {
             currentIndex--;
-        } else {
-            currentIndex = slides.length - 1;
+            showSlide(currentIndex);
         }
-        updateCarousel();
-        updateButtons(); // Actualiza el estado de los botones
+    }
+
+    // Función para habilitar o deshabilitar los botones según la posición del carrusel
+    function updateButtonState() {
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex + cardCount >= totalCards;
+    }
+
+
+    // Actualizar el estado de los botones al iniciar el carrusel
+    updateButtonState();
+
+    prevButton.addEventListener('click', () => {
+        prevSlide();
+        updateButtonState();
     });
 
-    function updateCarousel() {
-        const slideWidth = slides[currentIndex].offsetWidth;
-        carouselContainer.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+    nextButton.addEventListener('click', () => {
+        nextSlide();
+        updateButtonState();
+    });
+
+    // Media query para ajustar el comportamiento en mobile
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+    function handleMobileMediaQuery(e) {
+        if (e.matches) {
+            cardCount = 1;
+            cardWidth = 100 / cardCount; // Ancho de una tarjeta en porcentaje en mobile
+            currentIndex = 0; // Reinicia el índice
+        } else {
+            cardCount = cardCount;
+            cardWidth = 100 / cardCount; // Ancho de una tarjeta en porcentaje en desktop
+            currentIndex = 0;
+        }
+        showSlide(currentIndex);
+        updateButtonState();
     }
+
+    mediaQuery.addEventListener('change', handleMobileMediaQuery);
+    handleMobileMediaQuery(mediaQuery);
 }
 
 // Llama a la función para inicializar el carrusel específico
-initializeCarousel("carrouselContainerBest", "prevButtonBest", "nextButtonBest", ".carrousel-slide-best");
-initializeCarousel("carrouselContainerCategories", "prevButtonCategories", "nextButtonCategories", ".carrousel-slide-categories");
-initializeCarousel("carrouselContainerRecommended", "prevButtonRecommended", "nextButtonRecommended", ".carrousel-slide-recommended");
-initializeCarousel("carrouselContainerPopulars", "prevButtonPopulars", "nextButtonPopulars", ".carrousel-slide-populars");
-
+initializeCarousel("carrouselContainerBest", "prevButtonBest", "nextButtonBest", 4);
+initializeCarousel("carrouselContainerCategories", "prevButtonCategories", "nextButtonCategories", 3);
+initializeCarousel("carrouselContainerRecommended", "prevButtonRecommended", "nextButtonRecommended", 3);
+initializeCarousel("carrouselContainerPopulars", "prevButtonPopulars", "nextButtonPopulars", 3);

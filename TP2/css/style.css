@@ -355,7 +355,7 @@ main{
 /*-----------------------------------------------CARROUSEL----------------------------------*/
 
 .section-carrousel {
-    padding: 32px;
+    padding: 2rem;
 
     > h1{
         color: white;
@@ -364,37 +364,43 @@ main{
     
 }
 
-.carrousel {
-    position: relative;
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel {
     overflow: hidden;
+    width: 100%;
+    position: relative;
 }
 
-.carrousel-container {
+
+.carousel-inner {
     display: flex;
-    transition: transform 0.5s ease;
-    width: calc(100% - 100px);
-    margin: auto;
+    transition: transform 0.5s ease-in-out;
 }
 
-.carrousel-slide {
-    min-width: 100%;
-    flex: 0 0 100%; /* Asegura que los slides tengan el mismo ancho */
-    text-align: center;
+.no-margin-carousel .carousel-item {
+    padding: 0; /* Elimina el margen entre las tarjetas */
 }
 
-.slide-container {
-    display: flex;
-    flex-direction: row;
-    width: calc(100% - 100px);
-    margin: auto;
-    justify-content: space-between;
+.carousel-item {
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.quarter {
+    flex: 0 0 25%;
+}
+
+.third {
+    flex: 0 0 33.33%;
 }
 
 .btn-carrousel-arrow { 
-    position: absolute;
     border: none;
-    top: calc(50% - 25px); /* Centra verticalmente */
-    z-index: 1;
 
     >i { 
         color: white;
@@ -402,18 +408,14 @@ main{
 }
 
 .prevButton {
-    left: 0; /* Ajusta la posición izquierda */
-
     &:disabled {
-        display: none;
+        visibility: hidden;
     }
 }
 
 .nextButton {
-    right: 0; /* Ajusta la posición derecha */
-
     &:disabled {
-        display: none;
+        visibility: hidden;
     }
 }
 
@@ -421,7 +423,6 @@ main{
 /*-----------------------------------------------CARD CATEGORY ----------------------------------*/
 
 .card-category-container {
-    width: 34%;
     height: 300px;
     position: relative;
     cursor: pointer;
@@ -456,9 +457,7 @@ main{
 
 /*-----------------------------------------------CARD DISPLAY----------------------------------*/
 
-.card-container-display {
-    /*width: 17.5rem;*/ 
-    width: 30%; 
+.card-container-display { 
     background-color: var(--primary);
     color: #FFF;
 
@@ -489,9 +488,7 @@ main{
 
 /*-----------------------------------------------CARD WITH TITLE----------------------------------*/
 
-.card-container {
-    /*width: 13.75rem;*/
-    width: 21%;   
+.card-container {  
     background-color: var(--primary);
     padding: 1%;
     color: #FFF;
@@ -593,13 +590,12 @@ main{
 
 /*----------------------------------------------- FOOTER ----------------------------------*/
 
-
 footer {
-    height: 16.75rem;
+    display: flex;
+    flex-direction: row;
     background-color: var(--primary);
     color: #FFF;
     padding: 4rem;
-    
 }
 
 .footer_left {
@@ -622,6 +618,9 @@ footer {
 }
 
 .copyright {
+    padding-top: 2rem;
+    padding-bottom: 0px;
+
     .logo {
         align-items: center;
         & i {
@@ -660,8 +659,8 @@ footer {
 
 .footer_phone {
     justify-content: space-around;
+    padding-bottom: 0px;
 }
-
 /*-----------------------------------------------------game section ------------------------------------*/
 
 .section-tittle-game{
@@ -1001,4 +1000,65 @@ footer {
         align-items: end;
         width: 30%;
     }
+}
+
+/* --------------------------- MOBILE ----------------------- */
+
+/* Media query para dispositivos móviles estándar */
+@media screen and (max-width: 768px) {
+    .header {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        .btn-menu {
+            left: 1rem;
+        }
+
+        .profile {
+            right: 1rem;
+            gap: 0.5rem;
+        }
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    button {
+        padding: 4px 12px;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+
+    .section-carrousel {
+        padding: 1rem;
+    }
+
+    .quarter {
+        flex: 0 0 100%; /* Muestra 1 tarjetas por slide en mobile */
+    }
+    
+    .third {
+        flex: 0 0 100%;
+    }
+
+    footer {
+        flex-direction: column;
+        padding: 2rem;
+
+        .footer_right {
+            & div {
+                padding-left: 0px;
+            }
+        }
+
+        .copyright {
+            padding-bottom: 2rem;
+        }
+
+        .footer_phone {
+            padding-bottom: 1rem;
+        }
+    }
+
+
 }
