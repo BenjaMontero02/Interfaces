@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 function temporizadorDeRetraso() {
   identificadorTiempoDeEspera = setTimeout(funcionConRetraso, 5000);
-  console.log("asdasd");
 }
 
 function funcionConRetraso() {
