@@ -372,9 +372,13 @@ main {
 }
 
 .carousel {
-    overflow: hidden;
-    width: 100%;
-    position: relative;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+
+  &.with-margin {
+    margin: 0px 10px;
+  }
 }
 
 .carousel-inner {
@@ -1562,5 +1566,37 @@ header div p {
 }
 
 header div a {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+/* Animación de rotación al avanzar */
+.rotate-next {
+  animation-name: rotate-next-animation;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rotate-next-animation {
+  0% {
+      transform: rotateY(0deg);
+  }
+  100% {
+      transform: rotateY(360deg);
+  }
+}
+
+/* Animación de rotación al retroceder */
+.rotate-prev {
+  animation-name: rotate-prev-animation;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rotate-prev-animation {
+  0% {
+      transform: rotateY(0deg);
+  }
+  100% {
+      transform: rotateY(-360deg);
+  }
 }
