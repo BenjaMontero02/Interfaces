@@ -310,14 +310,21 @@ main {
     width: 100%;
 }
 
-.banner {
-    justify-content: end;
+.hero {
+    justify-content: space-around;
     align-items: center;
     height: 26rem;
-    background-image: url(../svg/image.svg);
+    background-image: url(../images/starWardsBG3x.png);
     background-position: center;
     background-size: cover;
     padding: 2rem;
+
+    >h1 {
+      font-size: 30px;
+      color: white;
+      background-color: var(--primary);
+      padding: 1rem;
+    }
 
     /*------------------------------------------------ BTN ANIMATIONS --------------------------------*/
 
@@ -606,6 +613,10 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    >div {
+      padding-top: 0px;
+    }
 }
 
 .footer-columns-h3{
@@ -1451,10 +1462,15 @@ section .form-container {
         flex-direction: column;
         padding: 2rem;
 
-        .footer_right {
-            & div {
-                padding-left: 0px;
-            }
+        .footer-columns {
+          flex-direction: column;
+          >div {
+            padding-top: 1rem;
+          }
+        }
+
+        .footer-second-part {
+          flex-direction: column;
         }
 
         .copyright {
