@@ -13,20 +13,50 @@ function initializeCarousel(carouselContainerId, prevButtonId, nextButtonId, car
     }
 
     showSlide(currentIndex);
+// Agregar una clase para iniciar la animación de rotación al avanzar
+function animateRotationNext() {
+    if (currentIndex < totalCards - 1) {
+        const currentCard = carousel.querySelector('.carousel-item:nth-child(' + (currentIndex + 1) + ') .card');
+        currentCard.classList.add('rotate-next');
+    }
+}
 
-    // Avanzar al siguiente slide
-    function nextSlide() {
-        currentIndex++;
+// Agregar una clase para iniciar la animación de rotación al retroceder
+function animateRotationPrev() {
+    if (currentIndex > 0) {
+        const previousCard = carousel.querySelector('.carousel-item:nth-child(' + (currentIndex) + ') .card');
+        previousCard.classList.add('rotate-prev');
+    }
+}
+
+// Función para limpiar las clases de rotación después de la animación
+function clearRotationClasses() {
+    const cards = carousel.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.classList.remove('rotate-next', 'rotate-prev');
+    });
+}
+
+// Avanzar al siguiente slide
+function nextSlide() {
+    clearRotationClasses(); // Limpiar las clases de rotación
+    animateRotationNext(); // Iniciar la animación de rotación al avanzar
+    currentIndex++;
+    showSlide(currentIndex);
+    updateButtonState();
+}
+
+// Retroceder al slide anterior
+function prevSlide() {
+    clearRotationClasses(); // Limpiar las clases de rotación
+    animateRotationPrev(); // Iniciar la animación de rotación al retroceder
+    if (currentIndex > 0) {
+        currentIndex--;
         showSlide(currentIndex);
+        updateButtonState();
     }
+}
 
-    // Retroceder al slide anterior
-    function prevSlide() {
-        if (currentIndex > 0) {
-            currentIndex--;
-            showSlide(currentIndex);
-        }
-    }
 
     // Función para habilitar o deshabilitar los botones según la posición del carrusel
     function updateButtonState() {
@@ -34,18 +64,15 @@ function initializeCarousel(carouselContainerId, prevButtonId, nextButtonId, car
         nextButton.disabled = currentIndex + cardCount >= totalCards;
     }
 
-
     // Actualizar el estado de los botones al iniciar el carrusel
     updateButtonState();
 
     prevButton.addEventListener('click', () => {
         prevSlide();
-        updateButtonState();
     });
 
     nextButton.addEventListener('click', () => {
         nextSlide();
-        updateButtonState();
     });
 
     // Media query para ajustar el comportamiento en mobile
@@ -68,6 +95,7 @@ function initializeCarousel(carouselContainerId, prevButtonId, nextButtonId, car
     mediaQuery.addEventListener('change', handleMobileMediaQuery);
     handleMobileMediaQuery(mediaQuery);
 }
+
 
 // Llama a la función para inicializar el carrusel específico
 initializeCarousel("carrouselContainerBest", "prevButtonBest", "nextButtonBest", 4);
