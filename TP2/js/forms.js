@@ -1,7 +1,7 @@
 "use strict";
-let formLogin = document.querySelector(".form-login");
+let formLogin = document.querySelector(".hover-shadow");
 
-formLogin.addEventListener("submit", function (e) {
+formLogin.addEventListener("click", function (e) {
   e.preventDefault();
 
   let mje = document.querySelector(".mje-ingreso");
@@ -9,6 +9,6 @@ formLogin.addEventListener("submit", function (e) {
   mje.classList.remove("none");
 
   setTimeout(() => {
-    window.location.replace("index.html");
+    window.location.replace("home.html");
   }, 3000);
 });

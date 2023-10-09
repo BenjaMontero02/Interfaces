@@ -1216,6 +1216,7 @@ section .form-container {
     position: relative;
     transition-duration: .3s;
     transition-property: transform;
+    cursor: pointer;
 
     @include hideTapHighlightColor();
     @include hardwareAccel();

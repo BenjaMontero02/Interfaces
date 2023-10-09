@@ -9,6 +9,6 @@ formRegister.addEventListener("submit", function (e) {
   mje.classList.remove("none");
 
   setTimeout(() => {
-    window.location.replace("index.html");
+    window.location.replace("home.html");
   }, 3000);
 });
