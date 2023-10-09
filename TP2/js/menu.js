@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
   let navMenu = document.getElementById("navMenu");
   let btnCloseMenu = document.getElementById("btn-close-menu");
 
+  let btnAdventure = document.getElementById('item-adventure');
+  let navMenuAdventure = document.getElementById('navMenuAdventure');
+
   let btnProfile = document.getElementById("avatar");
   let navMenuProfile = document.getElementById("navMenuProfile");
 
@@ -14,11 +17,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
       navMenu.style.display = "none";
     } else {
       navMenu.style.display = "block";
+      // Calcula la altura del botón y configura la misma altura para el submenu
+      var alturaBoton = btnAdventure.offsetTop;
+      navMenuAdventure.style.top = alturaBoton + 'px';
     }
   });
 
   btnCloseMenu.addEventListener("click", () => {
     navMenu.style.display = "none";
+    navMenuAdventure.style.display = "none";
   });
 
   btnProfile.addEventListener("click", () => {
@@ -26,6 +33,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
       navMenuProfile.style.display = "none";
     } else {
       navMenuProfile.style.display = "block";
+    }
+  });
+
+  btnAdventure.addEventListener("click", () => {
+    if (navMenuAdventure.style.display === "block") {
+      navMenuAdventure.style.display = "none";
+    } else {
+      navMenuAdventure.style.display = "block";
     }
   });
 
