@@ -153,7 +153,7 @@ button {
         left: 0;
         height: 25rem;
         width: 18.75rem;
-
+    
         >button {
             margin-left: 2rem;
             margin-top: 2rem;
@@ -164,36 +164,46 @@ button {
             cursor: pointer;
         }
 
-        .nav-menu-sub-menu {
-            display: none;
-        }
-
         >h3 {
             color: #fff;
             margin-left: 2rem;
             margin-top: 1rem;
         }
+    }
 
-        .nav-menu-list {
-            list-style: none;
-            padding-left: 0px;
-            cursor: pointer;
-        }
+    .nav-menu-list {
+        list-style: none;
+        padding-left: 0px;
+        cursor: pointer;
+    }
 
-        .nav-menu-list li {
-            padding-left: 2rem;
-            padding-right: 2rem;
-            border-bottom: 1px solid var(--primary-light-2);
-            color: #fff;
-            padding-bottom: 0.5rem;
-            padding-top: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+    .nav-menu-list li {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        border-bottom: 1px solid var(--primary-light-2);
+        color: #fff;
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-        .nav-menu-list li:hover {
-            background-color: var(--primary-light-2);
+    .nav-menu-list li:hover {
+        background-color: var(--primary-light-2);
+    }
+
+    /* SUBMENU ADVENTURE */
+
+    .nav-menu-adventure {
+        background-color: var(--secondary);
+        display: none;
+        position: absolute;
+        left: 18.75rem;
+        width: 18.75rem;
+
+        >ul {
+            margin: 0px;
         }
     }
 
