@@ -28,13 +28,13 @@
       <div class="row profile">
         <p>Don't have an account yet?</p>
         <a href="registration.html">Registration</a>
-        <i class="fa fa-chevron-right fa-2x"></i>
+        <i class="fa fa-chevron-right fa-2x" style="color: #e2e9e9" ;></i>
       </div>
     </header>
     <main>
       <section class="form-section">
         <div class="form-container">
-          <form action="" class="ninth">
+          <form action="index.html" class="form-login ninth">
             <label for="email">Email</label>
             <input type="text" name="name" placeholder="Email" />
             <label for="password">Password</label>
@@ -44,10 +44,17 @@
               <img src="../TP2/images/facebook-new.png" alt="facebook" />
               <img src="../TP2/images/google-logo.png" alt="" />
             </div>
-            <button type="submit"><a href="index.html">LOGIN</a></button>
+            <button type="submit" class="ninth">LOGIN</button>
           </form>
         </div>
       </section>
+      <div class="overlay mje-ingreso none">
+        <div class="pop-up-exitoso">
+          <div class="pop-up-body">
+            <h3>Log in succesful!</h3>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <div class="column footer_left">
@@ -112,5 +119,6 @@
         </div>
       </div>
     </footer>
+    <script src="../TP2/js/forms.js"></script>
   </body>
 </html>
