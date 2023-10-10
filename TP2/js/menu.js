@@ -51,6 +51,24 @@ document.addEventListener("DOMContentLoaded", (event) => {
       navMenuShoppingCart.style.display = "block";
     }
   });
+
+      // Media query para ajustar el comportamiento en mobile
+      const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+      function handleMobileMediaQuery(e) {
+          if (e.matches) {
+            navMenu.style.width = '50%';
+            navMenuAdventure.style.width = '40%';
+            navMenuAdventure.style.left = '50%';
+          } else {
+            navMenu.style.width = '18.75rem';
+            navMenuAdventure.style.width = '18.75rem';
+            navMenuAdventure.style.left = '18.75rem';
+          }
+      }
+  
+      mediaQuery.addEventListener('change', handleMobileMediaQuery);
+      handleMobileMediaQuery(mediaQuery);
 });
 
 function temporizadorDeRetraso() {
