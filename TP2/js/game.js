@@ -4,67 +4,172 @@ document.addEventListener("DOMContentLoaded" , function () {
     const ctx = myCanvas.getContext("2d");
     let canvasWidth = myCanvas.width;
     let canvasHeight = myCanvas.height;
+    let imgFondo = document.getElementById("fondo");
+    let img1 = document.getElementById("img1");
+    let img2 = document.getElementById("img2");
+    let jugadorUno = "juan"
+    let jugadorDos = "claudio"
 
     //variables del juego
-    let fichas1 = [];
-    let fichas2 = [];
-    let tablero = [[]];
-    let gapWidth = 30;
-    let gapHeight = 30;
-    let total = 1;
+    let fichas = [];
+    let tablero = [];
+    let gapWidth = 60;
+    let gapHeight = 100;
+    let total = 0;
 
     //1 es igual a jugador 1 y 2 es jugador 2
     let turno = 1
-    let cantFichas = 4;
+    let cantFichas = 7;
     
+    // myCanvas.addEventListener("mousemove", (e) => {
+    //     console.log("x", e.layerX);
+    //     console.log("y", e.layerY);
+    // })
 
     init();
     function init(){
         console.log(canvasWidth)
         console.log(canvasHeight)
         addFicha();
+        addFicha2();
+        llenarTablero();
+        drawImg()
         drawFigure();
+        drawTablero();
     }
 
-    function addFicha(){
-        let width = 0;
-        let height = 0
-        let bg = "red";
+    //dibujo la img
+    function drawImg(){
+        ctx.drawImage(imgFondo, canvasWidth/4, 0, canvasWidth/2, 500);
+    }
 
-        while(fichas1.length < cantFichas && fichas2.length < cantFichas){
-            width = 0 + total * gapHeight;
-            height = 0 + total * gapHeight;
+    //lleno el tablero con la cant de posibilidades q se pueden creear
+    function llenarTablero(){
+        let width = canvasWidth/4 + 50
+        let height = canvasHeight -40;
+        for(let i = 0; i < cantFichas; i++){
+            tablero.push([]);
+            for(let j = 0; j < cantFichas; j++){
+                tablero[i].push(new Ficha(width, height, "black", ctx, 30, null))
+                height -= 70;
+            }
 
-            let ficha1 = new Ficha(width, height, bg, ctx, 10);
-            fichas1.push(ficha1);
-
-            width = canvasWidth - total * gapWidth;
-            height = canvasHeight - total * gapHeight;
-            let ficha2 = new Ficha(width, height, bg, ctx, 10);
-            fichas2.push(ficha2);
-
-            total++;
-
+            width += 100
+            height = canvasHeight -40;
         }
     }
-
+    //agrego fichas para el jugador 1
+    function addFicha(){
+        let width = 60;
+        let height = canvasHeight - 60;
+        while(fichas.length < cantFichas/2){
+            let ficha = new Ficha(width, height, "orange", ctx, 30, jugadorUno);
+            fichas.push(ficha);
+            height -= 100;
+            total++;
+        }
+        
+        height = canvasHeight - 60;
+        width += 120;
+        while(fichas.length < cantFichas){
+            let ficha = new Ficha(width, height, "orange", ctx, 30, jugadorUno);
+            fichas.push(ficha);
+            height -= 100;
+        }
+    }
+    //agrego fichas para el jugador 2
+    function addFicha2(){
+        let width = canvasWidth - 60;
+        let height = canvasHeight - 60;
+        while(fichas.length-cantFichas < cantFichas/2){
+            let ficha = new Ficha(width, height, img1, ctx, 30, jugadorDos);
+            fichas.push(ficha);
+            height -= 100;
+            total++;
+        }
+        
+        height = canvasHeight - 60;
+        width -= 120;
+        while(fichas.length-cantFichas < cantFichas){
+            let ficha = new Ficha(width, height, img1, ctx, 30, jugadorDos);
+            fichas.push(ficha);
+            height -= 100;
+        }
+    }
+    
+    //dibujo todo lo necesario para comenzar
     function drawFigure(){
         clearCanvas();
-        for(let i = 0; i < fichas1.length; i++){
-            fichas1[i].draw();
-        }
-        for(let i = 0; i < fichas2.length; i++){
-            fichas2[i].draw();
+        for(let i = 0; i < fichas.length; i++){
+            fichas[i].draw();
         }
     }
 
+    //dibujo las fichas del tablero
+    function drawTablero(){
+        for(let i = 0; i < cantFichas; i++){
+            for(let j = 0; j < cantFichas; j++){
+                tablero[i][j].draw();
+            }
+    }}
+
+    //reseteo el canvas
     function clearCanvas(){
-        ctx.fillStyle = "black";
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+        drawImg()
     }
 
+    myCanvas.addEventListener("click", (e) => {
+        fichas.forEach(ficha => {
+            console.log(ficha.isPositionInside(e.layerX, e.layerY))
+            return ficha.isPositionInside(e.layerX, e.layerY);
+        });
+    })
 
+    //verifica si gano el jugador q se le pase x parametro
+    function verifyGanador(jugador){
+        if(verifyHorizontal(jugador) || verifyVertical(jugador) || verifyDiagonal()){
+            return "Ganador: " + jugador;
+            //setear q termina el juego y lanzar cartel
+        }
+    }
 
+    //verifican si el jugador por parametro gano 
+    function verifyHorizontal(jugador){
+        for(let i = 0; i < cantFichas; i++){
+            let posible = 0;
+            for(let j = 0; j < cantFichas; j++){
+                if(tablero[i][j].contieneJugador(jugador)){
+                    posible++;
+                }else{
+                    posible = 0;
+                }
 
+                if(posible == cantFichas){
+                    return true;
+                }
+            }
+        }
+    }
 
+    function verifyVertical(jugador){
+        for(let i = 0; i < cantFichas; i++){
+            let posible = 0;
+            for(let j = 0; j < cantFichas; j++){
+                if(tablero[j][i].contieneJugador(jugador)){
+                    posible++;
+                }else{
+                    posible = 0;
+                }
 
+                if(posible == cantFichas){
+                    return true;
+                }
+            }
+        }
+    }
+
+    function verifyDiagonal(jugador){
+        
+    }
 })
