@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded" , function () {
     //1 es igual a jugador 1 y 2 es jugador 2
     let turno = 1
     let cantFichas = 7;
+    let cantFichasJugador = 10;
     
     // myCanvas.addEventListener("mousemove", (e) => {
     //     console.log("x", e.layerX);
@@ -36,6 +37,7 @@ document.addEventListener("DOMContentLoaded" , function () {
         drawImg()
         drawFigure();
         drawTablero();
+        events();
     }
 
     //dibujo la img
@@ -62,8 +64,8 @@ document.addEventListener("DOMContentLoaded" , function () {
     function addFicha(){
         let width = 60;
         let height = canvasHeight - 60;
-        while(fichas.length < cantFichas/2){
-            let ficha = new Ficha(width, height, "orange", ctx, 30, jugadorUno);
+        while(fichas.length < cantFichasJugador/2){
+            let ficha = new Ficha(width, height, "orange", ctx, 20, jugadorUno);
             fichas.push(ficha);
             height -= 100;
             total++;
@@ -71,8 +73,8 @@ document.addEventListener("DOMContentLoaded" , function () {
         
         height = canvasHeight - 60;
         width += 120;
-        while(fichas.length < cantFichas){
-            let ficha = new Ficha(width, height, "orange", ctx, 30, jugadorUno);
+        while(fichas.length < cantFichasJugador){
+            let ficha = new Ficha(width, height, "orange", ctx, 20, jugadorUno);
             fichas.push(ficha);
             height -= 100;
         }
@@ -81,8 +83,8 @@ document.addEventListener("DOMContentLoaded" , function () {
     function addFicha2(){
         let width = canvasWidth - 60;
         let height = canvasHeight - 60;
-        while(fichas.length-cantFichas < cantFichas/2){
-            let ficha = new Ficha(width, height, img1, ctx, 30, jugadorDos);
+        while(fichas.length-cantFichasJugador < cantFichasJugador/2){
+            let ficha = new Ficha(width, height, img1, ctx, 20, jugadorDos);
             fichas.push(ficha);
             height -= 100;
             total++;
@@ -90,8 +92,8 @@ document.addEventListener("DOMContentLoaded" , function () {
         
         height = canvasHeight - 60;
         width -= 120;
-        while(fichas.length-cantFichas < cantFichas){
-            let ficha = new Ficha(width, height, img1, ctx, 30, jugadorDos);
+        while(fichas.length-cantFichasJugador < cantFichasJugador){
+            let ficha = new Ficha(width, height, img1, ctx, 20, jugadorDos);
             fichas.push(ficha);
             height -= 100;
         }
@@ -119,12 +121,19 @@ document.addEventListener("DOMContentLoaded" , function () {
         drawImg()
     }
 
-    myCanvas.addEventListener("click", (e) => {
+    
+
+    function mouseDown(e){
+        let x = e.layerX - 32
+        let y = e.layerY - 80 - 16 - 74.667 - 32
+        console.log(e);
         fichas.forEach(ficha => {
-            console.log(ficha.isPositionInside(e.layerX, e.layerY))
-            return ficha.isPositionInside(e.layerX, e.layerY);
+            if(ficha.isPositionInside(x, y)){
+                console.log(true);
+                return true;
+            }
         });
-    })
+    }
 
     //verifica si gano el jugador q se le pase x parametro
     function verifyGanador(jugador){
@@ -170,6 +179,15 @@ document.addEventListener("DOMContentLoaded" , function () {
     }
 
     function verifyDiagonal(jugador){
-        
+        let i = [];
+        let j = [];
+    }
+
+    function backtracking(){
+
+    }
+
+    function events(){
+        myCanvas.onmousedown = mouseDown;
     }
 })
