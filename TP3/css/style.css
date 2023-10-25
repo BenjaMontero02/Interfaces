@@ -321,7 +321,8 @@ main {
 }
 
 .hero {
-    justify-content: space-around;
+    position: relative;
+    justify-content: center;
     align-items: center;
     height: 26rem;
     background-image: url(../images/starWardsBG3x.png);
@@ -330,6 +331,8 @@ main {
     padding: 2rem;
 
     >h1 {
+      position: absolute;
+      top: 25%;
       font-size: 30px;
       color: white;
       background-color: var(--primary);
@@ -339,13 +342,18 @@ main {
 
     /*------------------------------------------------ BTN ANIMATIONS --------------------------------*/
 
-    #playButton>a>button {
+    #playButton {
         border: none;
         background-color: var(--accent);
         transition: all 0.3s ease-in-out;
+        margin-top: 25%;
+        
+        >a {
+            color: var(--primary);
+        }
     }
 
-    #playButton:hover>a>button {
+    #playButton:hover {
         border: none;
         box-shadow: var(--primary-light-2);
         font-size: xx-large;
