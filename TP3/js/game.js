@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded" , function () {
     //0 es igual a jugador 1 y 1 es jugador 2
     let turno = 0
     let cantFichas = 6;
-    let cantFichasJugador = 10;
+    let cantFichasJugador = 2;
     
     // myCanvas.addEventListener("mousemove", (e) => {
     //     console.log("x", e.layerX);
@@ -134,17 +134,19 @@ document.addEventListener("DOMContentLoaded" , function () {
     //selecciono la ficha en la que estoy clickeadno
     function mouseDown(e){
         //let ClientRect = myCanvas.getBoundingClientRect()
-        let x = e.layerX - 32
-        let y = e.layerY - 80 - 16 - 74.667 - 32
+        let x = e.offsetX
+        let y = e.offsetY
+        console.log(x);
+        console.log(y);
         // let x = 
-        for(let i = 0; i < cantFichasJugador; i++){
+        for(let i = 0; i < fichas.length; i++){
             if(fichas[i].isPositionInside(x, y)){
-                if(fichas[i].contieneJugador(jugador[turno])) {
+                //if(fichas[i].contieneJugador(jugador[turno])) {
                     posXFichaAnterior = fichas[i].getX();
                     posYFichaAnterior = fichas[i].getY();
                     fichaSeleccionada = fichas[i];
                     posFicha = i;
-                }
+                //}
                 return
             }
             
@@ -154,8 +156,8 @@ document.addEventListener("DOMContentLoaded" , function () {
     function mouseMove(e){
         if(fichaSeleccionada == null) return;
 
-        let x = e.layerX - 32;
-        let y = e.layerY - 80 - 16 - 74.667 - 32;
+        let x = e.offsetX
+        let y = e.offsetY
 
         fichaSeleccionada.setPosition(x, y);
         drawFigure();
@@ -163,8 +165,8 @@ document.addEventListener("DOMContentLoaded" , function () {
 
     function mouseUp(e){
         if(fichaSeleccionada == null) return;
-        let x = e.layerX - 32
-        let y = e.layerY - 80 - 16 - 74.667 - 32
+        let x = e.offsetX
+        let y = e.offsetY
         for(let i = 0; i < cantFichas; i++) {
             for(let j = 0; j < cantFichas; j++) {
                 if(tablero[i][j].isPositionInside(x, y)){
@@ -193,11 +195,11 @@ document.addEventListener("DOMContentLoaded" , function () {
                 verifyGanador(jugador[turno]);
                 
                 //cambio el turno del jugador ARREGLAR Y LLEVARLO A UNA FUNCION APARTE Y REINICIAR EL TIMMER
-                if(turno === 1){
-                    turno = 0;
-                }else{
-                    turno = 1;
-                }
+                // if(turno === 1){
+                //     turno = 0;
+                // }else{
+                //     turno = 1;
+                // }
                 return
             }
         }

@@ -372,6 +372,11 @@ main {
     }
 }
 
+.canvas{
+    padding: 32px;
+    margin: auto;
+}
+
 /*-----------------------------------------------CARROUSEL----------------------------------*/
 
 .section-carrousel {
