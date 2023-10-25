@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded" , function () {
     let imgFondo = document.getElementById("fondo");
     let img1 = document.getElementById("img1");
     let img2 = document.getElementById("img2");
-    let jugador = ["juan", "claudio"];
+    
 
     //variables del juego
     let fichas = [];
@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded" , function () {
     let gapWidth = 60;
     let gapHeight = 100;
     let total = 0;
+    let jugador = ["juan", "claudio"]
+    
 
     //variables p fichaSeleccionada
     let fichaSeleccionada = null;
@@ -131,16 +133,18 @@ document.addEventListener("DOMContentLoaded" , function () {
     
     //selecciono la ficha en la que estoy clickeadno
     function mouseDown(e){
-        let ClientRect = myCanvas.getBoundingClientRect()
+        //let ClientRect = myCanvas.getBoundingClientRect()
         let x = e.layerX - 32
         let y = e.layerY - 80 - 16 - 74.667 - 32
         // let x = 
         for(let i = 0; i < cantFichasJugador; i++){
             if(fichas[i].isPositionInside(x, y)){
-                posXFichaAnterior = fichas[i].getX();
-                posYFichaAnterior = fichas[i].getY();
-                fichaSeleccionada = fichas[i];
-                posFicha = i;
+                if(fichas[i].contieneJugador(jugador[turno])) {
+                    posXFichaAnterior = fichas[i].getX();
+                    posYFichaAnterior = fichas[i].getY();
+                    fichaSeleccionada = fichas[i];
+                    posFicha = i;
+                }
                 return
             }
             
@@ -181,13 +185,19 @@ document.addEventListener("DOMContentLoaded" , function () {
         for(let j = 0; j < tablero.length; j++) {
             if(tablero[i][j].esNula()){
                 tablero[i][j].setFill(fichaSeleccionada.getFill());
-
                 tablero[i][j].setJugador(fichaSeleccionada.getJugador());
                 fichas.splice(posFicha, 1);
                 posFicha = null;
                 fichaSeleccionada = null;
                 drawFigure();
                 verifyGanador(jugador[turno]);
+                
+                //cambio el turno del jugador ARREGLAR Y LLEVARLO A UNA FUNCION APARTE Y REINICIAR EL TIMMER
+                if(turno === 1){
+                    turno = 0;
+                }else{
+                    turno = 1;
+                }
                 return
             }
         }
@@ -244,17 +254,43 @@ document.addEventListener("DOMContentLoaded" , function () {
         }
     }
 
+    //sacar variable gano y cantidad afuera de la funcion asi se modifica
     function verifyDiagonal(jugador){
         let i = [];
         let j = [];
-
-        backtracking(i, j);
+        let gano = false;
+        backtracking(i, j, 0, 0, jugador, 0, gano);
+        return gano;
     }
 
-    function backtracking(i, j){
-        let c = 0;
-        let f = 0;
+    //c === columna
+    //f === fila
+    //columna a variable global
+    function backtracking(arrColumna, arrFila, columna, fila, cantidad, gano){
+        //si mis arreglos no contienen ese nro 
+        if(cantidad === cantFichas){
+            if(gano === true) return
+            gano = true;
+            return
+        }else{
+            while(gano != true){
+            //si mi tablero contiene el jugador q se esta verificando q gano entonces
+            // sumo la cant de fichas q va metiendo seguidas 
+                if(tablero[columna][fila].contieneJugador(jugador[turno])){
+                    cantidad++;
+                //o sea si esa ficha esta nula(sin jugador)
+                }else if(tablero[columna][fila].contieneJugador("")){
+                    cantidad = 0;
+                    return;
+                }else{
+                    cantidad = 0;
+                }
+                
+            }
+            return;
+        }
     }
+    
 
     function events(){
         myCanvas.onmousedown = mouseDown;

@@ -46,6 +46,7 @@ class Ficha{
         this.ctx.beginPath();
         this.ctx.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
         this.ctx.fillStyle = this.fill;
+        //this.ctx.drawImage(this.fill, this.getX()-20, this.getY()-20, 40, 40);
         this.ctx.fill();
     }
     
