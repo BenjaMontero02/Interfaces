@@ -14,11 +14,32 @@ class Ficha{
         this.posY = y;
     }
 
-    getPosition(){
-        return {
-            x: this.posX,
-            y: this.posY
-        }
+    getX(){
+        return this.posX;
+    }
+
+    getY(){
+        return this.posY;
+    }
+
+    getJugador(){
+        return this.jugador;
+    }
+
+    setJugador(jugador){
+        this.jugador = jugador;
+    }
+
+    setRadio(radius){
+        this.radius = radius;
+    }
+
+    setFill(fill){
+        this.fill = fill
+    }
+
+    getFill(){
+        return this.fill;
     }
 
     draw(){
@@ -36,6 +57,10 @@ class Ficha{
 
     contieneJugador(jugador){
         return this.jugador === jugador;
+    }
+
+    esNula(){
+        return this.jugador == null;
     }
 
 }
