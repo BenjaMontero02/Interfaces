@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LevelUp.com</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+
+</head>
+
+<body>
+    <header class="header row">
+        <button id="menu" class="outlined btn-menu">
+            <i class="fa fa-bars"></i>
+        </button>
+        <nav class="nav-menu" id="navMenu">
+            <button class="outlined" id="btn-close-menu">X</button>
+            <h3>Categories</h3>
+            <ul class="nav-menu-list">
+                <li>Adventure <i class="fa fa-chevron-right"></i></li>
+                <li>Action <i class="fa fa-chevron-right"></i></li>
+                <li>Arcade <i class="fa fa-chevron-right"></i></li>
+                <li>Multiplayer <i class="fa fa-chevron-right"></i></li>
+                <li>Shooters <i class="fa fa-chevron-right"></i></li>
+                <li>Sports <i class="fa fa-chevron-right"></i></li>
+            </ul>
+        </nav>
+        <div class="row header-tittle">
+            <i class="fas fa-headset fa-2x"></i>
+            <h1><a href="home.html">LevelUp.com</a></h1>
+        </div>
+        <div class="row profile">
+            <button id="shoppingCart" class="outlined">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+            <button id="avatar" class="outlined">
+                <img class="profile-img" src="../TP2/images/profile.png" alt="user-avatar">
+            </button>
+        </div>
+        <nav id="navMenuCart" class="nav-menu-profile menu-cart">
+            <ul>
+                <li>
+                    <div class="cart-item row">
+                        <div class="left row">
+                            <img src="../TP2/images/game-battlegrounds.jpg" alt="game-battlegrounds">
+                            <h3 class="light">Battlegrounds</h3>
+                        </div>
+                        <div class="right row">
+                            <h3 class="semibold">$4500</h3>
+                            <i class="fa fa-trash"></i>
+                        </div>
+                    </div>
+                </li>
+                <li class="last">
+                    <div class="cart-item row">
+                        <h3 class="light">Total</h3>
+                        <h3 class="semibold">$4500</h3>
+                    </div>
+                </li>
+                <li class="last"><button>Checkout</button></li>
+            </ul>
+        </nav>
+        <nav id="navMenuProfile" class="nav-menu-profile menu-avatar">
+            <ul>
+                <li>Profile</li>
+                <li>Favorites</li>
+                <li>My games</li>
+                <li class="last">LOGOUT <i class="fas fa-sign-out-alt"></i></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="column section-tittle-game">
+            <p class="light"><a href="../TP2/index.html" class="light">Home</a> > Arcade > May the 4th in a row</p>
+            <div class="row section-tittle-game2">
+                <h1 class="semibold">MAY THE 4th IN A ROW</h1>
+                <button class="outlined light" id="share">SHARE <img src="../TP2/svg/ShareIcon.svg" alt="share">
+                    <div class="share">
+                        <img src="../TP2/svg/Whatsapp-icon.svg" alt="">
+                        <img src="../TP2/svg/Twitter-icon.svg" alt="">
+                        <img src="../TP2/svg/Facebook-icon.svg" alt="">
+                        <img src="../TP2/svg/Instagram-icon.svg" alt="">
+                        <img src="../TP2/svg/Google.svg" alt="">
+                    </div>
+                </button>
+            </div>
+        </section>
+        <section class="column">
+            <div class="row section-game-content">
+                <div class="column">
+                    <p class="semibold">PLAYER 1</p>
+                    <p class="light tokens">Avalaible tokens</p>
+                    <img src="../TP2/svg/r2d2-token.svg" alt="">
+                </div>
+                <div>
+                    <img src="../TP2/svg/board.svg" alt="">
+                </div>
+                <div class="column">
+                    <p class="semibold">PLAYER 1</p>
+                    <p class="light tokens">Avalaible tokens</p>
+                    <img src="../TP2/svg/stormtrooper-token.svg" alt="">
+                </div>
+            </div>
+            <section class="section-game-instructions">
+                <h2 class="semibold">TURN<span class="light">: PLAYER 1</span></h2>
+                <div>
+                    <button class="outlined"><i class="fas fa-cog fa-2x"></i></button>
+                    <button class="outlined"><i class="fas fa-expand-arrows-alt fa-2x"></i></button>
+                    <button class="outlined"><i class="fas fa-times-circle fa-2x"></i></button>
+                </div>
+            </section>
+        </section>
+        <section class="column section-game-about">
+            <h2 class="semibold">ABOUT THIS GAME</h2>
+            <h4>In this classic strategy game, the fate of the galaxy hinges on your tactical prowess.
+                <br> Choose your allegiance, either as the resourceful and astute R2-D2 or the loyal and determined
+                Stormtrooper, and engage in an exhilarating battle for supremacy.
+                <br> Your mission is clear: connect four of your character's symbols in a row, be it horizontally,
+                vertically, or diagonally, while thwarting your opponent's every move.
+            </h4>
+            <h4> Will you join the ranks of the Empire or fight alongside the Rebel Alliance? The choice is yours in
+                this epic battle of wits. May the best strategist triumph in this ultimate showdown between R2-D2 and
+                the Stormtrooper!</h4>
+        </section>
+        <section class="row section-game-logos">
+            <img src="../TP2/svg/vehicles.svg" alt="">
+            <img src="../TP2/svg/characters.svg" alt="">
+            <img src="../TP2/svg/starships.svg" alt="">
+        </section>
+        <section class="column section-game-howToPlay">
+            <h2 class="semibold">HOW TO PLAY</h2>
+            <div class="row section-game-howToPlay-content">
+                <div class="section-game-howToPlay-content-card">
+                    <div class="column section-game-howToPlay-content-card-info">
+                        <p>Step 1</p>
+                        <p>Position the mouse cursor over your token and <br> CLICK AND HOLD your token with your mouse
+                            or touchpad.</p>
+                    </div>
+                    <div class="section-game-howToPlay-content-img">
+                        <img src="../TP2/images/mouse-right-click.png" alt="" class="img-game-mouse">
+                    </div>
+                </div>
+                <div class="section-game-howToPlay-content-card">
+                    <div class="column section-game-howToPlay-content-card-info">
+                        <p>Step 2</p>
+                        <p>While holding the token, move your cursor to the column where you want to drop it.</p>
+                    </div>
+                    <div class="section-game-howToPlay-content-img">
+                        <img src="../TP2/images/drag-drop-svgrepo-com 1.png" alt="" class="img-game-mouse">
+                    </div>
+                </div>
+                <div class="section-game-howToPlay-content-card">
+                    <div class="column section-game-howToPlay-content-card-info">
+                        <p>Step 3</p>
+                        <p>Position the piece over the desired column and release the mouse button or lift your finger
+                            to drop the piece.</p>
+                    </div>
+                    <div class="section-game-howToPlay-content-img">
+                        <img src="../TP2/images/mouse-release.png" alt="" class="img-game-mouse">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="column section-game-win-info">
+            <h2 class="semibold">OUTCOMES</h2>
+            <div class="row section-game-win-info-content">
+                <div class="column">
+                    <h3>WIN</h3>
+                    <p class="light">Your triumph is realized when you successfully align four of your tokens
+                        horizontally, vertically, or diagonally. </p>
+                </div>
+                <div class="column">
+                    <h3>LOOSE</h3>
+                    <p class="light">You face defeat when your opponent manages to connect four of their chosen tokens
+                        before you do. </p>
+                </div>
+                <div class="column">
+                    <h3>TIE</h3>
+                    <p class="light">This outcome occurs when every slot on the game board is filled, yet neither player
+                        has managed to secure a victory.</p>
+                </div>
+            </div>
+        </section>
+        <section class="column section-game-video">
+            <h2 class="semibold">RECENT EVENTS & ANNOUNCEMENTS</h2>
+
+            <div class="row section-game-video-content">
+                <div class="column first-card">
+                    <img src="../TP2/svg/StarWars1.svg" alt="">
+                    <h4>News about this game</h4>
+                    <p class="light">Read more > </p>
+                </div>
+                <div class="column second-card">
+                    <div>
+                        <button class="outlined"><i class="fa fa-play fa-3x"></i></button>
+                    </div>
+                    <h4>May the 4th in a row - LIVE </h4>
+                </div>
+            </div>
+        </section>
+        <section class="column section-carrousel">
+            <h1>More like this</h1>
+            <div  class="carousel-container">
+                <button class="outlined btn-carrousel-arrow prevButton" id="prevButtonCategories">
+                    <i class="fa fa-chevron-left fa-2x"></i>
+                </button>
+                <div class="carousel">
+                    <div class="carousel-inner" >
+                        <div class="carousel-item third">
+                            <div class="card-container-display column">
+                                <img src="../TP2/images/game-mario.jpg" alt="game-mario" />
+                                <div class="card-body-second column">
+                                    <p>$ 1750</p>
+                                    <button><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item third">
+                            <div class="card-container-display column">
+                                <img src="../TP2/images/game-street.jpg" alt="game-street" />
+                                <div class="card-body-second column">
+                                    <div class="card-discount-content">
+                                        <p class="discount">-50%</p>
+                                        <p>$ 2000</p>
+                                    </div>
+                                    <button><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item third">
+                            <div class="card-container-display column">
+                                <img src="../TP2/images/game-wonder-boy.jpg" alt="game-wonder-boy" />
+                                <div class="card-body-second column">
+                                    <p>$ 999</p>
+                                    <button><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+                <button class="outlined btn-carrousel-arrow nextButton" id="nextButtonCategories">
+                    <i class="fa fa-chevron-right fa-2x"></i>
+                </button>
+            </div>
+        </section>
+
+        <section class="row section-comments">
+            <section class="column" style="width: 100%;">
+                <section class="column section-form-comments">
+                    <div class="row section-comments-first">
+                        <img src="../TP2/images/profile.png" alt="" class="img">
+                        <h3>Andy</h3>
+                    </div>
+                    <input type="text" placeholder="Leave a comment about the game..." class="input">
+                    <div class="row section-comments-buttons">
+                        <p><img src="../TP2/svg/StarIcon.svg" alt=""><img src="../TP2/svg/StarIcon.svg" alt=""><img
+                                src="../TP2/svg/StarIcon.svg" alt=""><img src="../TP2/svg/StarIcon.svg" alt=""><img
+                                src="../TP2/svg/StarIcon.svg" alt=""></p>
+                        <div>
+                            <button>CANCEL</button>
+                            <button>COMMENT</button>
+                        </div>
+                    </div>
+                    <div class="row order">
+                        <p>5 comments</p>
+                        <p><img src="../TP2/svg/OrderIcon.svg" alt="orderByIcon"> Order By</p>
+                    </div>
+                </section>
+                <section class="column scroll-comment">
+                    <section class="row comment">
+                        <div class="first-part-comment">
+                            <div class="row section-comments-first">
+                                <img src="../TP2/images/profile.png" alt="" class="img">
+                                <h3>Jhon</h3>
+                            </div>
+                            <div>
+                                <p>Very good!! Great Game</p>
+                            </div>
+                        </div>
+                        <div class="second-part-comment">
+                            <p>Today 11:35</p>
+                            <p><img src="../TP2/svg/StarIconYellow.svg" alt=""><img src="../TP2/svg/StarIconYellow.svg" alt=""><img
+                                    src="../TP2/svg/StarIconYellow.svg" alt=""><img src="../TP2/svg/StarIcon.svg" alt=""><img
+                                    src="../TP2/svg/StarIcon.svg" alt=""></p>
+                        </div>
+                    </section>
+                    <section class="row comment">
+                        <div class="first-part-comment">
+                            <div class="row section-comments-first">
+                                <img src="../TP2/images/profile.png" alt="" class="img">
+                                <h3>Samantha</h3>
+                            </div>
+                            <div>
+                                <p>Awesome theme!! Love it!! </p>
+                            </div>
+                        </div>
+                        <div class="second-part-comment">
+                            <p>Today 11:35</p>
+                            <p><img src="../TP2/svg/StarIconYellow.svg" alt=""><img src="../TP2/svg/StarIconYellow.svg" alt=""><img
+                                    src="../TP2/svg/StarIcon.svg" alt=""><img src="../TP2/svg/StarIcon.svg" alt=""><img
+                                    src="../TP2/svg/StarIcon.svg" alt=""></p>
+                        </div>
+                    </section>
+                    <section class="row comment">
+                        <div class="first-part-comment">
+                            <div class="row section-comments-first">
+                                <img src="../TP2/images/profile.png" alt="" class="img">
+                                <h3>Jhon</h3>
+                            </div>
+                            <div>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod natus voluptas officia
+                                    at deleniti qui, error ipsam cumque perspiciatis nesciunt ullam, architecto enim
+                                    explicabo repudiandae optio laudantium laboriosam ea animi!</p>
+                            </div>
+                        </div>
+                        <div class="second-part-comment">
+                            <p>Today 11:35</p>
+                            <p><img src="../TP2/svg/StarIconYellow.svg" alt=""><img src="../TP2/svg/StarIconYellow.svg" alt=""><img
+                                    src="../TP2/svg/StarIconYellow.svg" alt=""><img src="../TP2/svg/StarIcon.svg" alt=""><img
+                                    src="../TP2/svg/StarIcon.svg" alt=""></p>
+
+                        </div>
+                    </section>
+                    <section class="row comment">
+                        <div class="first-part-comment">
+                            <div class="row section-comments-first">
+                                <img src="../TP2/images/profile.png" alt="" class="img">
+                                <h3>Jhon</h3>
+                            </div>
+                            <div>
+                                <p>Very good!! Great Game</p>
+                            </div>
+                        </div>
+                        <div class="second-part-comment">
+                            <p>Today 11:35</p>
+                            <p><img src="../TP2/svg/StarIconYellow.svg" alt=""><img src="../TP2/svg/StarIcon.svg" alt=""><img
+                                    src="../TP2/svg/StarIcon.svg" alt=""><img src="../TP2/svg/StarIcon.svg" alt=""><img
+                                    src="../TP2/svg/StarIcon.svg" alt=""></p>
+
+                        </div>
+                    </section>
+                    <section class="row comment">
+                        <div class="first-part-comment">
+                            <div class="row section-comments-first">
+                                <img src="../TP2/images/profile.png" alt="" class="img">
+                                <h3>Jhon</h3>
+                            </div>
+                            <div>
+                                <p>Very good!! Great Game</p>
+                            </div>
+                        </div>
+                        <div class="second-part-comment">
+                            <p>Today 11:35</p>
+                            <p><img src="../TP2/svg/StarIconYellow.svg" alt=""><img src="../TP2/svg/StarIconYellow.svg" alt=""><img
+                                    src="../TP2/svg/StarIconYellow.svg" alt=""><img src="../TP2/svg/StarIcon.svg" alt=""><img
+                                    src="../TP2/svg/StarIcon.svg" alt=""></p>
+
+                        </div>
+                    </section>
+                </section>
+            </section>
+            <aside><img src="../TP2/svg/banner.svg" alt=""></aside>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="column footer_left">
+            <div class="row footer_items">
+                <div class="column" id="footer_categories">
+                    <h3>Categories</h3>
+                    <p><a href="">For you</a></p>
+                    <p><a href="">Free</a></p>
+                    <p><a href="">Releases</a></p>
+                    <p><a href="">Arcade</a></p>
+                    <p><a href="">Sports</a></p>
+                </div>
+                <div class="column" id="footer_us">
+                    <h3>Us</h3>
+                    <p><a href="">About us</a></p>
+                    <p><a href="">Privacy policy</a></p>
+                    <p><a href="">Terms of use</a></p>
+                </div>
+                <div class="column" id="footer_community">
+                    <h3>Community</h3>
+                    <p><a href="">Comments</a></p>
+                    <p><a href="">Forum</a></p>
+                    <p><a href="">Reviews</a></p>
+                    <p><a href="">Corporate Blogs</a></p>
+                </div>
+                <div class="column" id="footer_help">
+                    <h3>Help</h3>
+                    <p><a href="">FAQ</a></p>
+                    <p><a href="">Games</a></p>
+                    <p><a href="">Upgrades</a></p>
+                    <p><a href="">Support</a></p>
+                </div>
+            </div>
+            <div class="column copyright">
+                <div class="logo row">
+                    <i class="fas fa-headset fa-2x"></i>
+                    <h1>LevelUp.com</h1>
+                </div>
+                <p>Copyright 2023. All Rights Reserved</p>
+            </div>
+        </div>
+        <div class="column footer_right">
+            <div class="column footer_phone" id="footer_phone">
+                <h1>Support</h1>
+                <h3>+420-511-180-800</h3>
+                <h1>Sales</h1>
+                <h3>+420-511-180-920</h3>
+            </div>
+            <div class="row" id="footer_social">
+                <a href="" target="_blank" alt="Whatsapp"><i class="fab fa-whatsapp fa-2x"></i></a>
+                <a href="" target="_blank" alt="Twitter"><i class="fab fa-twitter fa-2x"></i></a>
+                <a href="" target="_blank" alt="Facebook"><i class="fab fa-facebook-square fa-2x"></i></a>
+                <a href="" target="_blank" alt="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="../TP2/js/menu.js"></script>
+    <script src="../TP2/js/carrousel.js"></script>
+    <script src="../TP2/js/share.js"></script>
+</body>
+
+</html>
