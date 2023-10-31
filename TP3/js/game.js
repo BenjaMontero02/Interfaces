@@ -24,11 +24,13 @@ document.addEventListener("DOMContentLoaded" , function () {
     let posXFichaAnterior = null;
     let posYFichaAnterior = null;
     let posFicha = null;
+    let posColumnaFichaActual = null;
+    let posFilaFichaActual = null;
 
     //0 es igual a jugador 1 y 1 es jugador 2
     let turno = 0
-    let cantFichas = 6;
-    let cantFichasJugador = 2;
+    let cantFichas = 3;
+    let cantFichasJugador = 7;
     
     // myCanvas.addEventListener("mousemove", (e) => {
     //     console.log("x", e.layerX);
@@ -191,6 +193,8 @@ document.addEventListener("DOMContentLoaded" , function () {
                 fichas.splice(posFicha, 1);
                 posFicha = null;
                 fichaSeleccionada = null;
+                posColumnaFichaActual = i;
+                posFilaFichaActual = j;
                 drawFigure();
                 verifyGanador(jugador[turno]);
                 
@@ -211,86 +215,125 @@ document.addEventListener("DOMContentLoaded" , function () {
 
     //verifica si gano el jugador q se le pase x parametro
     function verifyGanador(jugador){
-        if(verifyHorizontal(jugador) || verifyVertical(jugador) /*|| verifyDiagonal()*/){
-            setTimeout(() => {
-                alert("Ganador: " + jugador);
-                init();
-            }, 100);
-            return
+        if(verifyHorizontal(jugador) || verifyVertical(jugador) || verifyDiagonal(jugador)){
+            alert("ganador " + jugador)
             //setear q termina el juego y lanzar cartel
         }
     }
 
     //verifican si el jugador por parametro gano 
-    function verifyHorizontal(jugador){
-        for(let i = 0; i < cantFichas; i++){
-            let posible = 0;
-            for(let j = 0; j < cantFichas; j++){
-                if(tablero[i][j].contieneJugador(jugador)){
-                    posible++;
-                }else{
-                    posible = 0;
-                }
-
-                if(posible == cantFichas){
-                    return true;
-                }
-            }
-        }
-    }
-
     function verifyVertical(jugador){
-        for(let i = 0; i < cantFichas; i++){
-            let posible = 0;
-            for(let j = 0; j < cantFichas; j++){
-                if(tablero[j][i].contieneJugador(jugador)){
-                    posible++;
-                }else{
-                    posible = 0;
-                }
-
-                if(posible == cantFichas){
-                    return true;
-                }
+        let i = posColumnaFichaActual;
+        let j = posFilaFichaActual
+        let cant = 0;
+        while(j > 0){
+            if(tablero[i][j-1].contieneJugador(jugador)){
+                j--;
+            }else{
+                break;
             }
         }
+
+        while(cant != cantFichas && j < cantFichas){
+            if(tablero[i][j].contieneJugador(jugador)){
+                cant++
+            }else{
+                return false;
+            }
+
+            j++;
+        }
+
+        return cant == cantFichas
     }
 
-    //sacar variable gano y cantidad afuera de la funcion asi se modifica
+    function verifyHorizontal(jugador){
+        let i = posColumnaFichaActual;
+        let j = posFilaFichaActual
+        let cant = 0;
+        while(i > 0){
+            if(tablero[i-1][j].contieneJugador(jugador)){
+                i--;
+            }else{
+                break;
+            }
+        }
+
+        while(cant != cantFichas && i < cantFichas){
+            if(tablero[i][j].contieneJugador(jugador)){
+                cant++
+            }else{
+                return false;
+            }
+
+            i++;
+        }
+
+        return cant == cantFichas
+    }
+
     function verifyDiagonal(jugador){
-        let i = [];
-        let j = [];
-        let gano = false;
-        backtracking(i, j, 0, 0, jugador, 0, gano);
-        return gano;
+        if(verifyDiagonalIzq(jugador) || verifyDiagonalDer(jugador)){
+            return true
+        }
+
+            return false
     }
 
-    //c === columna
-    //f === fila
-    //columna a variable global
-    function backtracking(arrColumna, arrFila, columna, fila, cantidad, gano){
-        //si mis arreglos no contienen ese nro 
-        if(cantidad === cantFichas){
-            if(gano === true) return
-            gano = true;
-            return
-        }else{
-            while(gano != true){
-            //si mi tablero contiene el jugador q se esta verificando q gano entonces
-            // sumo la cant de fichas q va metiendo seguidas 
-                if(tablero[columna][fila].contieneJugador(jugador[turno])){
-                    cantidad++;
-                //o sea si esa ficha esta nula(sin jugador)
-                }else if(tablero[columna][fila].contieneJugador("")){
-                    cantidad = 0;
-                    return;
-                }else{
-                    cantidad = 0;
-                }
-                
+    function verifyDiagonalIzq(jugador){
+        let i = posColumnaFichaActual;
+        let j = posFilaFichaActual
+        let cant = 0;
+
+        while(i > 0 && j > 0){
+            if(tablero[i-1][j-1].contieneJugador(jugador)){
+                i--;
+                j--;
+            }else{
+                break;
             }
-            return;
         }
+
+        while(cant != cantFichas && (i < cantFichas && j < cantFichas)){
+            if(tablero[i][j].contieneJugador(jugador)){
+                cant++
+            }else{
+                return false;
+            }
+
+            i++;
+            j++;
+        }
+
+        return cant == cantFichas
+    }
+
+    function verifyDiagonalDer(jugador){
+        let i = posColumnaFichaActual;
+        let j = posFilaFichaActual
+        let cant = 0;
+
+        while(i > 0 && j < cantFichas-1){
+            if(tablero[i-1][j+1].contieneJugador(jugador)){
+                i--;
+                j++;
+            }else{
+                break;
+            }
+        }
+
+        while(cant != cantFichas && (i < cantFichas && j != -1)){
+            if(tablero[i][j].contieneJugador(jugador)){
+                cant++
+            }else{
+                return false;
+            }
+
+            i++;
+            j--;
+        }
+
+        return cant == cantFichas
     }
     
 
