@@ -93,12 +93,22 @@
             </div>
         </section>
         <section class="column">
-            <div class="row canvas">
-                <canvas id='myCanvas' width="1200" height="500">
-                    <img src="../TP3/images/fondo.jpg" alt="asd" id="fondo">
-                    <img src="../TP3/images/img1.jpg" alt="asd" id="img1">
-                    <img src="../TP3/images/img2.jpg" alt="asd" id="img2">
-                </canvas> 
+            <div class="column canvas-content">
+                <div class="start-button">
+                    <button id="playButton">Jugar</button>
+                </div>
+                <div class="options">
+                    <button class="option-button" value="4">4 en Línea</button>
+                    <button class="option-button" value="5">5 en Línea</button>
+                    <button class="option-button" value="6">6 en Línea</button>
+                </div>
+                <div class="canvas-container">
+                    <canvas id='myCanvas' width="1700" height="700">
+                        <img src="../TP3/images/fondo.jpg" alt="asd" id="fondo">
+                        <img src="../TP3/images/img1.jpg" alt="asd" id="img1" width="30px" height="30px">
+                        <img src="../TP3/images/img2.jpg" alt="asd" id="img2" width="30px" height="30px">
+                    </canvas> 
+                </div>
             </div>
             <section class="section-game-instructions">
                 <h2 class="semibold">TURN<span class="light">: PLAYER 1</span></h2>

@@ -372,9 +372,34 @@ main {
     }
 }
 
-.canvas{
-    padding: 32px;
+
+
+.canvas-container {
+    display: none;
     margin: auto;
+}
+
+.canvas-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../../TP3/images/fondoGame.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 800px;
+}
+
+.canvas-content-init{
+    width: 100%;
+    height: 800px;
+}
+
+.options{
+    display: none;
+}
+
+.start-button{
+    display: block;
 }
 
 /*-----------------------------------------------CARROUSEL----------------------------------*/

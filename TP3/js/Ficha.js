@@ -1,8 +1,9 @@
 class Ficha{
 
-    constructor(posX, posY, fill, context, radius, jugador){
+    constructor(posX, posY, fill, img ,context, radius, jugador){
         this.posX = posX;
         this.posY = posY;
+        this.img = img;
         this.radius = radius;
         this.fill = fill;
         this.ctx = context;
@@ -45,10 +46,22 @@ class Ficha{
     draw(){
         this.ctx.beginPath();
         this.ctx.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
-        this.ctx.fillStyle = this.fill;
-        //this.ctx.drawImage(this.fill, this.getX()-20, this.getY()-20, 40, 40);
-        this.ctx.fill();
+        if(this.img == null){
+            this.ctx.fillStyle = this.fill;
+            this.ctx.fill();
+        }else{
+            this.ctx.fill();
+            this.ctx.drawImage(this.img, this.getX()-20, this.getY()-20, 40, 40);
+        }
         this.ctx.closePath();
+    }
+
+    setImg(img){
+        this.img = img;
+    }
+
+    getImg(){
+        return this.img;
     }
     
     isPositionInside(x, y){
