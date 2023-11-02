@@ -21,6 +21,11 @@ document.addEventListener("DOMContentLoaded" , function () {
     let total = 0;
     let jugador = ["juan", "claudio"]
     let fichasAGanar = null;
+
+    let timerSecond = 60;
+    let timer = null; 
+
+
     
     //variables p fichaSeleccionada
     let fichaSeleccionada = null;
@@ -77,16 +82,17 @@ document.addEventListener("DOMContentLoaded" , function () {
     }
 
     function init(){
-        console.log(canvasWidth)
-        console.log(canvasHeight)
         fichas = [];
         tablero = [];
         addFicha();
         addFicha2();
         llenarTablero();
-        drawImg()
         drawFigure();
+        drawImg()
         events();
+        setTimer();
+        drawTimer();
+        drawTimerFont();
     }
 
     //dibujo la img
@@ -97,15 +103,23 @@ document.addEventListener("DOMContentLoaded" , function () {
 
     //lleno el tablero con la cant de posibilidades q se pueden creear
     function llenarTablero(){
+        //los width y height serian las pos en x e y de la ficha en tablero
+        //las cuentas son para que separen del borde de la img
         let width = canvasWidth/4 + 50
         let height = canvasHeight -40;
         for(let i = 0; i < columna; i++){
+            //en la pos de i agrego una fila -- "arreglo"
             tablero.push([]);
             for(let j = 0; j < fila; j++){
+                //creo una ficha nula, que sea negra, el primer null hace referencia a la img de mi ficha
+                //el segundo null hace referencia a que la ficha no posee ningun jugador
                 tablero[i].push(new Ficha(width, height, "black", null, ctx, 30, null))
+                //separo la siguiente ficha para que no se superpongan
                 height -= 70;
             }
 
+            //se supone que ya termine una columna, entonces cambio los x e y para que se dibuje
+            // una columna al lado
             width += 100
             height = canvasHeight -40;
         }
@@ -166,14 +180,20 @@ document.addEventListener("DOMContentLoaded" , function () {
 
     //reseteo el canvas
     function clearCanvas(){
-        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+        ctx.clearRect(0, 60, canvasWidth, canvasHeight);
         drawImg()
     }
+
+    function drawTimer(){
+            setInterval(() => {
+                drawTimerFontSecond(timerSecond);
+            }, 1000)
+    }
+    
 
     
     //selecciono la ficha en la que estoy clickeadno
     function mouseDown(e){
-        //let ClientRect = myCanvas.getBoundingClientRect()
         let x = e.offsetX
         let y = e.offsetY
         console.log(x);
@@ -235,12 +255,10 @@ document.addEventListener("DOMContentLoaded" , function () {
                 drawFigure();
                 verifyGanador(jugador[turno]);
                 
-                //cambio el turno del jugador ARREGLAR Y LLEVARLO A UNA FUNCION APARTE Y REINICIAR EL TIMMER
-                if(turno === 1){
-                    turno = 0;
-                }else{
-                    turno = 1;
-                }
+                //reinicio el contador del timer
+                timerSecond = 60;
+                //cambio el turno de jugador
+                changeTurn();
                 return
             }
         }
@@ -249,6 +267,45 @@ document.addEventListener("DOMContentLoaded" , function () {
         fichas[posFicha].setPosition(posXFichaAnterior, posYFichaAnterior);
         drawFigure();
     }
+
+        //creo el timer
+        function setTimer(){
+            timer = setInterval(()=> {
+                //dibujar el timer
+                timerSecond--;
+                if(timerSecond == 0){
+                    //cambio el turno y reseto el timer
+                    changeTurn();
+                    clearInterval(timer);
+                    timerSecond = 60;
+                    setTimer();
+                }
+            }, 1000);
+        }
+    
+        function drawTimerFont(){
+            ctx.font = "30px Comic Sans MS";
+            ctx.fillStyle = "red";
+            ctx.textAlign = "center";
+            ctx.fillText("Tiempo del turno ", canvasWidth/2-20, 50);
+        }
+
+        function drawTimerFontSecond(timerSecond){
+            ctx.clearRect(canvasWidth/2+100, 0, 50, 60);
+            ctx.font = "30px Comic Sans MS";
+            ctx.fillStyle = "red";
+            ctx.textAlign = "center";
+            ctx.fillText(timerSecond, canvasWidth/2+130, 50);
+        }
+    
+        //cambio el turno del jugador
+        function changeTurn(){
+            if(turno == 0){
+                turno = 1;
+            }else{
+                turno = 0;
+            }
+        }
 
     //verifica si gano el jugador q se le pase x parametro
     function verifyGanador(jugador){

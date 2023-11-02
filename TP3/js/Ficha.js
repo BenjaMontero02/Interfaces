@@ -50,8 +50,10 @@ class Ficha{
             this.ctx.fillStyle = this.fill;
             this.ctx.fill();
         }else{
-            this.ctx.fill();
-            this.ctx.drawImage(this.img, this.getX()-20, this.getY()-20, 40, 40);
+            this.ctx.save();
+            this.ctx.clip();
+            this.ctx.drawImage(this.img, this.getX() - this.radius, this.getY() - this.radius, this.radius * 2, this.radius * 2);
+            this.ctx.restore();
         }
         this.ctx.closePath();
     }
