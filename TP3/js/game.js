@@ -6,12 +6,14 @@ document.addEventListener("DOMContentLoaded" , function () {
     let canvasWidth = myCanvas.width;
     let canvasHeight = myCanvas.height;
     let imgFondo = document.getElementById("fondo");
-    let img1 = document.getElementById("img3");
-    let img2 = document.getElementById("img6");
+    let img1 = null;
+    let img2 = null
 
     let btn_jugar = document.getElementById("playButton");
     let optionsButtons = document.querySelectorAll(".option-button");
     let canvasContent = document.querySelector(".canvas-content");
+    let btnsImg1 = null;
+    let btnsImg2 = null;
     console.log(img1)
     console.log(img2)
     
@@ -46,22 +48,48 @@ document.addEventListener("DOMContentLoaded" , function () {
     btn_jugar.addEventListener("click", () => {
         document.querySelector(".options").style.display = "flex";
         document.querySelector(".start-button").style.display = "none";
+        document.querySelector(".options-img").style.display = "flex";
+        btnsImg1 = document.querySelectorAll(".btn-ficha1");
+        btnsImg2 = document.querySelectorAll(".btn-ficha2");
+
+        btnsImg1.forEach(button => {
+            button.addEventListener("click", () => {
+
+                btnsImg1.forEach(btn => {
+                    btn.classList.remove("selected");
+                });
+
+                button.classList.add("selected");
+                img1 = document.getElementById(button.value)
+                
+            })
+        })
+
+        btnsImg2.forEach(button => {
+            button.addEventListener("click", () => {
+
+                btnsImg2.forEach(btn => {
+                    btn.classList.remove("selected");
+                });
+
+                button.classList.add("selected");
+                img2 = document.getElementById(button.value)
+                
+            })
+        })
         
         optionsButtons.forEach(button => {
             button.addEventListener("click", () => {
                 fichasAGanar = button.value;
                 document.querySelector(".options").style.display = "none";
                 document.querySelector(".canvas-container").style.display = "block";
+                document.querySelector(".options-img").style.display = "none";
                 canvasContent.classList.replace("canvas-content", "canvas-content-init");
                 configGame();
             });
         });
     })
     
-    // myCanvas.addEventListener("mousemove", (e) => {
-    //     console.log("x", e.layerX);
-    //     console.log("y", e.layerY);
-    // })
 
     function configGame(){
         if(fichasAGanar == 4){
