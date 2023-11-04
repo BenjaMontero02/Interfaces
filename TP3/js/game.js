@@ -6,12 +6,14 @@ document.addEventListener("DOMContentLoaded" , function () {
     let canvasWidth = myCanvas.width;
     let canvasHeight = myCanvas.height;
     let imgFondo = document.getElementById("fondo");
-    let img1 = document.getElementById("img1");
-    let img2 = document.getElementById("img2");
+    let img1 = document.getElementById("img3");
+    let img2 = document.getElementById("img6");
 
     let btn_jugar = document.getElementById("playButton");
     let optionsButtons = document.querySelectorAll(".option-button");
     let canvasContent = document.querySelector(".canvas-content");
+    console.log(img1)
+    console.log(img2)
     
     //variables del juego
     let fichas = [];
