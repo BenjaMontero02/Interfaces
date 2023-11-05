@@ -72,7 +72,9 @@ button {
     padding: 8px 24px;
     font-size: 18px;
     border-radius: 8px;
-
+    background-color: var(--accent);
+    border: none;
+    
     >a {
         text-decoration: none;
     }
@@ -339,13 +341,16 @@ main {
 
     /*------------------------------------------------ BTN ANIMATIONS --------------------------------*/
 
-    #playButton>a>button {
+    #playButton {
         border: none;
         background-color: var(--accent);
         transition: all 0.3s ease-in-out;
+        >a {
+            color: var(--primary);
+        }
     }
 
-    #playButton:hover>a>button {
+    #playButton:hover {
         border: none;
         box-shadow: var(--primary-light-2);
         font-size: xx-large;
@@ -398,8 +403,13 @@ main {
     display: none;
 }
 
-.start-button{
+.start-button {
+    color: var(--primary);
     display: block;
+}
+
+.option-button {
+    margin: 20px;
 }
 
 /*-----------------------------------------------CARROUSEL----------------------------------*/
@@ -774,7 +784,7 @@ footer {
     padding-right: 32px;
     padding-bottom: 16px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 
     >div {

@@ -8,13 +8,11 @@ class Ficha{
         this.fill = fill;
         this.ctx = context;
         this.jugador = jugador;
+        //this.resaltado = false;
+        //this.resaltadoStyle = 'red';
     }
 
-    setPosition(x,y){
-        this.posX = x;
-        this.posY = y;
-    }
-
+    //Getters & Setters
     getX(){
         return this.posX;
     }
@@ -27,6 +25,19 @@ class Ficha{
         return this.jugador;
     }
 
+    getFill(){
+        return this.fill;
+    }
+
+    getImg(){
+        return this.img;
+    }
+
+    setPosition(x,y){
+        this.posX = x;
+        this.posY = y;
+    }
+    
     setJugador(jugador){
         this.jugador = jugador;
     }
@@ -39,10 +50,10 @@ class Ficha{
         this.fill = fill
     }
 
-    getFill(){
-        return this.fill;
+    setImg(img){
+        this.img = img;
     }
-
+    
     draw(){
         this.ctx.beginPath();
         this.ctx.arc(this.posX, this.posY, this.radius, 0, 2 * Math.PI);
@@ -56,14 +67,6 @@ class Ficha{
             this.ctx.restore();
         }
         this.ctx.closePath();
-    }
-
-    setImg(img){
-        this.img = img;
-    }
-
-    getImg(){
-        return this.img;
     }
     
     isPositionInside(x, y){

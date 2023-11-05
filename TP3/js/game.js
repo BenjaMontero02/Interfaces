@@ -13,20 +13,21 @@ document.addEventListener("DOMContentLoaded" , function () {
     let optionsButtons = document.querySelectorAll(".option-button");
     let canvasContent = document.querySelector(".canvas-content");
     
-    //variables del juego
+    //Variables game
     let fichas = [];
     let tablero = [];
-    let gapWidth = 60;
-    let gapHeight = 100;
-    let total = 0;
     let jugador = ["juan", "claudio"]
     let fichasAGanar = null;
+    let ganador = null;
 
+    // variables jugador
+    let playerNameHeight = 150;
+
+    // variables timer
+    let timerHeight = 150;
     let timerSecond = 60;
     let timer = null; 
 
-
-    
     //variables p fichaSeleccionada
     let fichaSeleccionada = null;
     let posXFichaAnterior = null;
@@ -56,11 +57,6 @@ document.addEventListener("DOMContentLoaded" , function () {
         });
     })
     
-    // myCanvas.addEventListener("mousemove", (e) => {
-    //     console.log("x", e.layerX);
-    //     console.log("y", e.layerY);
-    // })
-
     function configGame(){
         if(fichasAGanar == 4){
             cantFichasJugador = 12;
@@ -84,142 +80,165 @@ document.addEventListener("DOMContentLoaded" , function () {
     function init(){
         fichas = [];
         tablero = [];
-        addFicha();
-        addFicha2();
+        addFichas();
         llenarTablero();
-        drawFigure();
-        drawImg()
+        initTablero();
         events();
         setTimer();
-        drawTimer();
-        drawTimerFont();
     }
 
-    //dibujo la img
-    function drawImg(){
-        ctx.drawImage(imgFondo, 350, 100, 1000, 600);
-        drawTablero();
+    /*
+        * addFichas - addFichaJugador
+        * addFichas - distribuye las fichas correspondientes a cada jugador con sus params
+        * addFichaJugador - crea una instancia de Ficha por cada llamado y establace la relación de altura.
+    */
+     function addFichas() {
+        let radius = 20;
+        let marginY = ((canvasHeight - playerNameHeight) - (cantFichasJugador/2 * radius*2)) / (cantFichasJugador/2 + 1);
+        let posY = canvasHeight - radius - marginY;
+        for (let i = 0; i < cantFichasJugador*2; i++) {
+            if (i < cantFichasJugador) {
+                let posX = i%2 === 0 ? 60 : 180;
+                if (i%2 === 0) {
+                    posY -= radius*2 + marginY;
+                }
+                let ficha = new Ficha(posX, posY, 'orange', img1, ctx, radius, jugador[0]);
+                fichas.push(ficha);
+            } else {
+                let posX = i%2 === 0 ? canvasWidth - 60 : canvasWidth - 180;
+                if (i === cantFichasJugador) {
+                    posY = canvasHeight - radius - marginY;
+                }
+                if (i%2 === 0) {
+                    posY -= radius*2 + marginY;
+                }
+                let ficha = new Ficha(posX, posY, 'blue', img2, ctx, radius, jugador[1]);
+                fichas.push(ficha);
+            }
+        }
     }
 
-    //lleno el tablero con la cant de posibilidades q se pueden creear
+    /*
+     * llenarTablero - crea una matriz de fichas "vacias" y ajusta la distancia entre las mismas
+     * basandose en el modo de juego
+    */
+
     function llenarTablero(){
-        //los width y height serian las pos en x e y de la ficha en tablero
-        //las cuentas son para que separen del borde de la img
-        let width = canvasWidth/4 + 50
-        let height = canvasHeight -40;
+        let radius = 30;
+        let widthTablero = 650;
+        let marginX = (widthTablero - (columna * radius)) / (columna + 1);
+        let marginY = ((canvasHeight - timerHeight) - (fila * radius*2)) / (fila + 1);
+        let posX = canvasWidth/4;
+        let posY = canvasHeight - radius - marginY;
         for(let i = 0; i < columna; i++){
-            //en la pos de i agrego una fila -- "arreglo"
             tablero.push([]);
             for(let j = 0; j < fila; j++){
-                //creo una ficha nula, que sea negra, el primer null hace referencia a la img de mi ficha
-                //el segundo null hace referencia a que la ficha no posee ningun jugador
-                tablero[i].push(new Ficha(width, height, "black", null, ctx, 30, null))
-                //separo la siguiente ficha para que no se superpongan
-                height -= 70;
+                tablero[i].push(new Ficha(posX, posY, "black", null, ctx, radius, null))
+                posY -= radius*2 + marginY;
             }
+            posY = canvasHeight - radius - marginY;
+            posX += radius + marginX*2
+        }    
+    }
 
-            //se supone que ya termine una columna, entonces cambio los x e y para que se dibuje
-            // una columna al lado
-            width += 100
-            height = canvasHeight -40;
-        }
+    /*
+     *  clearCanvas - restear el canvas y carga la imagen de fondo
+    */
+    function clearCanvas(){
+        ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+        ctx.drawImage(imgFondo, 350, 0, 1000, canvasHeight);
     }
-    //agrego fichas para el jugador 1
-    function addFicha(){
-        let width = 60;
-        let height = canvasHeight - 60;
-        while(fichas.length < cantFichasJugador/2){
-            let ficha = new Ficha(width, height, "orange", img1, ctx, 20, jugador[0]);
-            fichas.push(ficha);
-            height -= 100;
-        }
-        
-        height = canvasHeight - 60;
-        width += 120;
-        while(fichas.length < cantFichasJugador){
-            let ficha = new Ficha(width, height, "orange", img1, ctx, 20, jugador[0]);
-            fichas.push(ficha);
-            height -= 100;
-        }
-    }
-    //agrego fichas para el jugador 2
-    function addFicha2(){
-        let width = canvasWidth - 60;
-        let height = canvasHeight - 60;
-        while(fichas.length-cantFichasJugador < cantFichasJugador/2){
-            let ficha = new Ficha(width, height, "blue", img2, ctx, 20, jugador[1]);
-            fichas.push(ficha);
-            height -= 100;
-        }
-        
-        height = canvasHeight - 60;
-        width -= 120;
-        while(fichas.length-cantFichasJugador < cantFichasJugador){
-            let ficha = new Ficha(width, height, "blue", img2, ctx, 20, jugador[1]);
-            fichas.push(ficha);
-            height -= 100;
-        }
-    }
-    
-    //dibujo todo lo necesario para comenzar
-    function drawFigure(){
+
+    /*
+     *  initTablero - restear el canvas y carga la imagen de fondo con el timer. 
+     *  Dibujar el tablero vacio y las fichas de cada jugador.
+    */
+    function initTablero(){
         clearCanvas();
+        drawFichas();
         drawTablero();
+        drawTimer();
+    }
+
+    function drawFichas(){
         for(let i = 0; i < fichas.length; i++){
             fichas[i].draw();
         }
-    }
+    };
 
-    //dibujo las fichas del tablero
     function drawTablero(){
         for(let i = 0; i < columna; i++){
             for(let j = 0; j < fila; j++){
                 tablero[i][j].draw();
             }
-    }}
-
-    //reseteo el canvas
-    function clearCanvas(){
-        ctx.clearRect(0, 60, canvasWidth, canvasHeight);
-        drawImg()
-    }
-
-    function drawTimer(){
-            setInterval(() => {
-                drawTimerFontSecond(timerSecond);
-            }, 1000)
-    }
-    
-
-    
-    //selecciono la ficha en la que estoy clickeadno
-    function mouseDown(e){
-        let x = e.offsetX
-        let y = e.offsetY
-        console.log(x);
-        console.log(y);
-        for(let i = 0; i < fichas.length; i++){
-            if(fichas[i].isPositionInside(x, y)){
-                if(fichas[i].contieneJugador(jugador[turno])) {
-                    posXFichaAnterior = fichas[i].getX();
-                    posYFichaAnterior = fichas[i].getY();
-                    fichaSeleccionada = fichas[i];
-                    posFicha = i;
-                }
-                return
-            }
-            
         }
     }
 
+    {/* TIMER*/}
+
+    /*
+     *  drawTimer - Dibuja el timer sobre el canvas con degrade y muestra el texto y el segundero.
+    */
+    function drawTimer() {
+        ctx.clearRect(canvasWidth/2 - 250, 20, 500, timerHeight - 70);
+        var gradient = ctx.createLinearGradient(canvasWidth/2, 20, 500, timerHeight - 70);
+        gradient.addColorStop(0, '#0f0829');
+        gradient.addColorStop(0.5, '#524487');
+        gradient.addColorStop(1, 'white');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(canvasWidth/2 - 250, 20, 500, timerHeight - 70)
+        ctx.font = "30px Roboto";
+        ctx.fillStyle = "rgba(255,255,255,0.8)";
+        ctx.textAlign = "center";
+        ctx.fillText("Tiempo del turno: " + timerSecond, canvasWidth/2, timerHeight - 80);
+    };
+
+
+    /*
+     *  setTimer - controla el valor del segundero y re-dibuja el timer.
+    */
+    function setTimer(){
+        timer = setInterval(()=> {
+            drawTimer();
+            timerSecond--;
+            if(timerSecond == 0 && !ganador){
+                changeTurn();
+                clearInterval(timer);
+                timerSecond = 60;
+                setTimer();
+            }
+        }, 1000);
+    }
+
+    {/* EVENTS */}
+    
+    /*
+     *  mouseDown - Identifico si estoy clickeando sobre una ficha del jugador activo y la guardo como seleccionada
+     *  y a su posición.
+    */
+    function mouseDown(e){
+        let x = e.offsetX
+        let y = e.offsetY
+        for(let i = 0; i < fichas.length; i++){
+            if(fichas[i].isPositionInside(x, y) && fichas[i].contieneJugador(jugador[turno])){  
+                posXFichaAnterior = fichas[i].getX();
+                posYFichaAnterior = fichas[i].getY();
+                fichaSeleccionada = fichas[i];
+                posFicha = i;
+            }  
+        }
+    }
+
+    /*
+     *  mouseMove - Si tengo una figura seleccionada voy reiniciando el canvas y asignandole a la ficha la posicion del evento.
+    */
     function mouseMove(e){
         if(fichaSeleccionada == null) return;
-
         let x = e.offsetX
         let y = e.offsetY
 
         fichaSeleccionada.setPosition(x, y);
-        drawFigure();
+        initTablero();
     }
 
     function mouseUp(e){
@@ -234,10 +253,9 @@ document.addEventListener("DOMContentLoaded" , function () {
                 }
             }
         }
-
         fichaSeleccionada = null;
         fichas[posFicha].setPosition(posXFichaAnterior, posYFichaAnterior);
-        drawFigure();
+        initTablero();
     }
 
     //seteo la ficha en el tablero, en la primer posicion disponible, caso de que se complete el for
@@ -252,7 +270,7 @@ document.addEventListener("DOMContentLoaded" , function () {
                 fichaSeleccionada = null;
                 posColumnaFichaActual = i;
                 posFilaFichaActual = j;
-                drawFigure();
+                initTablero();
                 verifyGanador(jugador[turno]);
                 
                 //reinicio el contador del timer
@@ -265,48 +283,21 @@ document.addEventListener("DOMContentLoaded" , function () {
         
         fichaSeleccionada = null;
         fichas[posFicha].setPosition(posXFichaAnterior, posYFichaAnterior);
-        drawFigure();
+        initTablero();
+    }
+    
+    {/* TURNOS */}
+
+    //cambio el turno del jugador
+    function changeTurn(){
+        if(turno == 0){
+            turno = 1;
+        }else{
+            turno = 0;
+        }
     }
 
-        //creo el timer
-        function setTimer(){
-            timer = setInterval(()=> {
-                //dibujar el timer
-                timerSecond--;
-                if(timerSecond == 0){
-                    //cambio el turno y reseto el timer
-                    changeTurn();
-                    clearInterval(timer);
-                    timerSecond = 60;
-                    setTimer();
-                }
-            }, 1000);
-        }
-    
-        function drawTimerFont(){
-            ctx.font = "30px Comic Sans MS";
-            ctx.fillStyle = "red";
-            ctx.textAlign = "center";
-            ctx.fillText("Tiempo del turno ", canvasWidth/2-20, 50);
-        }
-
-        function drawTimerFontSecond(timerSecond){
-            ctx.clearRect(canvasWidth/2+100, 0, 50, 60);
-            ctx.font = "30px Comic Sans MS";
-            ctx.fillStyle = "red";
-            ctx.textAlign = "center";
-            ctx.fillText(timerSecond, canvasWidth/2+130, 50);
-        }
-    
-        //cambio el turno del jugador
-        function changeTurn(){
-            if(turno == 0){
-                turno = 1;
-            }else{
-                turno = 0;
-            }
-        }
-
+    {/* RECORRIDOS */}
     //verifica si gano el jugador q se le pase x parametro
     function verifyGanador(jugador){
         if(verifyHorizontal(jugador) || verifyVertical(jugador) || verifyDiagonal(jugador)){
