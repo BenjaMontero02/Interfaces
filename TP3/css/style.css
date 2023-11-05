@@ -403,11 +403,60 @@ main {
 }
 
 .options-img{
-    display: none;
     width: 60%;
+    height: 30%;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    display: none;
+}
 
+.options-token {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    padding-top: 25%;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid var(--danger);
+    border-radius: 5px;
+    width: 50%;
+}
+
+.close {
+    color: var(--danger);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .img-ficha{
@@ -473,13 +522,12 @@ main {
     background-image: url("../../TP3/images/img6.jpeg");
 }
 
-.options{
+#playButton {
     display: none;
 }
 
-.start-button {
-    color: var(--primary);
-    display: block;
+.options{
+    display: flex;
 }
 
 .option-button {
