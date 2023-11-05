@@ -14,8 +14,6 @@ document.addEventListener("DOMContentLoaded" , function () {
     let canvasContent = document.querySelector(".canvas-content");
     let btnsImg1 = null;
     let btnsImg2 = null;
-    console.log(img1)
-    console.log(img2)
     
     //Variables game
     let fichas = [];
