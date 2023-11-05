@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded" , function () {
     let img1 = null;
     let img2 = null
 
-    let btn_jugar = document.getElementById("playButton");
+    let playButton = document.getElementById('playButton');
     let optionsButtons = document.querySelectorAll(".option-button");
     let canvasContent = document.querySelector(".canvas-content");
     let btnsImg1 = null;
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded" , function () {
     //Variables game
     let fichas = [];
     let tablero = [];
-    let jugador = ["juan", "claudio"]
+    let jugador = ["Player 1", "Player 2"];
     let fichasAGanar = null;
     let ganador = null;
 
@@ -44,51 +44,65 @@ document.addEventListener("DOMContentLoaded" , function () {
     let fila = null;
     let cantFichasJugador = null;
 
-    btn_jugar.addEventListener("click", () => {
-        document.querySelector(".options").style.display = "flex";
-        document.querySelector(".start-button").style.display = "none";
-        document.querySelector(".options-img").style.display = "flex";
-        btnsImg1 = document.querySelectorAll(".btn-ficha1");
-        btnsImg2 = document.querySelectorAll(".btn-ficha2");
-
-        btnsImg1.forEach(button => {
-            button.addEventListener("click", () => {
-
-                btnsImg1.forEach(btn => {
-                    btn.classList.remove("selected");
-                });
-
-                button.classList.add("selected");
-                img1 = document.getElementById(button.value)
-                
-            })
-        })
-
-        btnsImg2.forEach(button => {
-            button.addEventListener("click", () => {
-
-                btnsImg2.forEach(btn => {
-                    btn.classList.remove("selected");
-                });
-
-                button.classList.add("selected");
-                img2 = document.getElementById(button.value)
-                
-            })
-        })
-        
-        optionsButtons.forEach(button => {
-            button.addEventListener("click", () => {
-                fichasAGanar = button.value;
-                document.querySelector(".options").style.display = "none";
-                document.querySelector(".canvas-container").style.display = "block";
-                document.querySelector(".options-img").style.display = "none";
-                canvasContent.classList.replace("canvas-content", "canvas-content-init");
-                configGame();
-            });
+    optionsButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            fichasAGanar = button.value;
+            document.querySelector(".options").style.display = "none";
+            document.querySelector(".options-img").style.display = "flex";
+            playButton.style.display = 'block';
         });
+    });
+
+    btnsImg1 = document.querySelectorAll(".btn-ficha1");
+    btnsImg2 = document.querySelectorAll(".btn-ficha2");
+    let modalClose = document.querySelector(".close");
+    let modal = document.querySelector(".modal");
+
+    btnsImg1.forEach(button => {
+        button.addEventListener("click", () => {
+            btnsImg1.forEach(btn => {
+                btn.classList.remove("selected");
+            });
+            button.classList.add("selected");
+            img1 = document.getElementById(button.value)
+            
+        })
     })
-    
+
+    btnsImg2.forEach(button => {
+        button.addEventListener("click", () => {
+            btnsImg2.forEach(btn => {
+                btn.classList.remove("selected");
+            });
+            button.classList.add("selected");
+            img2 = document.getElementById(button.value)
+            
+        })
+    })
+
+    // When the user clicks on <span> (x), close the modal
+    modalClose.onclick = function() {
+        modal.style.display = "none";
+    }
+  
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+        }
+    }
+
+    playButton.addEventListener('click', () => {
+        if (img1 !== null && img2 !== null) {
+            document.querySelector(".canvas-container").style.display = "block";
+            document.querySelector(".options-img").style.display = "none";
+            playButton.style.display = 'none';
+            canvasContent.classList.replace("canvas-content", "canvas-content-init");
+            configGame();
+        } else {
+            modal.style.display = "block";
+        }
+    });
 
     function configGame(){
         if(fichasAGanar == 4){
@@ -190,8 +204,21 @@ document.addEventListener("DOMContentLoaded" , function () {
         clearCanvas();
         drawFichas();
         drawTablero();
+        drawJugadores();
         drawTimer();
     }
+
+    function drawJugadores() {
+        ctx.font = "30px Roboto";
+        ctx.fillStyle = "rgba(255,255,255,0.8)";
+            ctx.shadowColor="red";
+            ctx.shadowOffsetX = 5;
+            ctx.shadowOffsetY = 5;
+            ctx.shadowBlur=7;
+            ctx.fillText(jugador[0], 60, 50 );
+            ctx.fillText(jugador[1], canvasWidth - 180, 50 );
+    };
+
 
     function drawFichas(){
         for(let i = 0; i < fichas.length; i++){
@@ -214,6 +241,10 @@ document.addEventListener("DOMContentLoaded" , function () {
     */
     function drawTimer() {
         ctx.clearRect(canvasWidth/2 - 250, 20, 500, timerHeight - 70);
+        //Reset shadow
+        ctx.shadowBlur=0;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 0;
         var gradient = ctx.createLinearGradient(canvasWidth/2, 20, 500, timerHeight - 70);
         gradient.addColorStop(0, '#0f0829');
         gradient.addColorStop(0.5, '#524487');

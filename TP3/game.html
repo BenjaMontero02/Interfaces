@@ -104,26 +104,26 @@
         </section>
         <section class="column">
             <div class="column canvas-content">
-                <button rel="hover-shadow" class="button bg-accent hover-shadow start-button" id="playButton">
-                    Jugar
-                </button>
                 <div class="options">
                     <button rel="hover-shadow" class="button bg-accent hover-shadow option-button" value="4">4 en Línea</button>
                     <button rel="hover-shadow" class="button bg-accent hover-shadow option-button" value="5">5 en Línea</button>
                     <button rel="hover-shadow" class="button bg-accent hover-shadow option-button" value="6">6 en Línea</button>
                 </div>
                 <div class="options-img">
-                    <div>
-                        <button class="btn-1 btn-ficha1" value="img1"><img class="img-ficha" src="../TP3/images/img1.jpg" alt="1" id="img1"></button>
-                        <button class="btn-4 btn-ficha1" value="img4"></button><img class="img-ficha" src="../TP3/images/img4.jpeg" alt="1" id="img4"></button>
-                        <button class="btn-6 btn-ficha1" value="img6"></button><img class="img-ficha" src="../TP3/images/img6.jpeg" alt="1" id="img6"></button>
+                    <div class="options-token">
+                        <div>
+                            <button class="btn-1 btn-ficha1" value="img1"><img class="img-ficha" src="../TP3/images/img1.jpg" alt="1" id="img1"></button>
+                            <button class="btn-4 btn-ficha1" value="img4"></button><img class="img-ficha" src="../TP3/images/img4.jpeg" alt="1" id="img4"></button>
+                            <button class="btn-6 btn-ficha1" value="img6"></button><img class="img-ficha" src="../TP3/images/img6.jpeg" alt="1" id="img6"></button>
+                        </div>
+                        <h2 class="semibold">VS</h2>
+                        <div>
+                            <button class="btn-2 btn-ficha2" value="img2"></button><img class="img-ficha" src="../TP3/images/img2.jpeg" alt="1" id="img2"></button>
+                            <button class="btn-3 btn-ficha2" value="img3"></button><img class="img-ficha" src="../TP3/images/img3.jpeg" alt="1" id="img3"></button>
+                            <button class="btn-5 btn-ficha2" value="img5"></button><img class="img-ficha" src="../TP3/images/img5.jpeg" alt="1" id="img5"></button>
+                        </div>
                     </div>
-                    <h2 class="semibold">VS</h2>
-                    <div>
-                        <button class="btn-2 btn-ficha2" value="img2"></button><img class="img-ficha" src="../TP3/images/img2.jpeg" alt="1" id="img2"></button>
-                        <button class="btn-3 btn-ficha2" value="img3"></button><img class="img-ficha" src="../TP3/images/img3.jpeg" alt="1" id="img3"></button>
-                        <button class="btn-5 btn-ficha2" value="img5"></button><img class="img-ficha" src="../TP3/images/img5.jpeg" alt="1" id="img5"></button>
-                    </div>
+                    <button rel="hover-shadow" class="button bg-accent hover-shadow" id="playButton" >Jugar</button>
                 </div>
                 <div class="canvas-container">
                     <canvas id='myCanvas' width="1700" height="700">
@@ -132,6 +132,12 @@
                         <img src="../TP3/images/img2.jpg" alt="asd" id="img2" width="100px" height="100px">
                     </canvas> 
                 </div>
+            </div>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <h2>You need to pick two avatars to continue</h2>
+                  <span class="close">&times;</span>
+                </div> 
             </div>
             <section class="section-game-instructions">
                 <div>
