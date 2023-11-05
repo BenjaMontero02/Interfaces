@@ -344,7 +344,7 @@ main {
 
     /*------------------------------------------------ BTN ANIMATIONS --------------------------------*/
 
-    #playButton {
+    .play-hero {
         border: none;
         background-color: var(--accent);
         transition: all 0.3s ease-in-out;
