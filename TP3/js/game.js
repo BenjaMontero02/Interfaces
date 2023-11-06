@@ -225,11 +225,15 @@ document.addEventListener("DOMContentLoaded", function () {
    *  Dibujar el tablero vacio y las fichas de cada jugador.
    */
   function initTablero() {
+    //Reset shadow
+    ctx.shadowBlur = 0;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0;
     clearCanvas();
-    drawJugadores();
     drawTimer();
-    drawFichas();
     drawTablero();
+    drawFichas();
+    drawJugadores();
   }
 
   /*
@@ -242,8 +246,8 @@ document.addEventListener("DOMContentLoaded", function () {
     ctx.shadowOffsetX = 5;
     ctx.shadowOffsetY = 5;
     ctx.shadowBlur = 7;
-    ctx.fillText(jugador[0], 60, 50);
-    ctx.fillText(jugador[1], canvasWidth - 180, 50);
+    ctx.fillText(jugador[0], canvasWidth * 0.1, 50);
+    ctx.fillText(jugador[1], canvasWidth * 0.9, 50);
   }
 
    /*
