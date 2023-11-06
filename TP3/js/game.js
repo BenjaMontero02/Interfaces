@@ -258,7 +258,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function drawTablero() {
-    console.log('t', tablero);
     for (let i = 0; i < columna; i++) {
       for (let j = 0; j < fila; j++) {
         tablero[i][j].draw();
