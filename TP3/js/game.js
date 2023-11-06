@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // variables timer
   let timerHeight = 80;
-  let timerSecond = 10;
+  let timerSecond = 300;
   let timer = null;
 
   //variables p fichaSeleccionada
@@ -193,10 +193,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function llenarTablero() {
     let radius = 30;
-    let widthTablero = 650;
-    let marginX = (widthTablero - columna * radius) / (columna + 1);
-    let marginY = (canvasHeight - timerHeight - fila * radius * 2) / (fila + 1);
-    let posX = canvasWidth / 4;
+    let marginX = ((canvasWidth * 0.6) - (columna * radius * 2)) / (columna + 1);
+    let marginY = ((canvasHeight - timerHeight - 20) - (fila * radius * 2)) / (fila + 1);
+
+    let posX = (canvasWidth * 0.2) + radius + marginX;
     let posY = canvasHeight - radius - marginY;
     for (let i = 0; i < columna; i++) {
       tablero.push([]);
@@ -204,19 +204,20 @@ document.addEventListener("DOMContentLoaded", function () {
         tablero[i].push(
           new Ficha(posX, posY, "black", null, ctx, radius, null)
         );
-        posY -= radius * 2 + marginY;
+        posY -= (radius * 2) + marginY;
       }
       posY = canvasHeight - radius - marginY;
-      posX += radius + marginX * 2;
+      posX += (radius * 2) + marginX;
     }
   }
 
   /*
    *  clearCanvas - restear el canvas y carga la imagen de fondo
+      lógica tamaño de tablero (1/5 fichas (*0.2) - 3/5 tablero(*0.6) - 1/5 fichas(*0.2))
    */
   function clearCanvas() {
     ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-    ctx.drawImage(imgFondo, 250, 100, canvasWidth/2+150, canvasHeight-20);
+    ctx.drawImage(imgFondo, (canvasWidth * 0.2), timerHeight + 20, (canvasWidth * 0.6), (canvasHeight - timerHeight - 20));
   }
 
   /*
@@ -231,6 +232,9 @@ document.addEventListener("DOMContentLoaded", function () {
     drawTablero();
   }
 
+  /*
+   *  drawJugadores - Setea el estilo del titulo y arma dos textos, uno sobre cada pila de fichas
+   */
   function drawJugadores() {
     ctx.font = "30px Roboto";
     ctx.fillStyle = "rgba(255,255,255,0.8)";
@@ -241,6 +245,11 @@ document.addEventListener("DOMContentLoaded", function () {
     ctx.fillText(jugador[0], 60, 50);
     ctx.fillText(jugador[1], canvasWidth - 180, 50);
   }
+
+   /*
+   *  drawFichas - Recorre el arreglo de fichas creadas y las dibuja en su pos correspondiente
+   *  drawTablero -  Recorre el arreglo de fichas creadas para el tablero y las dibuja en su pos correspondiente
+   */
 
   function drawFichas() {
     for (let i = 0; i < fichas.length; i++) {
