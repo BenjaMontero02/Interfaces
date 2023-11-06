@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let playerNameHeight = 150;
 
   // variables timer
-  let timerHeight = 150;
-  let timerSecond = 60;
+  let timerHeight = 80;
+  let timerSecond = 10;
   let timer = null;
 
   //variables p fichaSeleccionada
@@ -47,7 +47,12 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", () => {
       fichasAGanar = button.value;
       document.querySelector(".options").style.display = "none";
-      document.querySelector(".options-img").style.display = "flex";
+      if(document.querySelector(".options-img").style.display == "flex"){
+        document.querySelector(".options-img").style.display = "none";
+      }else{
+        document.querySelector(".options-img").style.display = "flex";
+      }
+      
       playButton.style.display = "block";
     });
   });
@@ -56,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
   btnsImg2 = document.querySelectorAll(".btn-ficha2");
   let modalClose = document.querySelector(".close");
   let modal = document.querySelector(".modal");
+  let modalGame = document.getElementById("modalGame");
 
   btnsImg1.forEach((button) => {
     button.addEventListener("click", () => {
@@ -210,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
    */
   function clearCanvas() {
     ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-    ctx.drawImage(imgFondo, 350, 0, 1000, canvasHeight);
+    ctx.drawImage(imgFondo, 250, 100, canvasWidth/2+150, canvasHeight-20);
   }
 
   /*
@@ -219,10 +225,10 @@ document.addEventListener("DOMContentLoaded", function () {
    */
   function initTablero() {
     clearCanvas();
-    drawFichas();
-    drawTablero();
     drawJugadores();
     drawTimer();
+    drawFichas();
+    drawTablero();
   }
 
   function drawJugadores() {
@@ -273,17 +279,17 @@ document.addEventListener("DOMContentLoaded", function () {
     gradient.addColorStop(0.5, "#524487");
     gradient.addColorStop(1, "white");
     ctx.fillStyle = gradient;
-    ctx.fillRect(canvasWidth / 2 - 250, 20, 500, timerHeight - 70);
+    ctx.fillRect(canvasWidth / 2 - 250, 0, 500, timerHeight);
     ctx.font = "30px Roboto";
     ctx.fillStyle = "rgba(255,255,255,0.8)";
     ctx.textAlign = "center";
     if (ganador) {
-      ctx.fillText("Ganador: " + ganador, canvasWidth / 2, timerHeight - 80);
+      ctx.fillText("Ganador: " + ganador, canvasWidth / 2, timerHeight/2+10);
     } else {
       ctx.fillText(
-        "Tiempo del turno: " + timerSecond,
+        "Time of game: " + timerSecond,
         canvasWidth / 2,
-        timerHeight - 80
+        timerHeight/2+10
       );
     }
   }
@@ -295,13 +301,33 @@ document.addEventListener("DOMContentLoaded", function () {
     timer = setInterval(() => {
       drawTimer();
       timerSecond--;
-      if (timerSecond == 0 && !ganador) {
-        changeTurn();
+      if (timerSecond == -1) {
         clearInterval(timer);
-        timerSecond = 60;
-        setTimer();
+        //para que no se ponga un -1 en el timer
+        timerSecond++;
+        finOfGame();
       }
     }, 1000);
+  }
+
+  function finOfGame(){
+    modalGame.style.display = "block";
+    let restart = document.getElementById("restartGame");
+    let change = document.getElementById("changeMode");
+
+    restart.addEventListener("click", () => {
+        init();
+        timerSecond = 300;
+        modalGame.style.display = "none";
+    })
+
+    change.addEventListener("click", () => {
+        modalGame.style.display = "none";
+        timerSecond = 300;
+        document.querySelector(".canvas-container").style.display = "none";
+        document.querySelector(".options").style.display = "block";
+        canvasContent.classList.replace("canvas-content-init", "canvas-content");
+    })
   }
 
   {
@@ -360,7 +386,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //seteo la ficha en el tablero, en la primer posicion disponible, caso de que se complete el for
   //es xq no hay mas lugar en esa columna para colocar fichas
   function setFichaEnTablero(i) {
-    for (let j = 0; j < tablero.length; j++) {
+    for (let j = 0; j < fila; j++) {
       if (tablero[i][j].esNula()) {
         tablero[i][j].setImg(fichaSeleccionada.getImg());
         tablero[i][j].setJugador(fichaSeleccionada.getJugador());
@@ -371,9 +397,6 @@ document.addEventListener("DOMContentLoaded", function () {
         posFilaFichaActual = j;
         initTablero();
         verifyGanador(jugador[turno]);
-
-        //reinicio el contador del timer
-        timerSecond = 60;
         //cambio el turno de jugador
         changeTurn();
         return;
