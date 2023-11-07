@@ -7,12 +7,15 @@ document.addEventListener("DOMContentLoaded", function () {
   let imgFondo = document.getElementById("fondo");
   let img1 = null;
   let img2 = null;
-
   let playButton = document.getElementById("playButton");
   let optionsButtons = document.querySelectorAll(".option-button");
   let canvasContent = document.querySelector(".canvas-content");
-  let btnsImg1 = null;
-  let btnsImg2 = null;
+  let btnsImg1 = document.querySelectorAll(".btn-ficha1");
+  let btnsImg2 = document.querySelectorAll(".btn-ficha2");
+  let modalClose = document.querySelector(".close");
+  let modal = document.querySelector(".modal");
+  let modalGame = document.getElementById("modalGame");
+  let winModal = document.getElementById("winModal");
 
   //Variables game
   let fichas = [];
@@ -57,12 +60,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  btnsImg1 = document.querySelectorAll(".btn-ficha1");
-  btnsImg2 = document.querySelectorAll(".btn-ficha2");
-  let modalClose = document.querySelector(".close");
-  let modal = document.querySelector(".modal");
-  let modalGame = document.getElementById("modalGame");
+  
 
+  //a cada boton(img de ficha para jugador) de mi array de botones le asigno un evento y cuando se clickea, saco todas las clases
+  //selected y se la asigno a ese boton
   btnsImg1.forEach((button) => {
     button.addEventListener("click", () => {
       btnsImg1.forEach((btn) => {
@@ -73,6 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  //a cada boton(img de ficha para jugador) de mi array de botones le asigno un evento y cuando se clickea, saco todas las clases
+  //selected y se la asigno a ese boton
   btnsImg2.forEach((button) => {
     button.addEventListener("click", () => {
       btnsImg2.forEach((btn) => {
@@ -95,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  //le asigno el evento al botton jugar
   playButton.addEventListener("click", () => {
     if (img1 !== null && img2 !== null) {
       document.querySelector(".canvas-container").style.display = "block";
@@ -107,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  //configuro las columnas y filas en base al modo que se eligio
   function configGame() {
     if (fichasAGanar == 4) {
       cantFichasJugador = 12;
@@ -323,6 +328,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
   }
 
+  //si se termino el tiempo(5 minutos) entonces lanzo un modal con la opcion de que 
+  //se reincie el juego o se cambie de modo
   function finOfGame(){
     modalGame.style.display = "block";
     let restart = document.getElementById("restartGame");
@@ -379,6 +386,10 @@ document.addEventListener("DOMContentLoaded", function () {
     initTablero();
   }
 
+  //si mi fichaSeleccionada no es nula entonces, verifico que este en una posicion de mi matriz de fichas(tablero)
+  //si esta en una posicion valida entonces llamo a setFichaTablero()
+  //si no esta en una posicion valida entonces la vuelvo a poner en su lugar(x,y) cuando se capturo el evento
+  //mouseDown
   function mouseUp(e) {
     if (fichaSeleccionada == null) return;
     let x = e.offsetX;
@@ -397,7 +408,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   //seteo la ficha en el tablero, en la primer posicion disponible, caso de que se complete el for
-  //es xq no hay mas lugar en esa columna para colocar fichas
+  //es xq no hay mas lugar en esa columna para colocar fichas, entonces vuelvo a poner la ficha en la posicion
+  //que estaba cuando se capturo el evento mouseDown
   function setFichaEnTablero(i) {
     for (let j = 0; j < fila; j++) {
       if (tablero[i][j].esNula()) {
@@ -446,12 +458,43 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       ganador = jugador;
       setTimeout(function () {
-        configGame();
-      }, 4000);
+        winModalFunction(ganador)
+      }, 500);
     }
   }
 
+
+  //lanzo un modal cuando un jugador gana dandole las opciones para reiniciar o cambiar el modo
+  function winModalFunction(ganador){
+    winModal.style.display = "block";
+    let span = document.getElementById("spanModal");
+    span.innerHTML = ganador + " you winner"
+
+    let restart = document.getElementById("restartModal");
+    let exit = document.getElementById("exitModal");
+
+    restart.addEventListener("click", () => {
+        init();
+        timerSecond = 300;
+        winModal.style.display = "none";
+    })
+
+    exit.addEventListener("click", () => {
+        winModal.style.display = "none";
+        timerSecond = 300;
+        document.querySelector(".canvas-container").style.display = "none";
+        document.querySelector(".options").style.display = "block";
+        canvasContent.classList.replace("canvas-content-init", "canvas-content");
+    })
+  }
+
   //verifican si el jugador por parametro gano
+  //cuando seteo la ficha en el tablero guardo la posicion de esa ficha para despues usarla en las funciones
+  //para verificar el ganador, lo que hacemos es desde esa posicion si es vertical.. ir hasta la primera posicion posible,
+  //cuando llega hasta la primera posicion posible ahi vuelve hasta que se junten la cant de fichas que tenga que tener
+  //para ganar o lo maximo que pudo hacer, si el maximo coincide con la cant para ganar, entonces ese jugador gano
+  //aplicamos la misma logica para todas las funciones que 
+  //verifican el ganador(diagonal(derecha - izquierda), vertica, horizontal)
   function verifyVertical(jugador) {
     let i = posColumnaFichaActual;
     let j = posFilaFichaActual;
@@ -566,6 +609,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return cant == fichasAGanar;
   }
 
+  //le asigno los eventos basicos al canvas
   function events() {
     myCanvas.onmousedown = mouseDown;
     myCanvas.onmousemove = mouseMove;

@@ -346,6 +346,7 @@ main {
 
     .play-hero {
         border: none;
+        cursor: pointer;
         background-color: var(--accent);
         transition: all 0.3s ease-in-out;
         >a {
@@ -665,6 +666,7 @@ main {
     padding: 0.125rem 1rem;
 
     >button {
+        cursor: pointer;
         display: flex;
         align-items: center;
         padding: 0.25rem;
@@ -715,6 +717,13 @@ main {
     color: #fff;
     background-color: var(--secondary-shadow-2);
     border: none;
+    cursor: pointer;
+}
+
+.card-btn-inCart:hover{
+    transition: 1.5s;
+    color: var(--accent);
+    border: 1px solid black;
 }
 
 .card-btn-addToCart {
@@ -726,6 +735,13 @@ main {
     background-color: transparent;
     border: 0.09375rem solid #c3f25c;
     gap: 0.625rem;
+    cursor: pointer;
+}
+
+.card-btn-addToCart:hover{
+    transition: 1s;
+    color: var(--primary-shadow-2);
+    background-color: #c3f25c;
 }
 
 .content-price-discount {
@@ -1638,7 +1654,10 @@ section .form-container {
         .footer-columns {
           flex-direction: column;
           >div {
-            padding-top: 1rem;
+
+            > h3{
+                display: none;
+            }
           }
         }
 
