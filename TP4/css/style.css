@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+:root {
+    --celeste: #2982ff;
+    --azul: #02187e;
+    --amarillo: #ffe901;
+}
+
+
+
+
+
+/* Estilos para el Header */
+header {
+    background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0) 100%);
+    display: flex;
+    width: 1280px;
+    height: 227px;
+    z-index: 1;
+    
+}
+
+.menu{
+    top: 20px;
+    left: 100px;
+    width: fit-content;
+}
+
+.btn-comprar{
+    top: 20px;
+    left: 980px;
+    height: 50px;
+    width: 200px;
+    border: 8px solid;
+    border-radius: 111px;
+    border-color: var(--celeste);
+    background-color: var(--amarillo);
+    color: var(--azul);
+    box-shadow: 4px 5px 0px 0px var(--azul);
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 19px;
+    letter-spacing: 0.11em;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+.logo{
+    position: absolute;
+    top: 91px;
+    left: 330px;
+    z-index: 1000;
+}
+
+.nubes{
+    position: absolute;
+    top: -90px;
+    width: 1280px;
+}
+
+.estructuraIzq{
+    position: absolute;
+    top: -92px;
+    left: 0px;
+    z-index: 2;
+}
+
+.spider-woman{
+    position: absolute;
+    top: 159px;
+    left: 90px;
+    z-index: 3;
+}
+
+.estructuraAbajo{
+    position: absolute;
+    top: 397px;
+    left: 386px;
+}
+
+.spider{
+    position: absolute;
+    top: 187px;
+    left: 393px;
+}
+
+.spider-men{
+    position: absolute;
+    top: 112px;
+    left: 695px;
+    z-index: 4;
+}
+
+.estructuraDer{
+    position: absolute;
+    top: -100px;
+    left: 899px;
+    z-index: 2;
+}
+
+.tela-izq{
+    position: absolute;
+    left: -3px;
+    top: 160px;
+    z-index: 3;
+}
+
+.tela-der{
+    position: absolute;
+    z-index: 5;
+    left: 981px;
+    top: 170px;
+}
+
+main{
+    height: 2000px;
+}
+  
