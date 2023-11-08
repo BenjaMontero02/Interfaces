@@ -89,6 +89,7 @@ header {
     position: absolute;
     top: 187px;
     left: 393px;
+    z-index: 4;
 }
 
 .spider-men{
@@ -109,7 +110,7 @@ header {
     position: absolute;
     left: -3px;
     top: 160px;
-    z-index: 3;
+    z-index: 5;
 }
 
 .tela-der{

@@ -1,0 +1,47 @@
+.section-first{
+    position: absolute;
+    top: 550px;
+    background-image: url(../svg/rect-violeta.svg);
+    width: 1280px;
+    height: 844.5px;
+    background-size: cover;
+    z-index: 2;
+
+    .duende-verde{
+        left: 720px;
+        top: 122px;
+        z-index: 3;
+    }
+
+    .game{
+        top: -420px;
+        left: 86px;
+    }
+}
+
+.section-first-content{
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    position: absolute;
+    left: 95px;
+    top: 218px;
+
+    > h2 {
+        font-size: 60px;
+        font-weight: 600;
+        line-height: 57px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin-bottom: 16px;
+    }
+
+    > p {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+}
