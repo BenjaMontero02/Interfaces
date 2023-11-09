@@ -72,11 +72,57 @@ header {
     width: 1280px;
 }
 
+@keyframes entrada {
+    0% {
+      transform: scale(0.8);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes entradaBack {
+    0% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+
+  @keyframes estructura-izq {
+    0% {
+      transform: translateX(-40px)
+    }
+    100% {
+      transform: translateX(0px)
+    }
+  }
+
+  @keyframes estructura-der {
+    0% {
+      transform: translateX(40px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+
+  .estructuraDer{
+    position: absolute;
+    top: -100px;
+    left: 899px;
+    z-index: 2;
+    animation: estructura-der 1.5s ease-in-out;
+}
+
 .estructuraIzq{
     position: absolute;
     top: -92px;
     left: 0px;
     z-index: 2;
+    animation: estructura-izq 1.5s ease-in-out;
 }
 
 .spider-woman{
@@ -84,12 +130,14 @@ header {
     top: 159px;
     left: 90px;
     z-index: 3;
+    animation: entrada 1.5s ease-in-out;
 }
 
 .estructuraAbajo{
     position: absolute;
     top: 397px;
     left: 386px;
+    animation: entradaBack 1.5s ease-in-out;
 }
 
 .spider{
@@ -97,6 +145,7 @@ header {
     top: 187px;
     left: 393px;
     z-index: 4;
+    animation: entrada 1.5s ease-in-out;
 }
 
 .spider-men{
@@ -104,14 +153,10 @@ header {
     top: 112px;
     left: 695px;
     z-index: 4;
+    animation: entrada 1.5s ease-in-out;
 }
 
-.estructuraDer{
-    position: absolute;
-    top: -100px;
-    left: 899px;
-    z-index: 2;
-}
+
 
 .tela-izq{
     position: absolute;
