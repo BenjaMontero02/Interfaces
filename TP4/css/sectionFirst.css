@@ -1,5 +1,5 @@
 .section-first{
-    position: absolute;
+    position: relative;
     top: 550px;
     background-image: url(../svg/rect-violeta.svg);
     width: 1280px;
@@ -11,11 +11,13 @@
         left: 720px;
         top: 122px;
         z-index: 3;
+        position: absolute;
     }
 
     .game{
-        top: -420px;
+        top: 500px;
         left: 86px;
+        position: absolute;
     }
 }
 
