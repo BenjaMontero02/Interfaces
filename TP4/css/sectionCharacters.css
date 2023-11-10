@@ -1,0 +1,20 @@
+.section-characters {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 100px;
+
+    .characters-block {
+        width: 30%;
+
+        >img {
+            width: 100%;
+        }
+
+        >p {
+            height: 218px;
+            margin-top: 23px;
+        }
+    }
+}
