@@ -1,0 +1,30 @@
+@import url("header.css");
+@import url("sectionFirst.css");
+@import url("footer.css");
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    
+}
+
+:root {
+    --celeste: #2982ff;
+    --azul: #02187e;
+    --amarillo: #ffe901;
+    --lightGrey: #5E5E5D;
+    --darkGrey: #242424;
+}
+
+main{
+    height: 2000px;
+}
+
+p {
+    line-height: 94.5%; /* 18.9px */
+    letter-spacing: 2.2px;
+    font-size: 20px;
+}
