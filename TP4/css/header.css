@@ -1,21 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
-}
-
-:root {
-    --celeste: #2982ff;
-    --azul: #02187e;
-    --amarillo: #ffe901;
-}
-
-
-
-
-
-/* Estilos para el Header */
 header {
     background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0) 100%);
     display: flex;
@@ -127,7 +109,5 @@ header {
     top: 170px;
 }
 
-main{
-    height: 2000px;
-}
+
   
