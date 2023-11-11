@@ -1,8 +1,14 @@
 .section-games {
+    position: relative;
+    background-image: url(../svg/games-bg.svg);
+    width: 1280px;
+    background-size: cover;
     padding: 0px 100px;
+    z-index: 2;
+    margin-top: -50px;
 
     >h1 {
-        margin: 69px 0px;
+        padding: 261px 0px 69px 0px;
     }
     .games-block {
         display: flex;

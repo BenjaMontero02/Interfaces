@@ -1,21 +1,21 @@
 .section-first{
     position: relative;
-    top: 550px;
     background-image: url(../svg/rect-violeta.svg);
     width: 1280px;
-    height: 844.5px;
+    height: 1053px;
     background-size: cover;
+    margin-top: -300px;
     z-index: 2;
 
     .duende-verde{
         left: 720px;
-        top: 122px;
+        bottom: 0;
         z-index: 3;
         position: absolute;
     }
 
     .game{
-        top: 500px;
+        bottom: 100px;
         left: 86px;
         position: absolute;
     }
@@ -28,7 +28,7 @@
     justify-content: start;
     position: absolute;
     left: 95px;
-    top: 218px;
+    bottom: 577px;
 
     > h2 {
         font-size: 60px;

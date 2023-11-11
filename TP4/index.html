@@ -11,12 +11,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
 </head>
 <body>
+    <!-- 
+        Opcional 1: La página deberá tener un loader acorde a la temática propuesta. Igual al que hicieron en el TPE 2
+
+        Opcional 2: El menú Hamburguesa de la página cuando se despliega se debe transformar las 3 líneas en una Cruz, utilizando una animación. (no debe cambiar directamente sino vía una transición) Aclaración: al pedir una transición se entiende que debe ser una animación keyframe y que pase menú hamburguesa a cruz progresivamente.Si ya lo tenian hecho lo pueden reutilizar pero verifiquen que cumpla con todo lo que se pide.
+
+        Opcional 3: Los ítems del menú tienen que aparecer desde un costado de la pantalla e ir cargándose uno por uno. Los ítems no están en Figma, poner mínimo 3 a gusto.
+    -->
+    <!-- Al hacer scroll el Header debe ser sticky y achicarse, de tal manera que además el logo debe achicarse. 
+        En caso de ser necesario cambiar el fondo a un color plano (recomendado)  
+    -->
     <header>
         <p class="menu">menu</p>
         <img src="../TP4/svg/logo.svg" alt="logo" class="logo">
+        <!-- Animar botones COMPRAR minimamente con un hover con cambio de color. -->
         <button class="btn-comprar">Comprar</button>        
     </header>
     <main>
+        <!--El héroe debe tener efecto parallax, utilizando las capas de la composición de la imagen, 
+            moverlas según el scroll, a diferentes velocidades, dando sensación de profundidad.
+            Animar también la entrada de los elementos a pantalla.
+        -->
         <section class="section-banner">
             <img src="../TP4/svg/nubes.svg" alt="nubes" class="nubes">
             <img src="../TP4/svg/estructuraIzq.svg" alt="nubes" class="estructuraIzq">
@@ -28,6 +43,7 @@
             <img src="../TP4/svg/tela-izq.svg" alt="nubes" class="tela-izq">
             <img src="../TP4/svg/tela-der.svg" alt="nubes" class="tela-der">
         </section>
+        <!-- En la sección "Conoce a Spidey y sus sorprendentes amigos", el duende verde debe moverse más lento que la velocidad de scroll. -->
         <section class="section-first">
             <div class="section-first-content">
                 <h2>Conoce a Spidey y sus <br>sorprendentes amigos</h2>
@@ -39,7 +55,10 @@
             <img src="../TP4/svg/duende-verde.svg" alt="duendeVerde" class="duende-verde">
             <img src="../TP4/svg/game.svg" alt="game" class="game">
         </section>
-    </main>
+            <!-- En la sección de los cards de los 3 personajes, los cards deben aparecer flotados con fade-in, 
+        es decir, no se ven inicialmente, y cuando se scrollea hasta dejar la sección visible, 
+        aparecen sutilmente (a diferentes velocidades) los tres cards desde abajo desde un estado transparente.   
+    -->
     <section class="section-characters">
         <div class="characters-block">
             <img src="../TP4/assets/spider-char-1.png"/>
@@ -54,6 +73,27 @@
             <p>El personaje es una variante de El Hombre Araña, una versión de universo alternativo de Gwen Stacy. Ella reside en la "Tierra-65", donde, en lugar de Peter Benjamin Parker, Gwen Stacy fue mordida por la Araña Radiactiva</p>
         </div>
     </section>
+    <section class="section-ghost" >
+        <img src="../TP4/assets/ghost-spider.png"/>
+    </section>
+    <section class="section-avengers" >
+        <div class="avengers-card">
+            <h1 class="avengers-title">Los vengadores acompañando tu aventura</h1>
+        </div>
+        <div class="avengers-bg">
+            <img src="../TP4/svg/city-bg.svg" class="city-bg"/>
+            <img src="../TP4/svg/leaves-bg.svg" class="leaves-bg"/>
+            <img src="../TP4/svg/hulk.svg" class="hulk"/>
+            <img src="../TP4/svg/elastic-girl.svg" class="elastic"/>
+        </div>
+        <img src="../TP4/svg/black-panther.svg" class="panther"/>
+    </section>
+    <!-- En la sección de “Más amigos, más diversión!” Se debe tener 2 columnas en la cual la parte izquierda 
+        es una imagen y sobre la derecha está el texto descriptivo. A modo de ejemplo ver en  
+        https://growproexperience.com/ (Te acompañamos en tu viaje de principio a fin). 
+        La imagen de la izquierda que fija, Sticky, y va cambiando (con una transición suave) 
+        a medida que se prolonga el texto de la derecha.
+    -->
     <section class="section-games">
         <h1>Mas amigos, mas diversión!</h1>
         <div class="games-block">
@@ -85,6 +125,10 @@
             </div>
         </div>
     </section>
+    </main>
+    <!-- Cerca del footer, animar utilizando un spritesheet un personaje del juego en lanzamiento.
+         Algo decorativo, cambiar la animacion on-hover. Spritesheets de ejemplo:
+    -->
     <footer>
         <div class="footer-top">
             <img src="../TP4/assets/footer-brands.png"/>

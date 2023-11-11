@@ -1,0 +1,68 @@
+.section-avengers {
+    position: relative;
+    background-color: #000;
+    width: 1280px;
+    height: 920px;
+    margin-top: -255px;
+
+    .avengers-card {
+        position: relative;
+        width: 100%;
+        height: 763px;
+    }
+
+    .avengers-title {
+        position: absolute;
+        left: 100px;
+        top: 163px;
+        color: #fff;
+        width: 50%;
+    }
+
+    .avengers-bg {
+        position: absolute;
+        top: 450px;
+        left: 100px;
+        background-image: url(../svg/cloud-bg.svg);
+        background-size: cover;
+
+        width: 1077.059px;
+        height: 527.626px;
+        z-index: 3;
+    }
+
+    .city-bg{
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2;
+    }
+
+    .leaves-bg{
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 5;
+    }
+
+    .hulk {
+        position: absolute;
+        right: -60px;
+        bottom: -60px;
+        z-index: 4;
+    }
+
+    .panther {
+        position: absolute;
+        left: 40%;
+        top: 200px;
+        z-index: 8;
+    }
+
+    .elastic {
+        position: absolute;
+        left: 0;
+        bottom: -50px;
+        z-index: 4;
+    }
+}
