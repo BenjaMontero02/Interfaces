@@ -1,0 +1,94 @@
+.menu-burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: fit-content;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+}
+
+.menu-burger img {
+    transition: transform 0.5s ease;
+}
+
+.menu-burger.active #line1 {
+    animation: line1 0.5s forwards;
+}
+
+.menu-burger.active #line2 {
+    animation: line2 0.5s forwards;
+}
+
+.menu-burger.active #line3 {
+    animation: line3 0.5s forwards;
+}
+
+.menu-burger:not(.active) #line1 {
+    animation: revertLine1 0.5s forwards;
+}
+
+.menu-burger:not(.active) #line2 {
+    animation: revertLine2 0.5s forwards;
+}
+
+.menu-burger:not(.active) #line3 {
+    animation: revertLine3 0.5s forwards;
+}
+
+@keyframes line1 {
+    0% {
+        transform: translateY(0)
+    }
+    100% {
+        transform: translateY(12px) rotate(-45deg);
+    }
+    0%{
+        transform: translateY(0)
+    }
+}
+
+@keyframes revertLine1 {
+    0% {
+        transform: translateY(12px) rotate(-45deg);
+    }
+    100% {
+        transform: translateY(0)
+    }
+}
+
+@keyframes line3 {
+    0% {
+        transform: translateY(0)
+    }
+    100% {
+        transform: translateY(-12px) rotate(45deg)
+    }
+}
+
+@keyframes revertLine3 {
+    0% {
+        transform: translateY(-12px) rotate(45deg);
+    }
+    100% {
+        transform: translateY(0)
+    }
+}
+
+@keyframes line2 {
+    0% {
+        transform: translateY(0)
+    }
+    100% {
+        transform: translateY(0px) rotate(45deg);
+    }
+}
+
+@keyframes revertLine2 {
+    0% {
+        transform: translateY(0px) rotate(45deg);
+    }
+    100% {
+        transform: translateY(0)
+    }
+}

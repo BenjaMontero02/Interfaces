@@ -1,3 +1,5 @@
+
+
 const container = document.getElementById("container-loader")
 const estructuraIzq = document.querySelector(".estructuraIzq")
 const estructuraDer = document.querySelector(".estructuraDer")
@@ -24,7 +26,7 @@ function habilitarScroll() {
     document.body.style.overflow = ''; // Restablecer a la configuración predeterminada
 }
 
-bloquearScroll()
+bloquearScroll();
 charge();
 
 
