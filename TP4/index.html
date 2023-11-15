@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../TP4/css/general.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+    
 </head>
 <body>
     <!-- 
@@ -21,8 +22,24 @@
     <!-- Al hacer scroll el Header debe ser sticky y achicarse, de tal manera que además el logo debe achicarse. 
         En caso de ser necesario cambiar el fondo a un color plano (recomendado)  
     -->
+    <div class="container" id="container-loader">
+        <div class="text">
+            <h1>Loading...</h1>
+        </div>
+        <div class="loading">
+            <div class="line-box">
+                <div class="line">
+                    <img class="svg" src="../TP4/svg/SpiderLoader.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
     <header>
-        <p class="menu">menu</p>
+        <div class="menu-burger" id="menuBurger">
+            <img src="../TP4/svg/menu-rect.svg" alt="line1" id="line1">
+            <img src="../TP4/svg/menu-rect.svg" alt="line2" id="line2">
+            <img src="../TP4/svg/menu-rect.svg" alt="line3" id="line3">
+        </div>
         <img src="../TP4/svg/logo.svg" alt="logo" class="logo">
         <!-- Animar botones COMPRAR minimamente con un hover con cambio de color. -->
         <button class="btn-comprar">Comprar</button>        
@@ -146,5 +163,7 @@
             </div>
         </div>
     </footer>
+    <script src="../TP4/js/loader.js"></script>
+    <script src="../TP4/js/menu.js"></script>
 </body>
 </html>

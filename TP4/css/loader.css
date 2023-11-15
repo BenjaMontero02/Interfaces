@@ -1,0 +1,69 @@
+.container{
+    position: absolute;
+    z-index: 40;
+    width: 1280px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.856);
+}
+
+.text{
+    color: #FFFFFF;
+    margin-bottom: 25px;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.loading{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading .line-box{
+    padding: 2px;
+    width: 40%;
+    height: 20px;
+    border: none;
+}
+
+.loading .line-box .line{
+    height: 20px;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    animation: loading 5s forwards cubic-bezier(0,0,0,0);
+}
+
+.line{
+    position: relative;
+}
+
+.svg{
+    position: absolute;
+    top: -30px;
+    left: -40px;
+    animation: svgCharge 5s forwards cubic-bezier(0,0,0,0);
+}
+
+@keyframes loading{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+@keyframes svgCharge{
+    0%{
+        transform: translateX(0)
+    }
+    100%{
+        transform: translateX(506px)
+    }
+}
