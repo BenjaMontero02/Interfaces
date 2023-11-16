@@ -4,6 +4,8 @@
 @import url("sectionGames.css");
 @import url("sectionGhost.css");
 @import url("sectionAvengers.css");
+@import url("sectionSuscribe.css");
+@import url("sectionBuy.css");
 @import url("footer.css");
 @import url("loader.css");
 @import url("menu.css");
@@ -30,4 +32,8 @@ h1 {
 }
 p {
     font-size: 20px;
+}
+
+.underlined {
+    text-decoration: underline;
 }

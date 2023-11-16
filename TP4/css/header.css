@@ -3,6 +3,7 @@ header {
     display: flex;
     justify-content: space-between;
     width: 1280px;
+    margin: auto;
     height: 227px;
     z-index: 1;
     padding-left: 32px;
@@ -36,6 +37,8 @@ header {
 }
 
 .section-banner{
+    width: 1280px;
+    margin: auto;
     position: relative;
     height: 840px;
 }

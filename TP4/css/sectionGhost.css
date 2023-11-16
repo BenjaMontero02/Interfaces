@@ -1,5 +1,6 @@
 .section-ghost {
     width: 1280px;
+    margin: auto;
     height: 892px;
     position: relative;
     z-index: 2;
