@@ -2,6 +2,8 @@
     position: relative;
     background-color: #000;
     width: 1280px;
+    margin: auto;
+    padding: 0px 100px;
     height: 920px;
     margin-top: -255px;
 
@@ -13,7 +15,7 @@
 
     .avengers-title {
         position: absolute;
-        left: 100px;
+        left: 0;
         top: 163px;
         color: #fff;
         width: 50%;

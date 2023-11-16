@@ -1,0 +1,74 @@
+.section-suscribe {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1280px;
+    height: 1296px;
+    margin: auto;
+    padding-top: 151px;
+    background-image: linear-gradient(180deg, #8FBEFC 21.2%, #F7E3D8 81.48%);
+
+    .suscribe-city {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 720px;
+    }
+
+    >h1 {
+        width: 816px;
+        text-align: center;
+        margin-bottom: 46px;
+
+        font-weight: 600;
+        line-height: 94.5%; /* 56.7px */
+    }
+
+    .suscribe-input {
+        >input {
+            width: 562px;
+            height: 100px;
+            margin-bottom: 39px;
+            font-size: 20px;
+            padding: 40px;
+    
+            border-radius: 50px 0px 0px 50px;
+            border: 9px solid #2982FF;
+            background: #FFF;
+            box-shadow: 4px 5px 0px 0px var(--azul);
+
+            &:focus-visible {
+                outline: none;
+            }
+        }
+    
+        >button {
+            width: 218px;
+            height: 100px;
+            font-size: 20px;
+            font-weight: 900;
+            color: var(--azul);
+            margin-left: -9px;
+            border-radius: 0px 50px 50px 0px;
+            border: 9px solid #2982FF;
+            background: var(--amarillo);
+            box-shadow: 4px 5px 0px 0px var(--azul);
+        }
+    }
+
+    .suscribe-bottom {
+        width: 100%;
+
+        .suscribe-text {
+            margin-left: 300px;
+            width: 578px;
+            margin-bottom: 17px;
+        }
+
+        .suscribe-rate {
+            margin-left: 300px;
+        }
+    }
+
+}
