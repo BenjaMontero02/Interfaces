@@ -1,12 +1,14 @@
 .section-first{
     position: relative;
     background-image: url(../svg/rect-violeta.svg);
-    width: 1280px;
     margin: auto;
-    height: 1053px;
+    height: 845px;
+    width: 100%;
     background-size: cover;
     margin-top: -300px;
     z-index: 2;
+    top: 12px;
+    display: none;
 
     .duende-verde{
         left: 720px;
