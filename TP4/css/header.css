@@ -2,13 +2,13 @@ header {
     background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0) 100%);
     display: flex;
     justify-content: space-between;
-    width: 1280px;
     margin: auto;
-    height: 227px;
+    height: 150px;
     z-index: 1;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 100px;
+    padding-right: 100px;
     padding-top: 20px;
+    position: relative;
 }
 
 .menu{
@@ -37,23 +37,31 @@ header {
 }
 
 .section-banner{
-    width: 1280px;
-    margin: auto;
+    height: 860px;
+    display: flex;
+    justify-content: center;
     position: relative;
-    height: 840px;
+    top: -20px;
+}
+
+.content-banner{
+  width: 1280px;
+  position: relative;
+  overflow: hidden;
 }
 
 .logo{
     position: absolute;
-    top: 91px;
-    left: 330px;
+    left: 50%;
+    top: 250px;
+    transform: translate(-50%, -50%);
     z-index: 10;
 }
 
 .nubes{
     position: absolute;
-    top: -90px;
-    width: 1280px;
+    top: 0px;
+    width: 100%;
 }
 
 @keyframes entrada {
@@ -95,7 +103,7 @@ header {
 
   .estructuraDer{
     position: absolute;
-    top: -100px;
+    top: -10px;
     left: 899px;
     z-index: 2;
     /*animation: estructura-der 1.5s ease-in-out;*/
@@ -103,7 +111,7 @@ header {
 
 .estructuraIzq{
     position: absolute;
-    top: -92px;
+    top:15px;
     left: 0px;
     z-index: 2;
     /*animation: estructura-izq 1.5s ease-in-out;*/
@@ -111,30 +119,30 @@ header {
 
 .spider-woman{
     position: absolute;
-    top: 159px;
-    left: 90px;
+    top: 265px;
+    left: 80px;
     z-index: 3;
     /*animation: entrada 1.5s ease-in-out;*/
 }
 
 .estructuraAbajo{
     position: absolute;
-    top: 397px;
+    top: 503px;
     left: 386px;
     /*animation: entradaBack 1.5s ease-in-out;*/
 }
 
 .spider{
     position: absolute;
-    top: 187px;
-    left: 393px;
+    top: 279px;
+    left: 402px;
     z-index: 4;
     animation: none /*entrada 1.5s ease-in-out;*/
 }
 
 .spider-men{
     position: absolute;
-    top: 112px;
+    top: 210px;
     left: 695px;
     z-index: 4;
     /*animation: entrada 1.5s ease-in-out;*/
@@ -144,8 +152,8 @@ header {
 
 .tela-izq{
     position: absolute;
-    left: -3px;
-    top: 160px;
+    left: 0px;
+    top: 260px;
     z-index: 5;
 }
 
@@ -153,7 +161,7 @@ header {
     position: absolute;
     z-index: 5;
     left: 981px;
-    top: 170px;
+    top: 263px;
 }
 
 

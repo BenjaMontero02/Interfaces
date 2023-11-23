@@ -1,18 +1,23 @@
 .section-characters {
-    width: 1280px;
-    margin: auto;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    padding: 0px 100px;
+    justify-content: center;
+    position: relative;
+    background-color: white;
+    width: 100%;
+    top: -150px;
+
+    .content-characters{
+        padding-left: 100px;
+        padding-right: 100px;
+        width: 1280px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
     .characters-block {
         width: 30%;
-
-        >img {
-            width: 100%;
-        }
 
         >p {
             height: 218px;

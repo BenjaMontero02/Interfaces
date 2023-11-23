@@ -1,16 +1,27 @@
 .section-games {
     position: relative;
     background-image: url(../svg/games-bg.svg);
-    width: 1280px;
-    margin: auto;
     background-size: cover;
-    padding: 0px 100px;
     z-index: 2;
-    margin-top: -50px;
+    margin-top: -580px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
 
-    >h1 {
-        padding: 261px 0px 69px 0px;
+    .games-content{
+        width: 1280px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 100px;
+        padding-right: 100px;
+
+        >h1 {
+            padding: 261px 0px 69px 0px;
+        }
     }
+
+    
     .games-block {
         display: flex;
         flex-direction: row;

@@ -1,0 +1,38 @@
+.section-spiders{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    top: -350px;
+}
+
+.rect-spiders{
+    position: absolute;
+    width: 100%;
+}
+
+.spiders-content{
+    width: 1280px;
+    padding-left: 100px;
+    padding-right: 100px;
+    position: relative;
+}
+
+.heroe-woman{
+    position: absolute;
+    top: 200px;
+    left: 170px;
+}
+
+.heroe-spider{
+    position: absolute;
+    left: 400px;
+    top: 200px;
+}
+
+.heroe-men{
+    position: absolute;
+    left: 800px;
+    top: 210px;
+
+}
