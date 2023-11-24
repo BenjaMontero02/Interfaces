@@ -38,3 +38,28 @@ p {
 .underlined {
     text-decoration: underline;
 }
+
+.btn-comprar {
+    transition: all 0.5s ease-in-out;
+    border-radius: 111px;
+    border: 8px solid var(--2982-ff, var(--celeste));
+    background: var(--amarillo);
+    box-shadow: 4px 5px 0px 0px var(--azul);
+
+    color: var(--azul);
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 19px;
+    letter-spacing: 0.11em;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        background: var(--azul);
+        border: 8px solid var(--2982-ff, var(--celeste));
+        box-shadow: 4px 5px 0px 0px var(--amarillo);
+        color: var(--amarillo);
+        transform: scale(1.2);
+    }
+}
+
