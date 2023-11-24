@@ -22,16 +22,7 @@
         >button {
             width: 292px;
             height: 66px;
-    
-            border-radius: 111px;
-            border: 8px solid var(--2982-ff, #2982FF);
-            background: #FFE901;
-            box-shadow: 4px 5px 0px 0px #02187E;
             margin-top: 42px;
-    
-            color: #02187E;
-            font-size: 20px;
-            font-weight: 900;
         }
     }
 }
