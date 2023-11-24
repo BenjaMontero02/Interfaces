@@ -26,7 +26,7 @@ function habilitarScroll() {
     document.body.style.overflow = ''; // Restablecer a la configuración predeterminada
 }
 
-bloquearScroll();
+//bloquearScroll();
 charge();
 
 
