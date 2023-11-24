@@ -2,7 +2,7 @@ let duende = document.getElementById("duende");
 
 document.addEventListener("scroll", () => {
     let scrollPosition = window.scrollY;
-
+    console.log("scroll position" + scrollPosition)
     let computedStyle = window.getComputedStyle(duende);
 
     let top = computedStyle.getPropertyValue('top');
