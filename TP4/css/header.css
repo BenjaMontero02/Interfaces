@@ -93,6 +93,15 @@ header {
     }
   }
 
+  @keyframes parallaxSpiders {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.5);
+    }
+  }
+
   @keyframes entradaBack {
     0% {
       transform: scale(1.1);
