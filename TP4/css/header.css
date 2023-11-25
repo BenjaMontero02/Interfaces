@@ -184,17 +184,18 @@ header {
 #menu-container {
   position: absolute;
   display: flex;
-  top: 80px;
+  top: 0px;
   left: -300px; /* Inicialmente fuera de la pantalla */
-  width: 300px;
+  width: 200px;
   height: 300px;
   background-color: var(--azul);
-  padding-top: 20px;
   transition: left 0.5s ease; /* Agrega una transición suave al cambio de posición */
+  padding-top: 80px;
 
   >ul {
     display: flex;
     flex-direction: column;
+    flex: 1;
     justify-content: space-around;
   }
 }
@@ -205,32 +206,37 @@ header {
 
 .menu-item {
   list-style: none;
-  padding: 30px 100px;
   color: #fff;
-  font-size: 18px;
+  font-size: 25px;
   cursor: pointer;
 
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding-left: 100px;
   opacity: 0;
   transform: translateX(-20px); /* Mueve el elemento hacia la izquierda */
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .menu-item:hover {
-  background-color: var(--celeste);
+  background-color: var(--amarillo);
+  color: var(--azul);
 }
+
 #menu-container.active .menu-item {
   opacity: 1; /* Hace visible el elemento */
   transform: translateX(0); /* Restaura la posición original */
 }
 
 #menu-container.active .menu-item:nth-child(1) {
-  transition-delay: 0.2s; /* Retraso para el primer elemento */
+  transition-delay: 0.4s; /* Retraso para el primer elemento */
 }
 
 #menu-container.active .menu-item:nth-child(2) {
-  transition-delay: 0.4s; /* Retraso para el segundo elemento */
+  transition-delay: 0.8s; /* Retraso para el segundo elemento */
 }
 
 #menu-container.active .menu-item:nth-child(3) {
-  transition-delay: 0.6s; /* Retraso para el tercer elemento */
+  transition-delay: 1.2s; /* Retraso para el tercer elemento */
 }
