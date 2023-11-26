@@ -11,11 +11,6 @@
     overflow-x: hidden;
 }
 
-.footer-svg{
-    position: absolute;
-    bottom: 0px;
-}
-
 .suscribe-content{
     width: 1280px;
     display: flex;
@@ -89,3 +84,37 @@
     padding-left: 180px;
 
 }
+
+.suscribe-spritesheet {
+    position: absolute;
+    bottom: 0;
+
+    .suscribe-spritesheet-bg{
+        width: 100%;
+    }
+
+    .footer-spider-black {
+        position: absolute;
+        bottom: 70px;
+        left: 220px;
+    }
+
+    .footer-spider-white {
+        position: absolute;
+        bottom: 170px;
+        left: 550px;
+    }
+
+    #sprite {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        right: 220px;
+        bottom: 245px;
+        background-image: url(../assets/spider-spritesheet.png);
+        background-size: cover;
+    }
+}
+
+
+  
