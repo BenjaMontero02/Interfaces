@@ -4,7 +4,6 @@ formRegister.addEventListener("submit", function (e) {
   e.preventDefault();
 
   let mje = document.querySelector(".mje-registro");
-  console.log(mje);
 
   mje.classList.remove("none");
 

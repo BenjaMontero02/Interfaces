@@ -10,7 +10,6 @@ let telaDerParallax = document.getElementById('telaDer');
 
 document.addEventListener('scroll', () => {
     let scrollPosition = window.scrollY;
-    console.log(scrollPosition)
     if(scrollPosition < 320){
         parallaxSpider(scrollPosition);
         parallaxEstructuraIzq(scrollPosition);
