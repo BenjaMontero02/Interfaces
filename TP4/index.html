@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TP4</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../TP4/css/general.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../TP4/css/general.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
+  </head>
+  <body>
     <!-- 
         Opcional 1: La página deberá tener un loader acorde a la temática propuesta. Igual al que hicieron en el TPE 2
 
@@ -22,210 +28,360 @@
         En caso de ser necesario cambiar el fondo a un color plano (recomendado)  
     -->
     <div class="container" id="container-loader">
-        <div class="text">
-            <h1>Loading...</h1>
+      <div class="text">
+        <h1>Loading...</h1>
+      </div>
+      <div class="loading">
+        <div class="line-box">
+          <div class="line">
+            <img class="svg" src="../TP4/svg/SpiderLoader.svg" alt="" />
+          </div>
         </div>
-        <div class="loading">
-            <div class="line-box">
-                <div class="line">
-                    <img class="svg" src="../TP4/svg/SpiderLoader.svg" alt="">
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
     <header id="header">
-        <div class="menu-burger" id="menuBurger">
-            <img src="../TP4/svg/menu-rect.svg" alt="line1" id="line1">
-            <img src="../TP4/svg/menu-rect.svg" alt="line2" id="line2">
-            <img src="../TP4/svg/menu-rect.svg" alt="line3" id="line3">
-        </div>
-        <img src="../TP4/svg/logo.svg" alt="logo" class="logo" id="logo">
-        <img src="../TP4/svg/logoHeader.svg" alt="" class="logoHeader">
-        <!-- Animar botones COMPRAR minimamente con un hover con cambio de color. -->
-        <button class="btn-comprar">Comprar</button>  
-        <nav id="menu-container">
-            <ul>
-              <li class="menu-item"><i class="fas fa-home"></i></li>
-              <li class="menu-item"><i class="fas fa-gamepad"></i></li>
-              <li class="menu-item"><i class="fas fa-user"></i></li>
-            </ul>
-        </nav>  
+      <div class="menu-burger" id="menuBurger">
+        <img src="../TP4/svg/menu-rect.svg" alt="line1" id="line1" />
+        <img src="../TP4/svg/menu-rect.svg" alt="line2" id="line2" />
+        <img src="../TP4/svg/menu-rect.svg" alt="line3" id="line3" />
+      </div>
+      <img src="../TP4/svg/logo.svg" alt="logo" class="logo" id="logo" />
+      <img src="../TP4/svg/logoHeader.svg" alt="" class="logoHeader" />
+      <!-- Animar botones COMPRAR minimamente con un hover con cambio de color. -->
+      <button class="btn-comprar">Comprar</button>
+      <nav id="menu-container">
+        <ul>
+          <li class="menu-item"><i class="fas fa-home"></i></li>
+          <li class="menu-item"><i class="fas fa-gamepad"></i></li>
+          <li class="menu-item"><i class="fas fa-user"></i></li>
+        </ul>
+      </nav>
     </header>
     <main id="main">
-        <!--El héroe debe tener efecto parallax, utilizando las capas de la composición de la imagen, 
+      <!--El héroe debe tener efecto parallax, utilizando las capas de la composición de la imagen, 
             moverlas según el scroll, a diferentes velocidades, dando sensación de profundidad.
             Animar también la entrada de los elementos a pantalla.
         -->
-        <section class="section-banner">
-            <img src="../TP4/svg/nubes.svg" alt="nubes" class="nubes" id="nubes">
-            <div class="content-banner">
-                <img src="../TP4/svg/estructuraIzq.svg" alt="nubes" class="estructuraIzq" id="estructuraIzq">
-                <img src="../TP4/svg/spider-woman.svg" alt="nubes" class="spider-woman" id="spiderWoman">
-                <img src="../TP4/svg/estructura-abajo.svg" alt="nubes" class="estructuraAbajo" id="estructuraAbajo">
-                <img src="../TP4/svg/spider.svg" alt="nubes" class="spider" id="spider">
-                <img src="../TP4/svg/spider-men.svg" alt="nubes" class="spider-men" id="spiderMen">
-                <img src="../TP4/svg/estructura-der.svg" alt="nubes" class="estructuraDer" id="estructuraDer">
-                <img src="../TP4/svg/tela-izq.svg" alt="nubes" class="tela-izq" id="telaIzq">
-                <img src="../TP4/svg/tela-der.svg" alt="nubes" class="tela-der" id="telaDer">
-            </div>
-        </section>
-        <!-- En la sección "Conoce a Spidey y sus sorprendentes amigos", el duende verde debe moverse más lento que la velocidad de scroll. -->
-        <section class="section-first">
-            <img src="../TP4/svg/rect-violeta.svg" alt="" class="rect">
-            <div class="section-first-content">
-                <h2>Conoce a Spidey y sus <br>sorprendentes amigos</h2>
-                <p>Spidey, nuestro lanzador de telarañas favorito se une a Ghost- <br>Spider (Gwen Stacey)
-                    y Miles Morales para formar el equipo de <br>Spidey, con la ayuda del cómico pero leal robot de Spidey, 
-                    TRACE- <br>E. Si Spidey se encuentra en una situación difícil donde necesita <br>aún más poder de superhéroe, 
-                    tengan la seguridad de que un <br>amigo de los Vengadores correrá para ayudar.</p>
-                <img src="../TP4/svg/game.svg" alt="game" class="game">
-                <img src="../TP4/svg/duende-verde.svg" alt="duendeVerde" class="duende-verde" id="duende">
-            </div>
-        </section>
-            <!-- En la sección de los cards de los 3 personajes, los cards deben aparecer flotados con fade-in, 
+      <section class="section-banner">
+        <img src="../TP4/svg/nubes.svg" alt="nubes" class="nubes" id="nubes" />
+        <div class="content-banner">
+          <img
+            src="../TP4/svg/estructuraIzq.svg"
+            alt="nubes"
+            class="estructuraIzq"
+            id="estructuraIzq"
+          />
+          <img
+            src="../TP4/svg/spider-woman.svg"
+            alt="nubes"
+            class="spider-woman"
+            id="spiderWoman"
+          />
+          <img
+            src="../TP4/svg/estructura-abajo.svg"
+            alt="nubes"
+            class="estructuraAbajo"
+            id="estructuraAbajo"
+          />
+          <img
+            src="../TP4/svg/spider.svg"
+            alt="nubes"
+            class="spider"
+            id="spider"
+          />
+          <img
+            src="../TP4/svg/spider-men.svg"
+            alt="nubes"
+            class="spider-men"
+            id="spiderMen"
+          />
+          <img
+            src="../TP4/svg/estructura-der.svg"
+            alt="nubes"
+            class="estructuraDer"
+            id="estructuraDer"
+          />
+          <img
+            src="../TP4/svg/tela-izq.svg"
+            alt="nubes"
+            class="tela-izq"
+            id="telaIzq"
+          />
+          <img
+            src="../TP4/svg/tela-der.svg"
+            alt="nubes"
+            class="tela-der"
+            id="telaDer"
+          />
+        </div>
+      </section>
+      <!-- En la sección "Conoce a Spidey y sus sorprendentes amigos", el duende verde debe moverse más lento que la velocidad de scroll. -->
+      <section class="section-first">
+        <img src="../TP4/svg/rect-violeta.svg" alt="" class="rect" />
+        <div class="section-first-content">
+          <h2>Conoce a Spidey y sus <br />sorprendentes amigos</h2>
+          <p>
+            Spidey, nuestro lanzador de telarañas favorito se une a Ghost-
+            <br />Spider (Gwen Stacey) y Miles Morales para formar el equipo de
+            <br />Spidey, con la ayuda del cómico pero leal robot de Spidey,
+            TRACE- <br />E. Si Spidey se encuentra en una situación difícil
+            donde necesita <br />aún más poder de superhéroe, tengan la
+            seguridad de que un <br />amigo de los Vengadores correrá para
+            ayudar.
+          </p>
+          <img src="../TP4/svg/game.svg" alt="game" class="game" />
+          <img
+            src="../TP4/svg/duende-verde.svg"
+            alt="duendeVerde"
+            class="duende-verde"
+            id="duende"
+          />
+        </div>
+      </section>
+      <!-- En la sección de los cards de los 3 personajes, los cards deben aparecer flotados con fade-in, 
         es decir, no se ven inicialmente, y cuando se scrollea hasta dejar la sección visible, 
         aparecen sutilmente (a diferentes velocidades) los tres cards desde abajo desde un estado transparente.   
     -->
-    <section class="section-characters">
+      <section class="section-characters">
         <div class="content-characters">
-            <div class="characters-block" id="characters-block-1">
-                <img src="../TP4/svg/spider-char-1.svg"/>
-                <p>Peter Parker, un joven huérfano neoyorquino que adquiere superpoderes después de ser mordido por una araña radiactiva,​ y cuya ideología como héroe se ve reflejada primordialmente en la expresión ”un gran poder conlleva una gran responsabilidad”.</p>
-            </div>
-            <div class="characters-block" id="characters-block-2">
-                <img src="../TP4/svg/spider-char-2.svg"/>
-                <p>Tras la muerte de Peter Parker, es quien toma la identidad de  Spider-Man. La elección del presidente Barack Obama en enero de 2009, fue una fuente de inspiración para el cambio de etnicidad de Spider-Man.</p>
-            </div>
-            <div class="characters-block" id="characters-block-3">
-                <img src="../TP4/svg/spider-char-3.svg"/>
-                <p>El personaje es una variante de El Hombre Araña, una versión de universo alternativo de Gwen Stacy. Ella reside en la "Tierra-65", donde, en lugar de Peter Benjamin Parker, Gwen Stacy fue mordida por la Araña Radiactiva</p>
-            </div>
+          <div class="characters-block" id="characters-block-1">
+            <img src="../TP4/svg/spider-char-1.svg" />
+            <p>
+              Peter Parker, un joven huérfano neoyorquino que adquiere
+              superpoderes después de ser mordido por una araña radiactiva,​ y
+              cuya ideología como héroe se ve reflejada primordialmente en la
+              expresión ”un gran poder conlleva una gran responsabilidad”.
+            </p>
+          </div>
+          <div class="characters-block" id="characters-block-2">
+            <img src="../TP4/svg/spider-char-2.svg" />
+            <p>
+              Tras la muerte de Peter Parker, es quien toma la identidad de
+              Spider-Man. La elección del presidente Barack Obama en enero de
+              2009, fue una fuente de inspiración para el cambio de etnicidad de
+              Spider-Man.
+            </p>
+          </div>
+          <div class="characters-block" id="characters-block-3">
+            <img src="../TP4/svg/spider-char-3.svg" />
+            <p>
+              El personaje es una variante de El Hombre Araña, una versión de
+              universo alternativo de Gwen Stacy. Ella reside en la "Tierra-65",
+              donde, en lugar de Peter Benjamin Parker, Gwen Stacy fue mordida
+              por la Araña Radiactiva
+            </p>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <section class="section-ghost" >
-        <img src="../TP4/svg/ghost-spider.svg" class="ghost-spider"/>
+      <section class="section-ghost">
+        <img src="../TP4/svg/ghost-spider.svg" class="ghost-spider" />
         <div class="ghost-content">
-            <img src="../TP4/svg/card-1.svg" alt="" class="card-1">
-            <img src="../TP4/svg/card-2.svg" alt="" class="card-2">
-            <img src="../TP4/svg/card-3.svg" alt="" class="card-3">
+          <img src="../TP4/svg/card-1.svg" alt="" class="card-1 card" />
+          <img src="../TP4/svg/card-2.svg" alt="" class="card-2 card" />
+          <img src="../TP4/svg/card-3.svg" alt="" class="card-3 card" />
         </div>
-    </section>
+      </section>
 
-    <section class="section-avengers" >
+      <section class="section-avengers">
         <div class="avengers-bg">
-            <h1 class="avengers-title">Los vengadores <br> acompañando tu <br> aventura </h1>
-            <img src="../TP4/svg/cloud-bg.svg" class="cloud-bg"/>
-            <img src="../TP4/svg/city-bg.svg" class="city-bg"/>
-            <img src="../TP4/svg/leaves-bg.svg" class="leaves-bg"/>
-            <img src="../TP4/svg/hulk.svg" class="hulk"/>
-            <img src="../TP4/svg/elastic-girl.svg" class="elastic"/>
-            <img src="../TP4/svg/black-panther.svg" class="panther"/>
+          <h1 class="avengers-title">
+            Los vengadores <br />
+            acompañando tu <br />
+            aventura
+          </h1>
+          <img src="../TP4/svg/cloud-bg.svg" class="cloud-bg" />
+          <img src="../TP4/svg/city-bg.svg" class="city-bg" />
+          <img src="../TP4/svg/leaves-bg.svg" class="leaves-bg" />
+          <img src="../TP4/svg/hulk.svg" class="hulk" />
+          <img src="../TP4/svg/elastic-girl.svg" class="elastic" />
+          <img src="../TP4/svg/black-panther.svg" class="panther" />
         </div>
-    </section>
-    <!-- En la sección de “Más amigos, más diversión!” Se debe tener 2 columnas en la cual la parte izquierda 
+      </section>
+      <!-- En la sección de “Más amigos, más diversión!” Se debe tener 2 columnas en la cual la parte izquierda 
         es una imagen y sobre la derecha está el texto descriptivo. A modo de ejemplo ver en  
         https://growproexperience.com/ (Te acompañamos en tu viaje de principio a fin). 
         La imagen de la izquierda que fija, Sticky, y va cambiando (con una transición suave) 
         a medida que se prolonga el texto de la derecha.
     -->
-    <section class="section-games">
+      <section class="section-games">
         <div class="games-content">
-            <h1>Mas amigos, mas diversión!</h1>
-            <div class="games-block">
-                <img src="../TP4/assets/games-1.png"/>
-                <div>
-                    <h2>Mas de 100 misiones para que juegues sin parar!</h2>
-                    <p>Tus padres, contentos. Explora el emocionante mundo de Spider-Man con más de 100 misiones que te mantendrán en constante acción y adrenalina. Enfréntate a desafíos únicos, desentraña misterios, y ayuda a Spider-Man a mantener la paz en la ciudad mientras te sumerges en la piel del héroe arácnido. ¿Tienes lo que se necesita para superar todas las misiones y convertirte en el auténtico Spider-Man?</p>
-                </div>
+          <h1>Mas amigos, mas diversión!</h1>
+          <div class="games-block">
+            <img src="../TP4/assets/games-1.png" />
+            <div>
+              <h2>Mas de 100 misiones para que juegues sin parar!</h2>
+              <p>
+                Tus padres, contentos. Explora el emocionante mundo de
+                Spider-Man con más de 100 misiones que te mantendrán en
+                constante acción y adrenalina. Enfréntate a desafíos únicos,
+                desentraña misterios, y ayuda a Spider-Man a mantener la paz en
+                la ciudad mientras te sumerges en la piel del héroe arácnido.
+                ¿Tienes lo que se necesita para superar todas las misiones y
+                convertirte en el auténtico Spider-Man?
+              </p>
             </div>
-            <div class="games-block">
-                <img src="../TP4/assets/games-2.png"/>
-                <div>
-                    <h2>Escenas deslumbrantes que te sorprenderán</h2>
-                    <p>Sumérgete en un universo de maravillas visuales con 'Spider-Man: [nombre del juego]'. Nuestro juego te llevará a través de escenas deslumbrantes que te dejarán sin aliento. Desde los rascacielos de Nueva York hasta los intrincados detalles de la vida de Peter Parker, cada rincón de este mundo te sorprenderá. Prepárate para una experiencia única que desafiará tus expectativas y te transportará a un asombroso viaje con el Hombre Araña.</p>            
-                </div>
+          </div>
+          <div class="games-block">
+            <img src="../TP4/assets/games-2.png" />
+            <div>
+              <h2>Escenas deslumbrantes que te sorprenderán</h2>
+              <p>
+                Sumérgete en un universo de maravillas visuales con 'Spider-Man:
+                [nombre del juego]'. Nuestro juego te llevará a través de
+                escenas deslumbrantes que te dejarán sin aliento. Desde los
+                rascacielos de Nueva York hasta los intrincados detalles de la
+                vida de Peter Parker, cada rincón de este mundo te sorprenderá.
+                Prepárate para una experiencia única que desafiará tus
+                expectativas y te transportará a un asombroso viaje con el
+                Hombre Araña.
+              </p>
             </div>
-            <div class="games-block">
-                <img src="../TP4/assets/games-3.png"/>
-                <div>
-                    <h2>Cada misión te dará puntos que no sirven para nada! </h2>
-                    <p>Cada misión es una oportunidad para vivir la emocionante vida del Hombre Araña, y aunque los puntos que ganarás no tengan un propósito específico, la verdadera recompensa está en la diversión y la inmersión que experimentarás en cada desafío. No necesitas acumular puntos para sentirte como un auténtico superhéroe, ya que la adrenalina de salvar la ciudad y la emoción de las acrobacias en el aire son más que suficientes. ¡Así que prepárate para sumergirte en la acción y la aventura, sin preocuparte por los puntos, y vive la experiencia definitiva de Spider-Man!</p>
-                </div>    
+          </div>
+          <div class="games-block">
+            <img src="../TP4/assets/games-3.png" />
+            <div>
+              <h2>Cada misión te dará puntos que no sirven para nada!</h2>
+              <p>
+                Cada misión es una oportunidad para vivir la emocionante vida
+                del Hombre Araña, y aunque los puntos que ganarás no tengan un
+                propósito específico, la verdadera recompensa está en la
+                diversión y la inmersión que experimentarás en cada desafío. No
+                necesitas acumular puntos para sentirte como un auténtico
+                superhéroe, ya que la adrenalina de salvar la ciudad y la
+                emoción de las acrobacias en el aire son más que suficientes.
+                ¡Así que prepárate para sumergirte en la acción y la aventura,
+                sin preocuparte por los puntos, y vive la experiencia definitiva
+                de Spider-Man!
+              </p>
             </div>
-            <div class="games-block">
-                <img src="../TP4/assets/games-4.png"/>
-                <div>
-                    <h2>Derrota a los villanos y diviértete</h2>
-                    <p>la diversión está asegurada mientras te enfrentas a los infames villanos de la ciudad de Nueva York. Enfréntate a desafíos épicos, combate a tus enemigos más temibles y disfruta de una experiencia llena de acción y emoción. Cada encuentro con los villanos te sumergirá en una batalla trepidante y te llevará más cerca de convertirte en el auténtico Hombre Araña. Así que, ¿estás listo para derrotar a los villanos y sumergirte en la aventura definitiva de Spider-Man?"</p>
-                </div>
+          </div>
+          <div class="games-block">
+            <img src="../TP4/assets/games-4.png" />
+            <div>
+              <h2>Derrota a los villanos y diviértete</h2>
+              <p>
+                la diversión está asegurada mientras te enfrentas a los infames
+                villanos de la ciudad de Nueva York. Enfréntate a desafíos
+                épicos, combate a tus enemigos más temibles y disfruta de una
+                experiencia llena de acción y emoción. Cada encuentro con los
+                villanos te sumergirá en una batalla trepidante y te llevará más
+                cerca de convertirte en el auténtico Hombre Araña. Así que,
+                ¿estás listo para derrotar a los villanos y sumergirte en la
+                aventura definitiva de Spider-Man?"
+              </p>
             </div>
+          </div>
         </div>
-    </section>
-    <section class="section-buy">
+      </section>
+      <section class="section-buy">
         <div class="section-top">
-            <h1>”un gran poder conlleva una gran responsabilidad”</h1>
-            <button class="btn-comprar">COMPRAR AHORA</button>
+          <h1>”un gran poder conlleva una gran responsabilidad”</h1>
+          <button class="btn-comprar">COMPRAR AHORA</button>
         </div>
-    </section>
+      </section>
 
-    <section class="section-spiders">
-        <img src="../TP4/svg/rect-spiders.svg" alt="" class="rect-spiders">
+      <section class="section-spiders">
+        <img src="../TP4/svg/rect-spiders.svg" alt="" class="rect-spiders" />
         <div class="spiders-content">
-            <img src="../TP4/svg/heroe-woman.svg" alt="" class="heroe-woman">
-            <img src="../TP4/svg/heroe-spider.svg" alt="" class="heroe-spider">
-            <img src="../TP4/svg/heroe-men.svg" alt="" class="heroe-men">
+          <img src="../TP4/svg/heroe-woman.svg" alt="" class="heroe-woman" />
+          <img src="../TP4/svg/heroe-spider.svg" alt="" class="heroe-spider" />
+          <img src="../TP4/svg/heroe-men.svg" alt="" class="heroe-men" />
         </div>
-    </section>
+      </section>
 
-    <section class="section-suscribe">
+      <section class="section-suscribe">
         <div class="suscribe-content">
-            <h2>Lo último de SPIDEY Y SUS <br>
-            AMIGOS en tu buzón de <br>
-            correo electrónico</h2>
-            <div class="suscribe-input">
-                <input placeholder="Ingresa aquí tu correo"/>
-                <button>SUSCRIBIRSE</button>
-            </div>
-            <div class="suscribe-bottom">
-                <p class="suscribe-text">Al inscribirse en nuestra lista de correo, nos autoriza a ponernos en contacto con usted para enviarle ofertas y 
-                actualizaciones de marketing por correo electrónico, y también acepta nuestra 
-                <span class="underlined">Política de privacidad</span> y las <span class="underlined">Condiciones del servicio.</span></p>
-            </div>
-            <div class="suscribe-rate">
-                <img src="../TP4/svg/rate-game.svg"/>
-            </div>
+          <h2>
+            Lo último de SPIDEY Y SUS <br />
+            AMIGOS en tu buzón de <br />
+            correo electrónico
+          </h2>
+          <div class="suscribe-input">
+            <input placeholder="Ingresa aquí tu correo" />
+            <button>SUSCRIBIRSE</button>
+          </div>
+          <div class="suscribe-bottom">
+            <p class="suscribe-text">
+              Al inscribirse en nuestra lista de correo, nos autoriza a ponernos
+              en contacto con usted para enviarle ofertas y actualizaciones de
+              marketing por correo electrónico, y también acepta nuestra
+              <span class="underlined">Política de privacidad</span> y las
+              <span class="underlined">Condiciones del servicio.</span>
+            </p>
+          </div>
+          <div class="suscribe-rate">
+            <img src="../TP4/svg/rate-game.svg" />
+          </div>
         </div>
         <!-- Cerca del footer, animar utilizando un spritesheet un personaje del juego en lanzamiento.
         Algo decorativo, cambiar la animacion on-hover.
         -->
         <section class="suscribe-spritesheet">
-            <img src="../TP4/svg/footer.svg" alt="" class="suscribe-spritesheet-bg">
-            <img src="../TP4/assets/footer-spider-black.png" alt="" class="footer-spider-black">
-            <img src="../TP4/assets/footer-spider-white.png" alt="" class="footer-spider-white">
-            <div id="sprite">
-            </div>
+          <img
+            src="../TP4/svg/footer.svg"
+            alt=""
+            class="suscribe-spritesheet-bg"
+          />
+          <img
+            src="../TP4/assets/footer-spider-black.png"
+            alt=""
+            class="footer-spider-black"
+          />
+          <img
+            src="../TP4/assets/footer-spider-white.png"
+            alt=""
+            class="footer-spider-white"
+          />
+          <div id="sprite"></div>
         </section>
-    </section>
+      </section>
     </main>
     <footer>
-        <div class="footer-top">
-            <img src="../TP4/assets/footer-brands.png"/>
+      <div class="footer-top">
+        <img src="../TP4/assets/footer-brands.png" />
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-content">
+          <p>
+            ©SEGA. All rights reserved. SEGA is registered in the U.S. Patent
+            and Trademark Office. SEGA, the SEGA logo and SONIC SUPERSTARS are
+            either registered trademarks or trademarks of SEGA CORPORATION or
+            its affiliates. All other trademarks, logos and copyrights are
+            property of their respective owners.©2023 The LEGO Group. LEGO, the
+            LEGO logo, the Minifigure, and the Brick and Knob configurations are
+            trademarks and/or copyrights of the LEGO Group. All other marks and
+            trademarks are the property of their respective owners. All rights
+            reserved."PS", "PS5" and "PS4" are registered trademarks or
+            trademarks of Sony Interactive Entertainment Inc.Microsoft, the Xbox
+            Sphere mark, the Series X logo, Xbox One, and Xbox Series X are
+            trademarks of the Microsoft group of companies.Nintendo Switch is a
+            trademark of NintendoEPIC GAMES and the EPIC STORE LOGO are
+            trademarks or registered trademarks of EPIC GAMES INC.©2023 Valve
+            Corporation. Steam and the Steam logo are trademarks and/or
+            registered trademarks of Valve Corporation in the U.S. and/or other
+            countries.The ESRB rating icons are registered trademarks of the
+            Entertainment Software Association.
+          </p>
+          <a
+            href="https://privacy.sega.com/en/sega-cookie-policy"
+            target="_blank"
+            >COOKIE POLICY</a
+          >
+          <a
+            href="https://privacy.sega.com/sega-of-america-inc-privacy-policy"
+            target="_blank"
+            >PRIVACY POLICY</a
+          >
+          <div class="footer-media">
+            <button><i class="fa-brands fa-facebook-f"></i></button>
+            <button><i class="fa-brands fa-twitter"></i></button>
+            <button><i class="fa-brands fa-youtube"></i></button>
+            <button><i class="fa-brands fa-twitch"></i></button>
+            <button><i class="fa-brands fa-instagram"></i></button>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <div class="footer-content">
-                <p>©SEGA. All rights reserved. SEGA is registered in the U.S. Patent and Trademark Office. SEGA, the SEGA logo and SONIC SUPERSTARS are either registered trademarks or trademarks of SEGA CORPORATION or its affiliates. All other trademarks, logos and copyrights are property of their respective owners.©2023 The LEGO Group. LEGO, the LEGO logo, the Minifigure, and the Brick and Knob configurations are trademarks and/or copyrights of the LEGO Group. All other marks and trademarks are the property of their respective owners. All rights reserved."PS", "PS5" and "PS4" are registered trademarks or trademarks of Sony Interactive Entertainment Inc.Microsoft, the Xbox Sphere mark, the Series X logo, Xbox One, and Xbox Series X are trademarks of the Microsoft group of companies.Nintendo Switch is a trademark of NintendoEPIC GAMES and the EPIC STORE LOGO are trademarks or registered trademarks of EPIC GAMES INC.©2023 Valve Corporation. Steam and the Steam logo are trademarks and/or registered trademarks of Valve Corporation in the U.S. and/or other countries.The ESRB rating icons are registered trademarks of the Entertainment Software Association.</p>
-                <a href="https://privacy.sega.com/en/sega-cookie-policy" target="_blank">COOKIE POLICY</a>   
-                <a href="https://privacy.sega.com/sega-of-america-inc-privacy-policy" target="_blank">PRIVACY POLICY</a>
-                <div class="footer-media">
-                    <button><i class="fa-brands fa-facebook-f"></i></button>
-                    <button><i class="fa-brands fa-twitter"></i></button>
-                    <button><i class="fa-brands fa-youtube"></i></button>
-                    <button><i class="fa-brands fa-twitch"></i></button>
-                    <button><i class="fa-brands fa-instagram"></i></button>
-                </div>
-            </div>
-        </div>
+      </div>
     </footer>
     <script src="../TP4/js/loader.js"></script>
     <script src="../TP4/js/menu.js"></script>
@@ -233,6 +389,5 @@
     <script src="../TP4/js/stickyHeader.js"></script>
     <script src="../TP4/js/parallaxSpiders.js"></script>
     <script src="../TP4/js/spritesheet.js"></script>
-
-</body>
+  </body>
 </html>
