@@ -6,15 +6,16 @@
     margin-top: -580px;
     display: flex;
     justify-content: center;
-    padding-bottom: 100px;
 
     .games-content{
         width: 1280px;
+        height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        align-items: start;
         padding-left: 100px;
         padding-right: 100px;
+        padding-bottom: 400px;
 
         >h1 {
             padding: 261px 0px 69px 0px;
@@ -26,17 +27,88 @@
         display: flex;
         flex-direction: row;
         padding-bottom: 100px;
+    }
+}
 
-        >img {
-            width: 556px;
-            height: 301px;
-            margin-right: 57px;
-        }
-        
-        >div {
-            >h2{
-                margin-bottom: 25px;
-            }
+.contentScroll{
+    height: 1650px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.imgContent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+}
+
+
+#img-1{
+    background: url(../../TP4/assets/games-1.png);
+}
+#img-2{
+    background: url(../../TP4/assets/games-2.png);
+}
+#img-3{
+    background: url(../../TP4/assets/games-3.png);
+}
+#img-4{
+    background: url(../../TP4/assets/games-4.png);
+}
+
+.stickyImgs{
+    width: 100%;
+    height: 302px;
+    position: sticky;
+    top: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerImg{
+    width: 552px;
+    height: 1750px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+
+.textContent{
+    position: relative;
+    left: 601px;
+    width: 467px;
+    height: 1750px;
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+    box-sizing: border-box;
+    
+    >div {
+
+        >h2{
+            margin-bottom: 25px;
         }
     }
+}
+
+.texto{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    opacity: 0;
+    transition: all 0.3s ease-in;
+}
+
+.showText{
+    opacity: 1;
+}
+
+.showImg{
+    z-index: 1;
+    opacity: 1;
 }
