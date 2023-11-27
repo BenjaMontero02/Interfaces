@@ -98,3 +98,33 @@ function setCardsFadeIn(){
         card3.classList.add("show");
     }, 4000);
 }
+    document.addEventListener("scroll", () => {
+    function clean() {
+        document.querySelectorAll(".imgContent").forEach((img) => {
+            img.classList.remove("showImg");
+        });
+        document.querySelectorAll(".texto").forEach((text) => {
+            text.classList.remove("showText");
+        });
+    }
+    if (window.scrollY < 4080) {
+        clean();
+        document.querySelector("#img-1").classList.add("showImg");
+        document.querySelector("#text-1").classList.add("showText");
+    }
+    if (window.scrollY > 4080 && window.screenY < 4450) {
+        clean();
+        document.querySelector("#img-2").classList.add("showImg");
+        document.querySelector("#text-2").classList.add("showText");
+    }
+    if (window.scrollY > 4450 && window.screenY < 4950) {
+        clean();
+        document.querySelector("#img-3").classList.add("showImg");
+        document.querySelector("#text-3").classList.add("showText");
+    }
+    if (window.scrollY > 4950) {
+        clean();
+        document.querySelector("#img-4").classList.add("showImg");
+        document.querySelector("#text-4").classList.add("showText");
+    }
+    });
