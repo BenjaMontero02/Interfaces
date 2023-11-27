@@ -7,7 +7,7 @@
     flex-direction: row;
     justify-content: center;
     z-index: 2;
-    margin-top: 330px;
+    top: -300px;
     overflow-x: hidden;
 }
 

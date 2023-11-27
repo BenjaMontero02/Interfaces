@@ -4,11 +4,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 15px;
   position: relative;
   z-index: 2;
-  margin-top: -143px;
+  top: -300px;
   clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+  background-color: #ffffff;
 }
 .fondo-Spider {
   position: absolute;
@@ -23,13 +23,13 @@
   opacity: 1;
 }
 .hoverSpiderWhite {
-  background-image: url(../assets/hoverBlanco.png);
+  background-image: url(../../TP4/assets/hoverBlanco.png);
 }
 .hoverSpiderRed {
-  background-image: url(../assets/hoverNormal.png);
+  background-image: url(../../TP4/assets/hoverNormal.png);
 }
 .hoverSpiderBlack {
-  background-image: url(../assets/hoverNegro.png);
+  background-image: url(../../TP4/assets/hoverNegro.png);
 }
 .centrado-Spider {
   width: 1080px;
