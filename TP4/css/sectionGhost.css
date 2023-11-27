@@ -8,7 +8,7 @@
   height: 800px;
   overflow: hidden;
   padding-top: 92px;
-  top: -250px;
+  top: -150px;
 }
 
 .ghost-content {
@@ -19,6 +19,7 @@
   z-index: 3;
   padding-left: 100px;
   padding-right: 100px;
+  top: 800px;
 }
 
 .ghost-spider {
@@ -28,29 +29,40 @@
 }
 
 .card-1 {
-  position: absolute;
-  z-index: 2;
   left: 48px;
-  top: -158px;
+  top: -110px;
+  transform: rotate(-8deg);
 }
 .card-2 {
-  position: absolute;
-  z-index: 2;
-  left: 32px;
-  top: -17px;
+  left: 70px;
+  top: 80px;
+  transform: rotate(-25deg);
+
 }
 .card-3 {
-  position: absolute;
-  z-index: 2;
-  left: 65px;
-  top: 170px;
+  left: 85px;
+  top: 290px;
+  transform: rotate(-30deg);
+
 }
 .card {
   position: absolute;
   z-index: 2;
-  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s ease
 }
 
-.card:hover {
-  transform: translateY(-10px) scale(1.1) rotateX(5deg);
+.card-1:hover{
+  z-index: 5;
+  transform: translateY(40px) rotate(5deg);
 }
+
+.card-2:hover{
+  z-index: 5;
+  transform: rotate(5deg)
+}
+
+.card-3:hover{
+  z-index: 5;
+  transform: rotate(5deg)
+}
+
