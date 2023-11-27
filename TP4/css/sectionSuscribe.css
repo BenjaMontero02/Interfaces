@@ -110,11 +110,25 @@
         height: 100px;
         position: absolute;
         right: 220px;
-        bottom: 245px;
-        background-image: url(../assets/spider-spritesheet.png);
+        bottom: 240px;
+        background-image: url(../assets/spider-spritesheet-hover.png);
         background-size: cover;
+        animation: spriteAnimation 1s steps(7) infinite;
     }
+
+    #sprite:hover {
+        background-image: url(../assets/spider-spritesheet.png);
+        cursor: pointer;
+      }
 }
 
+@keyframes spriteAnimation {
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: 700px;
+  }
+}
 
   
