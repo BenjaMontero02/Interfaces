@@ -11,7 +11,14 @@ let spiderWoman = document.querySelector(".spider-woman");
 let spider = document.querySelector(".spider");
 let spiderMen = document.querySelector(".spider-men");
 
+//BLOQUEO EL SCROLL PARA QUE NO SE HAGA NINGUNA ANIMACION DEL PARALLAX
+//MIENTRAS SE ESTE CARGANDO LA PAGINA
+bloquearScroll();
+charge();
+
 function charge() {
+  //DESPUES DE LOS 5 SEG, LE HAGO UN DISPLAY NONE AL LOADING, Y SETEO 
+  //LOS KEYFRAMES PARA LA ENTRADA DEL BANNER
   setTimeout(() => {
     container.style.display = "none";
     //ANIMA LA ENTRADA DEL BANNER
@@ -29,9 +36,8 @@ function habilitarScroll() {
   document.body.style.overflow = ""; // Restablecer a la configuración predeterminada
 }
 
-bloquearScroll();
-charge();
 
+//LE AGREGO LA ANIMACION A LA ENTRADA
 function setKeyFrames() {
   estructuraIzq.style.animation = "estructura-izq 1.5s ease-in-out";
   estructuraDer.style.animation = "estructura-der 1.5s ease-in-out";
@@ -64,11 +70,16 @@ menuBurger.addEventListener("click", function () {
   menuContainer.style.left = isVisible ? "0" : "-300px";
 });
 
+
+//SE ENCARGA DE MANEJAR CUANDO LLAMAR A LA FUNCION QUE SE TENGA Q HACER EL PALALLAX 
+//DEPENDIENDO DE LA POSICION DEL SCROLL
 document.addEventListener("scroll", () => {
   let scrollPosition = window.scrollY;
 
+  //MANEJA EL LOGO, CAMBIANDO LA OPACIDAD Y HACIENDO UN TRANSLATE
   stickyHeader(scrollPosition);
 
+  //SE ENCARGA DE AGREGAR EL TRANSLATE A TODA EL BANNER
   if (scrollPosition < 320) {
     parallaxSpiderAndTelarañaIzq(scrollPosition);
     parallaxEstructuraIzq(scrollPosition);
@@ -79,12 +90,17 @@ document.addEventListener("scroll", () => {
     parallaxSpiderWoman(scrollPosition);
   }
 
+  //MANEJA LA ENTRADA DEL DUENDE VERDE CAMBIANDO EL TOP Y DEJANDOLO FIJO CUANDO 
+  //LLEGO A SU POSICION CORRECTA
   duendeVerde(scrollPosition);
 
+  //CUANDO SE LLEGA A LA ETAPA DE LAS CARDS, LE AGREGA LA ANIMACION PARA DAR EL 
+  //EFECTO QUE SUBEN EN DISTINTOS TIEMPOS
   if (scrollPosition > 1400) {
     setCardsFadeIn();
   }
 
+  //SUBE LAS CARDS, MANEJANDO EL TOP Y CUANDO LLEGA A SU POSICION LO DEJA FIJO
   if (scrollPosition > 1550) {
     cardsGhost(scrollPosition);
   }
@@ -212,6 +228,8 @@ function setCardsFadeIn() {
     card3.classList.add("show");
   }, 2500);
 }
+
+
 document.addEventListener("scroll", () => {
   function clean() {
     document.querySelectorAll(".imgContent").forEach((img) => {
